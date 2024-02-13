@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://tsnqanemh5ff"]
 
-[ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://scene/Player.tscn" id="1_hcwwf"]
-[ext_resource type="Texture2D" uid="uid://duv04yis38qul" path="res://assets/png/tilemap.png" id="2_psjfr"]
-[ext_resource type="Texture2D" uid="uid://c0ht8jlwicj1t" path="res://assets/png/box.png" id="3_mtkab"]
+[ext_resource type="Texture2D" uid="uid://duv04yis38qul" path="res://assets/png/tilemap.png" id="1_jx0p3"]
+[ext_resource type="Texture2D" uid="uid://c0ht8jlwicj1t" path="res://assets/png/box.png" id="2_i3wq4"]
+[ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://scene/Player.tscn" id="3_6k3o2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4c2m"]
-texture = ExtResource("2_psjfr")
+texture = ExtResource("1_jx0p3")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -43,10 +43,10 @@ collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="Box"]
 texture_filter = 1
-texture = ExtResource("3_mtkab")
+texture = ExtResource("2_i3wq4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 shape = SubResource("RectangleShape2D_b34re")
 
-[node name="Player" parent="." instance=ExtResource("1_hcwwf")]
+[node name="Player" parent="." instance=ExtResource("3_6k3o2")]
 position = Vector2(9, -25)
