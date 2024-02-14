@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 @onready var ray: RayCast2D = $RayCast2D
 

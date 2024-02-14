@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b34re"]
 size = Vector2(16, 16)
 
-[node name="Statue" type="StaticBody2D" groups=["statue"]]
+[node name="Statue" type="Area2D" groups=["statue"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_gy53u")
