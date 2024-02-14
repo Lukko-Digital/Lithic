@@ -1,4 +1,7 @@
 extends Area2D
+class_name Statue
+
+@export var condition: Array[StatueCondition]
 
 @onready var ray: RayCast2D = $RayCast2D
 
