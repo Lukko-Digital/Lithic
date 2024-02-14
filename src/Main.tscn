@@ -26,7 +26,6 @@ sources/0 = SubResource("TileSetAtlasSource_t4c2m")
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4.875, 4.875)
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
