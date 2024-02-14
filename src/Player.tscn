@@ -20,5 +20,6 @@ shape = SubResource("RectangleShape2D_jl2t6")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 16)
 collision_mask = 6
+collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

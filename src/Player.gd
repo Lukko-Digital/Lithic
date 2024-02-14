@@ -26,3 +26,5 @@ func _unhandled_input(event):
 	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
+	if event.is_action_pressed("reset"):
+		get_tree().reload_current_scene()
