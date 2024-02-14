@@ -1,6 +1,6 @@
 extends Area2D
 
-var inputs = {"right": Vector2.RIGHT,
+var INPUTS = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
 			"up": Vector2.UP,
 			"down": Vector2.DOWN}
@@ -8,18 +8,21 @@ var inputs = {"right": Vector2.RIGHT,
 @onready var ray = $RayCast2D
 
 func move(dir):
-	ray.target_position = inputs[dir] * Globals.TILE_SIZE
+	ray.target_position = INPUTS[dir] * Globals.TILE_SIZE
 	ray.force_raycast_update()
 	if !ray.is_colliding():
-		position += inputs[dir] * Globals.TILE_SIZE
+		position += INPUTS[dir] * Globals.TILE_SIZE
 	else:
-		print_debug(ray.get_collider().get_collision_layer_value(3))
+		var colliding = ray.get_collider()
+		if colliding.is_in_group("statue"):
+			if colliding.move(INPUTS[dir]):
+				position += INPUTS[dir] * Globals.TILE_SIZE
 
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
 	position += Vector2.ONE * Globals.TILE_SIZE/2
 
 func _unhandled_input(event):
-	for dir in inputs.keys():
+	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
