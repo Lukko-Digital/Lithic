@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://nnr21idbckd6"]
 
-[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue.tscn" id="1_gneyj"]
+[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="1_gneyj"]
 [ext_resource type="Texture2D" uid="uid://bxi45tcinvvj6" path="res://assets/png/sign.png" id="2_hj358"]
 
 [node name="inscription" type="Node2D"]
