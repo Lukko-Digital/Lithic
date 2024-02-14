@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://tsnqanemh5ff"]
+[gd_scene load_steps=7 format=3 uid="uid://tsnqanemh5ff"]
 
 [ext_resource type="Texture2D" uid="uid://duv04yis38qul" path="res://assets/png/tilemap.png" id="1_jx0p3"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="3_6k3o2"]
-[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue.tscn" id="3_od2bu"]
+[ext_resource type="PackedScene" uid="uid://c7eb7rc1l5hfn" path="res://src/statues/bear_statue.tscn" id="3_gkh47"]
+[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/statues/inscription.tscn" id="4_51fbm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4c2m"]
 texture = ExtResource("1_jx0p3")
@@ -36,5 +37,8 @@ layer_0/tile_data = PackedInt32Array(-65536, 0, 0, 0, 0, 0, -1, 0, 0, -65535, 0,
 [node name="Player" parent="." instance=ExtResource("3_6k3o2")]
 position = Vector2(9, -25)
 
-[node name="Statue" parent="." instance=ExtResource("3_od2bu")]
-position = Vector2(-8, -8)
+[node name="bear_statue" parent="." instance=ExtResource("3_gkh47")]
+position = Vector2(32, 2)
+
+[node name="inscription" parent="." instance=ExtResource("4_51fbm")]
+position = Vector2(-32, -14)

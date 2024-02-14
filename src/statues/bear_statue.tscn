@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7eb7rc1l5hfn"]
+
+[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue.tscn" id="1_286dk"]
+[ext_resource type="Texture2D" uid="uid://ctpvmif2fpjul" path="res://assets/png/statue4.png" id="2_jgtyp"]
+
+[node name="bear_statue" type="Node2D"]
+
+[node name="Statue" parent="." instance=ExtResource("1_286dk")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jgtyp")
