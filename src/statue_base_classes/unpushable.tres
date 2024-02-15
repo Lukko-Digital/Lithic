@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://e30im1lfnb34"]
+
+[ext_resource type="Script" path="res://src/statue_base_classes/unpushable.gd" id="1_2hr50"]
+
+[resource]
+script = ExtResource("1_2hr50")

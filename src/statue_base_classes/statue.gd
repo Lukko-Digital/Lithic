@@ -3,6 +3,7 @@ class_name Statue
 
 @export_group("Properties")
 @export var conditions: Array[StatueCondition] = []
+@export var movement: StatueMovement
 @export var reads_inscription: bool = false
 @export var speaks_english: bool = false
 
@@ -15,12 +16,7 @@ func _ready():
 
 
 func move(dir: Vector2) -> bool:
-	ray.target_position = dir * Globals.TILE_SIZE
-	ray.force_raycast_update()
-	if !ray.is_colliding():
-		get_parent().position += dir * Globals.TILE_SIZE
-		return true
-	else: return false
+	return movement.move(self, dir)
 
 func get_neighbors() -> Array[Statue]:
 	var neighbors: Array[Statue] = []
