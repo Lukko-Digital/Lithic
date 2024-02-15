@@ -6,6 +6,7 @@
 [node name="bear_statue" type="Node2D"]
 
 [node name="Statue" parent="." instance=ExtResource("1_286dk")]
+reads_inscription = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_jgtyp")

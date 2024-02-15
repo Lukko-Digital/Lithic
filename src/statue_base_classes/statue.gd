@@ -23,13 +23,14 @@ func move(dir: Vector2) -> bool:
 	else: return false
 
 func get_neighbors() -> Array[Statue]:
-	var neighbors = []
+	var neighbors: Array[Statue] = []
 	for dir in $Adjacents.get_children():
 		dir.force_raycast_update()
 		if dir.is_colliding():
 			var colliding = dir.get_collider()
 			if colliding.is_in_group("statue"):
 				neighbors.append(colliding)
+
 	return neighbors
 
 func check_conditions() -> bool:
