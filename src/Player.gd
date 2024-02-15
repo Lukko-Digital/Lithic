@@ -28,3 +28,9 @@ func _unhandled_input(event):
 			move(dir)
 	if event.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
+	if event.is_action_pressed("interact"):
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			var colliding = ray.get_collider()
+			if colliding.is_in_group("statue"):
+				colliding.interact()

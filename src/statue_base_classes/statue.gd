@@ -35,3 +35,19 @@ func check_conditions() -> bool:
 			return false
 
 	return true
+
+func interact():
+	print(check_tree([]))
+
+func check_tree(e: Array[Statue]) -> bool:
+	var explored: Array[Statue] = e
+
+	if !check_conditions():
+		return false
+	for neighbor in get_neighbors():
+		if neighbor not in explored:
+			explored.append(neighbor)
+			if !neighbor.check_tree(explored):
+				return false
+	
+	return true
