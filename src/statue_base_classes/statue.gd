@@ -5,7 +5,8 @@ class_name Statue
 @export var conditions: Array[StatueCondition] = []
 @export var movement: StatueMovement
 @export var can_read: bool = false
-@export var speaks_english: bool = false
+@export var friendly: bool = false
+@export var speaks_english: bool = true
 @export var speaks_old: bool = false
 
 @onready var ray: RayCast2D = $RayCast2D
@@ -51,6 +52,9 @@ func interact():
 	print(check_tree())
 
 func check_tree() -> bool:
+	if !friendly:
+		return false
+
 	var q = [[self]]
 	var paths = []
 
@@ -64,12 +68,14 @@ func check_tree() -> bool:
 				if neighbor not in path:
 					q.append(path + [neighbor])
 
+	print(paths)
+
 	for path in paths:
 		var previous: Statue = null
 		var condition = true
 		var language = true
 		for statue in path:
-			condition = statue.check_condition()
+			condition = statue.check_conditions()
 			if previous != null:
 				language = ((statue.speaks_english and previous.speaks_english) or 
 							(statue.speaks_old and previous.speaks_old))
