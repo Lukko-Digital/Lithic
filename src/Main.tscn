@@ -3,11 +3,11 @@
 [ext_resource type="Texture2D" uid="uid://dyv043lm2nkxy" path="res://assets/png/tilemap.png" id="1_jx0p3"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="3_6k3o2"]
 [ext_resource type="PackedScene" uid="uid://c7eb7rc1l5hfn" path="res://src/statues/bear_statue.tscn" id="3_gkh47"]
-[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/statues/inscription.tscn" id="4_51fbm"]
+[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/inscription.tscn" id="4_51fbm"]
 [ext_resource type="PackedScene" uid="uid://bib74g0vnmp4g" path="res://src/statues/kid_statue.tscn" id="5_5lbq8"]
 [ext_resource type="PackedScene" uid="uid://do8s01btdu4mx" path="res://src/statues/parent_statue.tscn" id="6_et4xd"]
 [ext_resource type="PackedScene" uid="uid://curqycab2s72k" path="res://src/ui/dialogue_ui.tscn" id="7_17oqj"]
-[ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/statues/door.tscn" id="8_chvtg"]
+[ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="8_chvtg"]
 [ext_resource type="PackedScene" uid="uid://buyq5h8l4bg1f" path="res://src/ui/door_ui.tscn" id="8_ky4ks"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4c2m"]
