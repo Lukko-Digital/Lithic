@@ -1,11 +1,6 @@
 extends Control
 
-@onready var selectors = [
-	$selector0,
-	$selector1,
-	$selector2,
-	$selector3,
-]
+@onready var selectors = $selectors.get_children()
 
 const DEFAULT_Y = 56
 const ICON_DIST = 20
@@ -23,10 +18,12 @@ func _set_active_selector(new_selector):
 
 
 func _ready():
-	pass
+	print(selectors)
 
 
 func move_selector(dir: int):
+	if active_selector == 4:
+		return
 	var new_pos = clamp(selector_position[active_selector] + dir, 0, 3)
 	selector_position[active_selector] = new_pos
 	selectors[active_selector].position.y = DEFAULT_Y + new_pos * ICON_DIST

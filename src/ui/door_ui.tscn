@@ -17,19 +17,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_euxld")
 
-[node name="selector0" type="Sprite2D" parent="."]
+[node name="selectors" type="Node2D" parent="."]
+
+[node name="selector0" type="Sprite2D" parent="selectors"]
 position = Vector2(64, 56)
 texture = ExtResource("2_8pw33")
 
-[node name="selector1" type="Sprite2D" parent="."]
+[node name="selector1" type="Sprite2D" parent="selectors"]
 position = Vector2(84, 56)
 texture = ExtResource("2_8pw33")
 
-[node name="selector2" type="Sprite2D" parent="."]
+[node name="selector2" type="Sprite2D" parent="selectors"]
 position = Vector2(104, 56)
 texture = ExtResource("2_8pw33")
 
-[node name="selector3" type="Sprite2D" parent="."]
+[node name="selector3" type="Sprite2D" parent="selectors"]
 position = Vector2(124, 56)
 texture = ExtResource("2_8pw33")
 
