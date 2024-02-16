@@ -15,10 +15,15 @@ const BRANCH_FLAGS = [
 	"solution"
 ]
 
+
+# Type: Dictionary[String, Dictionary[int, Array[String]]]
 var dialogue_tree: Dictionary
+# Type: Dictionary[String, int]
+var interaction_count: Dictionary
 
 func _ready():
-	dialogue_tree = load_dialogue()
+	load_dialogue()
+	init_interaction_count()
 
 
 func load_dialogue():
@@ -28,8 +33,6 @@ func load_dialogue():
 	).get_as_text().strip_edges().split("\n")).filter(
 		func(line): if line == "": return false else: return true
 	)
-	# Dictionary[String, Dictionary[int, Array[String]]]
-	var dialogue_dict = {}
 	var branch: String
 	var interaction: int
 	for line in dialogue_lines:
@@ -38,12 +41,16 @@ func load_dialogue():
 				var flag = line.substr(1)
 				if flag in BRANCH_FLAGS:
 					branch = flag
-					dialogue_dict[branch] = {}
+					dialogue_tree[branch] = {}
 			"!":
 				var flag = line.substr(1)
 				if flag.is_valid_int():
 					interaction = flag.to_int()
-					dialogue_dict[branch][interaction] = []
+					dialogue_tree[branch][interaction] = []
 			_:
-				dialogue_dict[branch][interaction].append(line)
-	return dialogue_dict
+				dialogue_tree[branch][interaction].append(line)
+
+
+func init_interaction_count():
+	for branch in dialogue_tree.keys():
+		interaction_count[branch] = 0
