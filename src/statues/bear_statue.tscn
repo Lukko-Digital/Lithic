@@ -9,3 +9,6 @@ texture = ExtResource("2_jgtyp")
 script = ExtResource("2_7q4oi")
 
 [node name="Statue" parent="." instance=ExtResource("1_286dk")]
+can_read = true
+friendly = true
+speaks_old = true

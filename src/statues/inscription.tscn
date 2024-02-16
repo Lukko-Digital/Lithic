@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="2_0h188"]
 [ext_resource type="Texture2D" uid="uid://bbqmwm42cksr2" path="res://assets/png/sign.png" id="2_hj358"]
 [ext_resource type="Resource" uid="uid://b65bji2qmqrt" path="res://src/conditions/inscription.tres" id="2_j3nrw"]
-[ext_resource type="Resource" uid="uid://b6p6d3tm6ib6p" path="res://src/statue_base_classes/unpushable.tres" id="3_3sj1e"]
+[ext_resource type="Resource" uid="uid://e30im1lfnb34" path="res://src/statue_base_classes/unpushable.tres" id="3_3sj1e"]
 
 [node name="inscription" type="Sprite2D"]
 texture = ExtResource("2_hj358")
