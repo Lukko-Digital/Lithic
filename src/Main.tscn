@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyv043lm2nkxy" path="res://assets/png/tilemap.png" id="1_jx0p3"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="3_6k3o2"]
 [ext_resource type="PackedScene" uid="uid://c7eb7rc1l5hfn" path="res://src/statues/bear_statue.tscn" id="3_gkh47"]
-[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/statues/inscription.tscn" id="4_51fbm"]
+[ext_resource type="PackedScene" uid="uid://curqycab2s72k" path="res://src/ui/dialogue_ui.tscn" id="5_moqkd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t4c2m"]
 texture = ExtResource("1_jx0p3")
@@ -304,12 +304,9 @@ position = Vector2(10, 4)
 
 [node name="bear_statue" parent="." instance=ExtResource("3_gkh47")]
 position = Vector2(35, -16)
+dialogue_file = "res://src/ui/test.txt"
 
-[node name="inscription" parent="." instance=ExtResource("4_51fbm")]
-position = Vector2(-41, -24)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="bear_statue2" parent="." instance=ExtResource("3_gkh47")]
-position = Vector2(-56, 7)
-
-[node name="bear_statue3" parent="." instance=ExtResource("3_gkh47")]
-position = Vector2(-89, -5)
+[node name="dialogue_ui" parent="CanvasLayer" instance=ExtResource("5_moqkd")]
+visible = false
