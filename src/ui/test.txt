@@ -9,6 +9,12 @@ my condition isn't met
 #not_in_tree
 !0
 where's the sign
+!1
+wwwwwwwww
+!2
+aaaaaaaaa
+!3
+qqqqqq
 
 #next_to_sign
 !0

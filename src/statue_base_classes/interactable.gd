@@ -24,7 +24,6 @@ var interaction_count: Dictionary
 func _ready():
 	load_dialogue()
 	init_interaction_count()
-	print(dialogue_tree)
 
 
 func load_dialogue():
@@ -59,6 +58,13 @@ func init_interaction_count():
 
 func say(state: Globals.DialogueState):
 	var branch = BRANCH_FLAGS[state]
-	var interaction = interaction_count[branch]
-	var lines = dialogue_tree[branch][interaction]
+	var interaction_limits = dialogue_tree[branch].keys()
+	interaction_limits.reverse()
+	
+	var lines
+	for limit in interaction_limits:
+		if interaction_count[branch] >= limit:
+			lines = dialogue_tree[branch][limit]
+			interaction_count[branch] += 1
+			break
 	Globals.start_dialogue.emit(lines)
