@@ -305,13 +305,13 @@ layer_1/tile_data = PackedInt32Array(-196609, 196608, 0, -65531, 0, 1, -65532, 6
 position = Vector2(8, -8)
 
 [node name="bear_statue" parent="." instance=ExtResource("3_gkh47")]
-position = Vector2(38, -9)
+position = Vector2(40, -8)
 
 [node name="inscription" parent="." instance=ExtResource("4_51fbm")]
-position = Vector2(-41, -25)
+position = Vector2(-40, -24)
 
 [node name="kid_statue" parent="." instance=ExtResource("5_5lbq8")]
 position = Vector2(-56, 8)
 
 [node name="parent_statue" parent="." instance=ExtResource("6_et4xd")]
-position = Vector2(-25, 22)
+position = Vector2(-24, 24)
