@@ -22,7 +22,6 @@ var dialogue_tree: Dictionary
 var interaction_count: Dictionary
 
 func _ready():
-	return
 	load_dialogue()
 	init_interaction_count()
 
@@ -58,7 +57,6 @@ func init_interaction_count():
 
 
 func say(state: int):
-	return
 	var branch = BRANCH_FLAGS[state]
 	var interaction_limits = dialogue_tree[branch].keys()
 	interaction_limits.reverse()
