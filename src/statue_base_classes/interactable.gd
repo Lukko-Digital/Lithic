@@ -3,7 +3,7 @@ class_name Interactable
 
 @export_file var dialogue_file
 
-const BRANCH_FLAGS = {
+var BRANCH_FLAGS = {
 	Globals.DialogueState.CONDITIONS_UNMET: "condition_unmet",
 	Globals.DialogueState.NO_ENGLISH: "no_english",
 	Globals.DialogueState.NOT_IN_TREE: "not_in_tree",
@@ -22,6 +22,7 @@ var dialogue_tree: Dictionary
 var interaction_count: Dictionary
 
 func _ready():
+	return
 	load_dialogue()
 	init_interaction_count()
 
@@ -56,7 +57,8 @@ func init_interaction_count():
 		interaction_count[branch] = 0
 
 
-func say(state: Globals.DialogueState):
+func say(state: int):
+	return
 	var branch = BRANCH_FLAGS[state]
 	var interaction_limits = dialogue_tree[branch].keys()
 	interaction_limits.reverse()

@@ -51,7 +51,7 @@ func interact():
 		say(Globals.DialogueState.NO_ENGLISH)
 		return
 
-	print(check_tree())
+	printt('tree', check_tree())
 
 func check_tree() -> bool:
 	var q = [[self]] #Initialize graph search queue
@@ -99,7 +99,7 @@ func check_tree() -> bool:
 		say(Globals.DialogueState.NEIGHBOR_LANGUAGE_BARRIER)
 		return false
 	
-	if !first_path.check_conditions(): #Check neighbors condition
+	if !first_path[0].check_conditions(): #Check neighbors condition
 		say(Globals.DialogueState.NEIGHBOR_CONDITION_UNMET)
 		return false
 	
@@ -109,5 +109,5 @@ func check_tree() -> bool:
 
 
 func say(state: int):
-	print(state)
+	printt('say', state)
 	get_parent().say(state)
