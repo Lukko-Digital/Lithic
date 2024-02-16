@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brqrnaeifeskr"
-path="res://.godot/imported/box.png-14f22ba72633a3295da73f9d532508f6.ctex"
+uid="uid://oq6bh2rkq4vq"
+path="res://.godot/imported/statue1_portrait.png-97818a64f07f6de8ac1f93346cee8d85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/box.png"
-dest_files=["res://.godot/imported/box.png-14f22ba72633a3295da73f9d532508f6.ctex"]
+source_file="res://assets/png/statue1_portrait.png"
+dest_files=["res://.godot/imported/statue1_portrait.png-97818a64f07f6de8ac1f93346cee8d85.ctex"]
 
 [params]
 
