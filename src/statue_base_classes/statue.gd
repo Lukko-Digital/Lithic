@@ -4,8 +4,9 @@ class_name Statue
 @export_group("Properties")
 @export var conditions: Array[StatueCondition] = []
 @export var movement: StatueMovement
-@export var reads_inscription: bool = false
+@export var can_read: bool = false
 @export var speaks_english: bool = false
+@export var speaks_old: bool = false
 
 @onready var ray: RayCast2D = $RayCast2D
 
@@ -47,17 +48,32 @@ func check_conditions() -> bool:
 	return true
 
 func interact():
-	print(check_tree([]))
+	print(check_tree())
 
-func check_tree(e: Array[Statue]) -> bool:
-	var explored: Array[Statue] = e
+func check_tree() -> bool:
+	var q = [[self]]
+	var paths = []
 
-	if !check_conditions():
-		return false
-	for neighbor in get_neighbors():
-		if neighbor not in explored:
-			explored.append(neighbor)
-			if !neighbor.check_tree(explored):
-				return false
-	
-	return true
+	while len(q) > 0:
+		var path: Array = q.pop_front()
+		var last: Statue = path[-1]
+		if last.is_in_group("inscription"):
+			paths.append(path)
+		else:
+			for neighbor in last.get_neighbors():
+				if neighbor not in path:
+					q.append(path + [neighbor])
+
+	for path in paths:
+		var previous: Statue = null
+		var condition = true
+		var language = true
+		for statue in path:
+			condition = statue.check_condition()
+			if previous != null:
+				language = ((statue.speaks_english and previous.speaks_english) or 
+							(statue.speaks_old and previous.speaks_old))
+		if condition and language:
+			return true
+
+	return false
