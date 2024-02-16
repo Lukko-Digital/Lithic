@@ -12,14 +12,14 @@ class_name Statue
 @onready var ray: RayCast2D = $RayCast2D
 
 enum DialogueState {
-	CONDITIONS_NOT_MET, 
+	CONDITIONS_UNMET, 
 	NO_ENGLISH, 
 	NOT_IN_TREE, 
 	NEXT_TO_SIGN, 
-	NOT_FRIENDLY, 
-	NEIGHBOR_LANGUAGE,
-	NEIGHBOR_CONDITION,
-	OTHER_TREE_CONDITION,
+	UNFRIENDLY, 
+	NEIGHBOR_LANGUAGE_BARRIER,
+	NEIGHBOR_CONDITION_UNMET,
+	OTHER_TREE_CONDITION_UNMET,
 	SOLUTION,
 }
 
@@ -51,7 +51,7 @@ func check_conditions() -> bool:
 
 func interact():
 	if !check_conditions():
-		say(DialogueState.CONDITIONS_NOT_MET)
+		say(DialogueState.CONDITIONS_UNMET)
 		return
 	if !speaks_english:
 		say(DialogueState.NO_ENGLISH)
@@ -78,7 +78,7 @@ func check_tree() -> bool:
 		return false
 
 	if !friendly: #Not friendly
-		say(DialogueState.NOT_FRIENDLY)
+		say(DialogueState.UNFRIENDLY)
 		return false
 
 	for path in paths: #Check if there is a valid path
@@ -102,17 +102,18 @@ func check_tree() -> bool:
 
 	var first_path = paths[0] #Check if neighbor doesn't speak the same language
 	if !((self.speaks_english and first_path[0].speaks_english) or (self.speaks_old and first_path[0].speaks_old)):
-		say(DialogueState.NEIGHBOR_LANGUAGE)
+		say(DialogueState.NEIGHBOR_LANGUAGE_BARRIER)
 		return false
 	
 	if !first_path.check_conditions(): #Check neighbors condition
-		say(DialogueState.NEIGHBOR_CONDITION)
+		say(DialogueState.NEIGHBOR_CONDITION_UNMET)
 		return false
 	
 	#Else it is other condition
-	say(DialogueState.OTHER_TREE_CONDITION)
+	say(DialogueState.OTHER_TREE_CONDITION_UNMET)
 	return false
 
 
 func say(state: DialogueState):
 	print(state)
+	get_parent().say(state)
