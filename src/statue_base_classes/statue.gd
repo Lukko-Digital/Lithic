@@ -8,6 +8,12 @@ class_name Statue
 @export var friendly: bool = false
 @export var speaks_english: bool = true
 @export var speaks_old: bool = false
+@export_subgroup("Condition specific properties")
+@export var is_parent: bool = false
+@export var bound_location: Vector2 = Vector2(0, 0)
+@export var broken: bool = false
+
+
 
 @onready var ray: RayCast2D = $RayCast2D
 
