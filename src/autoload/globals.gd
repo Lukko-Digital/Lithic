@@ -17,3 +17,5 @@ enum DialogueState {
 }
 
 signal start_dialogue(lines)
+signal advance_dialogue
+signal end_dialogue

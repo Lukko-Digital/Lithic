@@ -13,9 +13,11 @@ const TEXT_SPEED = 0.04
 
 func _ready():
 	Globals.start_dialogue.connect(_start_dialogue)
+	Globals.advance_dialogue.connect(next_line)
 
 
 func _start_dialogue(lines):
+	Globals.in_dialogue = true
 	dialogue_lines = lines
 	current_line = -1
 	show()
@@ -29,7 +31,7 @@ func next_line():
 	else:
 		current_line += 1
 		if current_line >= len(dialogue_lines):
-			hide()
+			exit_dialogue()
 		else:
 			label.text = dialogue_lines[current_line]
 
@@ -40,3 +42,9 @@ func animate_display():
 		label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout
+
+
+func exit_dialogue():
+	hide()
+	Globals.end_dialogue.emit()
+	Globals.in_dialogue = false
