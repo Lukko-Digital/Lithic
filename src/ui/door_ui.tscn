@@ -1,12 +1,39 @@
-[gd_scene load_steps=8 format=3 uid="uid://buyq5h8l4bg1f"]
+[gd_scene load_steps=11 format=3 uid="uid://buyq5h8l4bg1f"]
 
 [ext_resource type="Texture2D" uid="uid://ds6nbc5p7tpgq" path="res://assets/png/statue1.png" id="1_cmvc1"]
 [ext_resource type="Script" path="res://src/ui/door_ui.gd" id="1_euxld"]
-[ext_resource type="Texture2D" uid="uid://brqrnaeifeskr" path="res://assets/png/box.png" id="2_8pw33"]
+[ext_resource type="Texture2D" uid="uid://gilemu6q2ovq" path="res://assets/png/selector-sheet.png" id="2_7680x"]
 [ext_resource type="Texture2D" uid="uid://cha0nypku4ws1" path="res://assets/png/statue2.png" id="2_xlh7r"]
 [ext_resource type="Texture2D" uid="uid://deni1egeuer2m" path="res://assets/png/statue3.png" id="3_ascpf"]
 [ext_resource type="Texture2D" uid="uid://ctpvmif2fpjul" path="res://assets/png/statue4.png" id="4_b5wpb"]
 [ext_resource type="FontFile" uid="uid://cixv775p251um" path="res://assets/fonts/Early GameBoy.ttf" id="7_vwjfb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohdu1"]
+atlas = ExtResource("2_7680x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0ljv"]
+atlas = ExtResource("2_7680x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0eo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohdu1")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ljv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="door_ui" type="Control"]
 layout_mode = 3
@@ -19,21 +46,21 @@ script = ExtResource("1_euxld")
 
 [node name="selectors" type="Node2D" parent="."]
 
-[node name="selector0" type="Sprite2D" parent="selectors"]
+[node name="selector0" type="AnimatedSprite2D" parent="selectors"]
 position = Vector2(64, 56)
-texture = ExtResource("2_8pw33")
+sprite_frames = SubResource("SpriteFrames_w0eo7")
 
-[node name="selector1" type="Sprite2D" parent="selectors"]
+[node name="selector1" type="AnimatedSprite2D" parent="selectors"]
 position = Vector2(84, 56)
-texture = ExtResource("2_8pw33")
+sprite_frames = SubResource("SpriteFrames_w0eo7")
 
-[node name="selector2" type="Sprite2D" parent="selectors"]
+[node name="selector2" type="AnimatedSprite2D" parent="selectors"]
 position = Vector2(104, 56)
-texture = ExtResource("2_8pw33")
+sprite_frames = SubResource("SpriteFrames_w0eo7")
 
-[node name="selector3" type="Sprite2D" parent="selectors"]
+[node name="selector3" type="AnimatedSprite2D" parent="selectors"]
 position = Vector2(124, 56)
-texture = ExtResource("2_8pw33")
+sprite_frames = SubResource("SpriteFrames_w0eo7")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0

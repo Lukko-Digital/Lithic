@@ -9,16 +9,24 @@ var active_selector = 0 : set = _set_active_selector
 
 
 func _set_active_selector(new_selector):
-	active_selector = clamp(new_selector, 0, 4)
-	if active_selector == 4:
-		$Enter.grab_focus()
+	# Release previous selector
+	if active_selector != 4:
+		selectors[active_selector].play("default")
 	else:
 		$Enter.release_focus()
 		$Exit.release_focus()
 
+	active_selector = clamp(new_selector, 0, 4)
+	
+	# Activate new Selector
+	if active_selector != 4:
+		selectors[active_selector].play("active")
+	else:
+		$Enter.grab_focus()
+
 
 func _ready():
-	print(selectors)
+	selectors[active_selector].play("active")
 
 
 func move_selector(dir: int):
