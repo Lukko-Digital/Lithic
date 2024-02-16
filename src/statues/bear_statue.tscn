@@ -3,10 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="1_286dk"]
 [ext_resource type="Texture2D" uid="uid://ctpvmif2fpjul" path="res://assets/png/statue4.png" id="2_jgtyp"]
 
-[node name="bear_statue" type="Node2D"]
+[node name="bear_statue" type="Sprite2D"]
+texture = ExtResource("2_jgtyp")
 
 [node name="Statue" parent="." instance=ExtResource("1_286dk")]
 reads_inscription = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_jgtyp")
