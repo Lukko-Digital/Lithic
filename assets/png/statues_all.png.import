@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnje6l2w8mx68"
-path="res://.godot/imported/statues_all.png-9ac082bed3069504df9d86ab03b8d8c7.ctex"
+path="res://.godot/imported/statues_all.png-16a2755a385349cc73fd5336a9bddd13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/png/textbox/statues_all.png"
-dest_files=["res://.godot/imported/statues_all.png-9ac082bed3069504df9d86ab03b8d8c7.ctex"]
+source_file="res://assets/png/statues_all.png"
+dest_files=["res://.godot/imported/statues_all.png-16a2755a385349cc73fd5336a9bddd13.ctex"]
 
 [params]
 
