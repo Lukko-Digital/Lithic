@@ -62,3 +62,5 @@ func _unhandled_input(event):
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue"):
 			colliding.interact()
+		elif colliding.is_in_group("door"):
+			print('door')
