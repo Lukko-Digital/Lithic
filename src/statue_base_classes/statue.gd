@@ -116,3 +116,4 @@ func check_tree() -> bool:
 
 func say(state: DialogueState):
 	print(state)
+	get_parent().say(state)
