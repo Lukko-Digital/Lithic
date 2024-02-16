@@ -9,6 +9,16 @@ class_name Statue
 
 @onready var ray: RayCast2D = $RayCast2D
 
+enum DialogStates {
+	CONDITIONS_NOT_MET, 
+	NO_ENGLISH, 
+	NOT_IN_TREE, 
+	NEXT_TO_SIGN, 
+	NOT_FRIENDLY, 
+	NEIGHBOR_LANGUAGE,
+	NEIGHBOR_CONDITION,
+	OTHER_TREE_CONDITION,
+}
 
 func _ready():
 	get_parent().position = get_parent().position.snapped(Vector2.ONE * Globals.TILE_SIZE)
