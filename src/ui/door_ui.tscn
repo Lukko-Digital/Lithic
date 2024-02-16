@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://buyq5h8l4bg1f"]
+[gd_scene load_steps=8 format=3 uid="uid://buyq5h8l4bg1f"]
 
 [ext_resource type="Texture2D" uid="uid://ds6nbc5p7tpgq" path="res://assets/png/statue1.png" id="1_cmvc1"]
 [ext_resource type="Script" path="res://src/ui/door_ui.gd" id="1_euxld"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cha0nypku4ws1" path="res://assets/png/statue2.png" id="2_xlh7r"]
 [ext_resource type="Texture2D" uid="uid://deni1egeuer2m" path="res://assets/png/statue3.png" id="3_ascpf"]
 [ext_resource type="Texture2D" uid="uid://ctpvmif2fpjul" path="res://assets/png/statue4.png" id="4_b5wpb"]
+[ext_resource type="FontFile" uid="uid://cixv775p251um" path="res://assets/fonts/Early GameBoy.ttf" id="7_vwjfb"]
 
 [node name="door_ui" type="Control"]
 layout_mode = 3
@@ -109,3 +110,25 @@ texture = ExtResource("4_b5wpb")
 [node name="d4" type="TextureRect" parent="GridContainer"]
 layout_mode = 2
 texture = ExtResource("4_b5wpb")
+
+[node name="Enter" type="Button" parent="."]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 54.0
+offset_right = 199.0
+offset_bottom = 85.0
+focus_neighbor_bottom = NodePath("../Exit")
+theme_override_fonts/font = ExtResource("7_vwjfb")
+theme_override_font_sizes/font_size = 8
+text = "Enter"
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 89.0
+offset_right = 194.0
+offset_bottom = 120.0
+focus_neighbor_top = NodePath("../Enter")
+theme_override_fonts/font = ExtResource("7_vwjfb")
+theme_override_font_sizes/font_size = 8
+text = "Exit"

@@ -14,7 +14,16 @@ var active_selector = 0 : set = _set_active_selector
 
 
 func _set_active_selector(new_selector):
-	active_selector = clamp(new_selector, 0, 3)
+	active_selector = clamp(new_selector, 0, 4)
+	if active_selector == 4:
+		$Enter.grab_focus()
+	else:
+		$Enter.release_focus()
+		$Exit.release_focus()
+
+
+func _ready():
+	pass
 
 
 func move_selector(dir: int):
