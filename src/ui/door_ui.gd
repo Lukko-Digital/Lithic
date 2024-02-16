@@ -26,7 +26,13 @@ func _set_active_selector(new_selector):
 
 
 func _ready():
-	selectors[active_selector].play("active")
+	Globals.enter_door_ui.connect(_enter)
+
+
+func _enter():
+	Globals.in_door_ui = true
+	active_selector = 0
+	show()
 
 
 func move_selector(dir: int):
@@ -38,6 +44,8 @@ func move_selector(dir: int):
 
 
 func _unhandled_input(event):
+	if not Globals.in_door_ui:
+		return
 	if event.is_action_pressed("left"):
 		active_selector -= 1
 	elif event.is_action_pressed("right"):
@@ -46,3 +54,8 @@ func _unhandled_input(event):
 		move_selector(-1)
 	elif event.is_action_pressed("down"):
 		move_selector(1)
+
+
+func _on_exit_pressed():
+	Globals.in_door_ui = false
+	hide()

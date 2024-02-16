@@ -101,6 +101,7 @@ interact={
 2d_physics/layer_1="player"
 2d_physics/layer_2="wall"
 2d_physics/layer_3="pushable"
+2d_physics/layer_4="door"
 
 [rendering]
 
