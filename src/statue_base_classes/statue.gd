@@ -51,7 +51,7 @@ func interact():
 		say(Globals.DialogueState.NO_ENGLISH)
 		return
 
-	printt('tree', check_tree())
+	check_tree()
 
 func check_tree() -> bool:
 	var q = [[self]] #Initialize graph search queue
@@ -109,5 +109,4 @@ func check_tree() -> bool:
 
 
 func say(state: int):
-	printt('say', state)
 	get_parent().say(state)

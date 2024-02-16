@@ -5,20 +5,42 @@ var INPUTS = {"right": Vector2.RIGHT,
 			"up": Vector2.UP,
 			"down": Vector2.DOWN}
 
-@onready var ray = $RayCast2D
+@onready var ray: RayCast2D = $RayCast2D
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 
 func move(dir):
 	if Globals.in_dialogue or Globals.in_door_ui:
 		return
 	ray.target_position = INPUTS[dir] * Globals.TILE_SIZE
 	ray.force_raycast_update()
+
 	if !ray.is_colliding():
 		position += INPUTS[dir] * Globals.TILE_SIZE
+		match dir:
+			"up", "down":
+				sprite.play(dir)
+			"left":
+				sprite.flip_h = true
+				sprite.play("right")
+			"right":
+				sprite.flip_h = false
+				sprite.play(dir)
+		
 	else:
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue"):
 			if colliding.move(INPUTS[dir]):
 				position += INPUTS[dir] * Globals.TILE_SIZE
+
+			match dir:
+				"up", "down":
+					sprite.play("%s_push" % dir)
+				"left":
+					sprite.flip_h = true
+					sprite.play("right_push")
+				"right":
+					sprite.flip_h = false
+					sprite.play("%s_push" % dir)
 
 func _ready():
 	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
