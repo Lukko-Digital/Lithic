@@ -8,6 +8,8 @@ var INPUTS = {"right": Vector2.RIGHT,
 @onready var ray = $RayCast2D
 
 func move(dir):
+	if Globals.in_dialogue or Globals.in_door_ui:
+		return
 	ray.target_position = INPUTS[dir] * Globals.TILE_SIZE
 	ray.force_raycast_update()
 	if !ray.is_colliding():
@@ -24,7 +26,7 @@ func _ready():
 
 func _unhandled_input(event):
 	for dir in INPUTS.keys():
-		if event.is_action_pressed(dir) and not Globals.in_dialogue:
+		if event.is_action_pressed(dir):
 			move(dir)
 	if event.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
@@ -41,4 +43,4 @@ func _unhandled_input(event):
 		if colliding.is_in_group("statue"):
 			colliding.interact()
 		elif colliding.is_in_group("door"):
-			print('door')
+			Globals.enter_door_ui.emit()
