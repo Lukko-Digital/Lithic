@@ -11,18 +11,6 @@ class_name Statue
 
 @onready var ray: RayCast2D = $RayCast2D
 
-enum DialogueState {
-	CONDITIONS_UNMET, 
-	NO_ENGLISH, 
-	NOT_IN_TREE, 
-	NEXT_TO_SIGN, 
-	UNFRIENDLY, 
-	NEIGHBOR_LANGUAGE_BARRIER,
-	NEIGHBOR_CONDITION_UNMET,
-	OTHER_TREE_CONDITION_UNMET,
-	SOLUTION,
-}
-
 func _ready():
 	get_parent().position = get_parent().position.snapped(Vector2.ONE * Globals.TILE_SIZE)
 	get_parent().position += Vector2.ONE * Globals.TILE_SIZE/2
@@ -51,10 +39,10 @@ func check_conditions() -> bool:
 
 func interact():
 	if !check_conditions():
-		say(DialogueState.CONDITIONS_UNMET)
+		say(Globals.DialogueState.CONDITIONS_UNMET)
 		return
 	if !speaks_english:
-		say(DialogueState.NO_ENGLISH)
+		say(Globals.DialogueState.NO_ENGLISH)
 		return
 
 	print(check_tree())
@@ -74,11 +62,11 @@ func check_tree() -> bool:
 					q.append(path + [neighbor])
 
 	if len(paths) == 0: #Not in tree
-		say(DialogueState.NOT_IN_TREE)
+		say(Globals.DialogueState.NOT_IN_TREE)
 		return false
 
 	if !friendly: #Not friendly
-		say(DialogueState.UNFRIENDLY)
+		say(Globals.DialogueState.UNFRIENDLY)
 		return false
 
 	for path in paths: #Check if there is a valid path
@@ -91,29 +79,29 @@ func check_tree() -> bool:
 				language = ((statue.speaks_english and previous.speaks_english) or 
 							(statue.speaks_old and previous.speaks_old))
 		if condition and language: #If there is a valid path, say solution
-			say(DialogueState.SOLUTION)
+			say(Globals.DialogueState.SOLUTION)
 			return true
 	
 
 	for statue in get_neighbors(): #If there is no valid path, check if next to sign
 		if statue.is_in_group("inscription") and (!friendly or !can_read):
-			say(DialogueState.NEXT_TO_SIGN)
+			say(Globals.DialogueState.NEXT_TO_SIGN)
 			return false
 
 	var first_path = paths[0] #Check if neighbor doesn't speak the same language
 	if !((self.speaks_english and first_path[0].speaks_english) or (self.speaks_old and first_path[0].speaks_old)):
-		say(DialogueState.NEIGHBOR_LANGUAGE_BARRIER)
+		say(Globals.DialogueState.NEIGHBOR_LANGUAGE_BARRIER)
 		return false
 	
 	if !first_path.check_conditions(): #Check neighbors condition
-		say(DialogueState.NEIGHBOR_CONDITION_UNMET)
+		say(Globals.DialogueState.NEIGHBOR_CONDITION_UNMET)
 		return false
 	
 	#Else it is other condition
-	say(DialogueState.OTHER_TREE_CONDITION_UNMET)
+	say(Globals.DialogueState.OTHER_TREE_CONDITION_UNMET)
 	return false
 
 
-func say(state: DialogueState):
+func say(state: int):
 	print(state)
 	get_parent().say(state)
