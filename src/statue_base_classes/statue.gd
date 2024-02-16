@@ -20,6 +20,7 @@ enum DialogueState {
 	NEIGHBOR_LANGUAGE,
 	NEIGHBOR_CONDITION,
 	OTHER_TREE_CONDITION,
+	SOLUTION,
 }
 
 func _ready():
@@ -49,16 +50,20 @@ func check_conditions() -> bool:
 	return true
 
 func interact():
+	if !check_conditions():
+		say(DialogueState.CONDITIONS_NOT_MET)
+		return
+	if !speaks_english:
+		say(DialogueState.NO_ENGLISH)
+		return
+
 	print(check_tree())
 
 func check_tree() -> bool:
-	if !friendly:
-		return false
-
-	var q = [[self]]
+	var q = [[self]] #Initialize graph search queue
 	var paths = []
 
-	while len(q) > 0:
+	while len(q) > 0: #Run graph search
 		var path: Array = q.pop_front()
 		var last: Statue = path[-1]
 		if last.is_in_group("inscription"):
@@ -68,7 +73,15 @@ func check_tree() -> bool:
 				if neighbor not in path:
 					q.append(path + [neighbor])
 
-	for path in paths:
+	if len(paths) == 0: #Not in tree
+		say(DialogueState.NOT_IN_TREE)
+		return false
+
+	if !friendly: #Not friendly
+		say(DialogueState.NOT_FRIENDLY)
+		return false
+
+	for path in paths: #Check if there is a valid path
 		var previous: Statue = null
 		var condition = true
 		var language = true
@@ -77,11 +90,29 @@ func check_tree() -> bool:
 			if previous != null:
 				language = ((statue.speaks_english and previous.speaks_english) or 
 							(statue.speaks_old and previous.speaks_old))
-		if condition and language:
+		if condition and language: #If there is a valid path, say solution
+			say(DialogueState.SOLUTION)
 			return true
+	
 
+	for statue in get_neighbors(): #If there is no valid path, check if next to sign
+		if statue.is_in_group("inscription") and (!friendly or !can_read):
+			say(DialogueState.NEXT_TO_SIGN)
+			return false
+
+	var first_path = paths[0] #Check if neighbor doesn't speak the same language
+	if !((self.speaks_english and first_path[0].speaks_english) or (self.speaks_old and first_path[0].speaks_old)):
+		say(DialogueState.NEIGHBOR_LANGUAGE)
+		return false
+	
+	if !first_path.check_conditions(): #Check neighbors condition
+		say(DialogueState.NEIGHBOR_CONDITION)
+		return false
+	
+	#Else it is other condition
+	say(DialogueState.OTHER_TREE_CONDITION)
 	return false
 
 
 func say(state: DialogueState):
-	pass
+	print(state)
