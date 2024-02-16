@@ -34,14 +34,17 @@ func next_line():
 			exit_dialogue()
 		else:
 			label.text = dialogue_lines[current_line]
+			animate_display()
 
 
 func animate_display():
 	label.visible_characters = 0
+	display_in_progress = true
 	while label.visible_characters < len(label.text):
 		label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout
+	display_in_progress = false
 
 
 func exit_dialogue():
