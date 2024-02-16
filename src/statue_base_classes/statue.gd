@@ -11,7 +11,7 @@ class_name Statue
 
 @onready var ray: RayCast2D = $RayCast2D
 
-enum DialogStates {
+enum DialogueState {
 	CONDITIONS_NOT_MET, 
 	NO_ENGLISH, 
 	NOT_IN_TREE, 
@@ -81,3 +81,7 @@ func check_tree() -> bool:
 			return true
 
 	return false
+
+
+func say(state: DialogueState):
+	pass
