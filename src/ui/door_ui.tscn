@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=3 uid="uid://buyq5h8l4bg1f"]
+
+[ext_resource type="Texture2D" uid="uid://ds6nbc5p7tpgq" path="res://assets/png/statue1.png" id="1_cmvc1"]
+[ext_resource type="Script" path="res://src/ui/door_ui.gd" id="1_euxld"]
+[ext_resource type="Texture2D" uid="uid://brqrnaeifeskr" path="res://assets/png/box.png" id="2_8pw33"]
+[ext_resource type="Texture2D" uid="uid://cha0nypku4ws1" path="res://assets/png/statue2.png" id="2_xlh7r"]
+[ext_resource type="Texture2D" uid="uid://deni1egeuer2m" path="res://assets/png/statue3.png" id="3_ascpf"]
+[ext_resource type="Texture2D" uid="uid://ctpvmif2fpjul" path="res://assets/png/statue4.png" id="4_b5wpb"]
+
+[node name="door_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_euxld")
+
+[node name="selector0" type="Sprite2D" parent="."]
+position = Vector2(64, 56)
+texture = ExtResource("2_8pw33")
+
+[node name="selector1" type="Sprite2D" parent="."]
+position = Vector2(84, 56)
+texture = ExtResource("2_8pw33")
+
+[node name="selector2" type="Sprite2D" parent="."]
+position = Vector2(104, 56)
+texture = ExtResource("2_8pw33")
+
+[node name="selector3" type="Sprite2D" parent="."]
+position = Vector2(124, 56)
+texture = ExtResource("2_8pw33")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 132.0
+offset_bottom = 124.0
+columns = 4
+
+[node name="a1" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+focus_neighbor_right = NodePath("../a2")
+texture = ExtResource("1_cmvc1")
+
+[node name="a2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../a1")
+focus_neighbor_right = NodePath("../a3")
+texture = ExtResource("1_cmvc1")
+
+[node name="a3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../a2")
+focus_neighbor_right = NodePath("../a4")
+texture = ExtResource("1_cmvc1")
+
+[node name="a4" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+focus_neighbor_left = NodePath("../a3")
+texture = ExtResource("1_cmvc1")
+
+[node name="b1" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_xlh7r")
+
+[node name="b2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_xlh7r")
+
+[node name="b3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_xlh7r")
+
+[node name="b4" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_xlh7r")
+
+[node name="c1" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_ascpf")
+
+[node name="c2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_ascpf")
+
+[node name="c3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_ascpf")
+
+[node name="c4" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_ascpf")
+
+[node name="d1" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_b5wpb")
+
+[node name="d2" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_b5wpb")
+
+[node name="d3" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_b5wpb")
+
+[node name="d4" type="TextureRect" parent="GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_b5wpb")
