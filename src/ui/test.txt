@@ -1,31 +1,41 @@
 #condition_unmet
 !0
+my condition isn't met
 
+#no_english
+!0
+中国第一
 
-
-
-
-
-
-
-
-
-
-
-statue_neutral: yo
-statue_neutral: we don’t get many travelers around here
+#not_in_tree
+!0
+where's the sign
 !1
-statue_neutral: yeah thats right
-statue_neutral: im a talking statue
+wwwwwwwww
 !2
-statue_neutral: oh you probably can’t read the sign
+aaaaaaaaa
 !3
+qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 
-statue_neutral: if you put me next to it i can read it for you
+#next_to_sign
+!0
+i can't read that
+
+#unfriendly
+!0
+i don't talk to you
+
+#neighbor_language_barrier
+!0
+i don't understand them
+
+#neighbor_condition_unmet
+!0
+they won't talk to me
+
+#other_tree_condition_unmet
+!0
+they don't know the answer
+
 #solution
 !0
-statue_neutral: okay so the sign says
-!1
-statue_neutral: ahem—
-!2
-statue_neutral: bird clover dagger bird
+the code is bird branch circle bird

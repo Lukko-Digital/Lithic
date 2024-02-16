@@ -24,13 +24,19 @@ func _ready():
 
 func _unhandled_input(event):
 	for dir in INPUTS.keys():
-		if event.is_action_pressed(dir):
+		if event.is_action_pressed(dir) and not Globals.in_dialogue:
 			move(dir)
 	if event.is_action_pressed("reset"):
 		get_tree().reload_current_scene()
 	if event.is_action_pressed("interact"):
+		if Globals.in_dialogue:
+			Globals.advance_dialogue.emit()
+			return
+		
 		ray.force_raycast_update()
-		if ray.is_colliding():
-			var colliding = ray.get_collider()
-			if colliding.is_in_group("statue"):
-				colliding.interact()
+		if !ray.is_colliding():
+			return
+		
+		var colliding = ray.get_collider()
+		if colliding.is_in_group("statue"):
+			colliding.interact()

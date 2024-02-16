@@ -3,17 +3,17 @@ class_name Interactable
 
 @export_file var dialogue_file
 
-const BRANCH_FLAGS = [
-	"condition_unmet",
-	"no_english",
-	"not_in_tree",
-	"next_to_sign",
-	"unfriendly",
-	"neighbor_language_barrier",
-	"neighbor_condition_unmet",
-	"other_tree_condition_unmet",
-	"solution"
-]
+const BRANCH_FLAGS = {
+	Globals.DialogueState.CONDITIONS_UNMET: "condition_unmet",
+	Globals.DialogueState.NO_ENGLISH: "no_english",
+	Globals.DialogueState.NOT_IN_TREE: "not_in_tree",
+	Globals.DialogueState.NEXT_TO_SIGN: "next_to_sign",
+	Globals.DialogueState.UNFRIENDLY: "unfriendly",
+	Globals.DialogueState.NEIGHBOR_LANGUAGE_BARRIER: "neighbor_language_barrier",
+	Globals.DialogueState.NEIGHBOR_CONDITION_UNMET: "neighbor_condition_unmet",
+	Globals.DialogueState.OTHER_TREE_CONDITION_UNMET: "other_tree_condition_unmet",
+	Globals.DialogueState.SOLUTION: "solution"
+}
 
 
 # Type: Dictionary[String, Dictionary[int, Array[String]]]
@@ -39,7 +39,7 @@ func load_dialogue():
 		match line[0]:
 			"#":
 				var flag = line.substr(1)
-				if flag in BRANCH_FLAGS:
+				if flag in BRANCH_FLAGS.values():
 					branch = flag
 					dialogue_tree[branch] = {}
 			"!":
@@ -54,3 +54,17 @@ func load_dialogue():
 func init_interaction_count():
 	for branch in dialogue_tree.keys():
 		interaction_count[branch] = 0
+
+
+func say(state: Globals.DialogueState):
+	var branch = BRANCH_FLAGS[state]
+	var interaction_limits = dialogue_tree[branch].keys()
+	interaction_limits.reverse()
+	
+	var lines
+	for limit in interaction_limits:
+		if interaction_count[branch] >= limit:
+			lines = dialogue_tree[branch][limit]
+			interaction_count[branch] += 1
+			break
+	Globals.start_dialogue.emit(lines)

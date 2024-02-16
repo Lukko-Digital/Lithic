@@ -1,6 +1,8 @@
 extends Node
 
-var TILE_SIZE = 16
+const TILE_SIZE = 16
+
+var in_dialogue
 
 enum DialogueState {
 	CONDITIONS_UNMET, 
@@ -13,3 +15,7 @@ enum DialogueState {
 	OTHER_TREE_CONDITION_UNMET,
 	SOLUTION,
 }
+
+signal start_dialogue(lines)
+signal advance_dialogue
+signal end_dialogue
