@@ -306,4 +306,10 @@ position = Vector2(10, 4)
 position = Vector2(35, -16)
 
 [node name="inscription" parent="." instance=ExtResource("4_51fbm")]
-position = Vector2(-58, -27)
+position = Vector2(-41, -24)
+
+[node name="bear_statue2" parent="." instance=ExtResource("3_gkh47")]
+position = Vector2(-56, 7)
+
+[node name="bear_statue3" parent="." instance=ExtResource("3_gkh47")]
+position = Vector2(-89, -5)

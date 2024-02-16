@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cybmii6rvx01a"]
+[gd_scene load_steps=4 format=3 uid="uid://cybmii6rvx01a"]
 
 [ext_resource type="Script" path="res://src/statue_base_classes/statue.gd" id="1_gy53u"]
+[ext_resource type="Resource" uid="uid://g2et165suq6o" path="res://src/statue_base_classes/pushable.tres" id="2_pfm1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b34re"]
 size = Vector2(16, 16)
@@ -9,6 +10,7 @@ size = Vector2(16, 16)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_gy53u")
+movement = ExtResource("2_pfm1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_b34re")
@@ -16,4 +18,26 @@ shape = SubResource("RectangleShape2D_b34re")
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, 16)
 collision_mask = 6
+collide_with_areas = true
+
+[node name="Adjacents" type="Node2D" parent="."]
+
+[node name="Down" type="RayCast2D" parent="Adjacents"]
+target_position = Vector2(0, 16)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="Up" type="RayCast2D" parent="Adjacents"]
+target_position = Vector2(0, -16)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="Left" type="RayCast2D" parent="Adjacents"]
+target_position = Vector2(-16, 0)
+collision_mask = 4
+collide_with_areas = true
+
+[node name="Right" type="RayCast2D" parent="Adjacents"]
+target_position = Vector2(16, 0)
+collision_mask = 4
 collide_with_areas = true

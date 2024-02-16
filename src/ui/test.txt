@@ -1,0 +1,31 @@
+#condition_unmet
+!0
+
+
+
+
+
+
+
+
+
+
+
+
+statue_neutral: yo
+statue_neutral: we don’t get many travelers around here
+!1
+statue_neutral: yeah thats right
+statue_neutral: im a talking statue
+!2
+statue_neutral: oh you probably can’t read the sign
+!3
+
+statue_neutral: if you put me next to it i can read it for you
+#solution
+!0
+statue_neutral: okay so the sign says
+!1
+statue_neutral: ahem—
+!2
+statue_neutral: bird clover dagger bird
