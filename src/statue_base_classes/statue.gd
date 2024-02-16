@@ -68,8 +68,6 @@ func check_tree() -> bool:
 				if neighbor not in path:
 					q.append(path + [neighbor])
 
-	print(paths)
-
 	for path in paths:
 		var previous: Statue = null
 		var condition = true
