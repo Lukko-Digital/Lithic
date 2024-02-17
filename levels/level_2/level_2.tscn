@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c486hruor0evv"]
+[gd_scene load_steps=9 format=3 uid="uid://c486hruor0evv"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_ev813"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_2n3l8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="5_b6uj1"]
 [ext_resource type="PackedScene" uid="uid://cwsx4e3n3o0y0" path="res://src/statue_base_classes/interactable.tscn" id="6_vjcp5"]
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="7_enp7g"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="8_3vu11"]
 
 [node name="level_0" type="Node2D"]
 
@@ -45,3 +46,6 @@ dialogue_file = "res://levels/level_2/dialogue_unfriendly_level_2.txt"
 [node name="Statue" parent="UnfriendlyHuman" instance=ExtResource("7_enp7g")]
 can_read = true
 speaks_old = true
+
+[node name="box" parent="." instance=ExtResource("8_3vu11")]
+position = Vector2(-40, 24)

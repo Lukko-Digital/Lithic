@@ -16,6 +16,7 @@ class_name Statue
 @onready var ray: RayCast2D = $RayCast2D
 @onready var glow: Node2D = $Glow
 
+
 ## Move according to movement resource
 ## Update glow of self and neighbors
 func move(dir: Vector2) -> bool:
@@ -27,19 +28,23 @@ func move(dir: Vector2) -> bool:
 
 ## Glow or deglow self and all touching statues if in tree
 func handle_tree_glow(prev_tree):
+	var new_tree = get_entire_tree()
 	if handle_glow():
-		for statue in get_entire_tree():
+		for statue in new_tree:
 			if not statue.is_in_group("sign"):
 				statue.glow.show()
+
+		for statue in prev_tree:
+			if statue not in new_tree:
+				statue.glow.hide()
 	else:
-		glow.hide()
 		for statue in prev_tree:
 			statue.handle_glow()
 
 
 ## Glow or deglow self if in tree
 func handle_glow() -> bool:
-	if is_in_group("sign"):
+	if is_in_group("sign") or is_in_group("box"):
 		return false
 	if len(find_paths_to_sign()) == 0:
 		glow.hide()
@@ -70,7 +75,7 @@ func get_neighbors() -> Array[Statue]:
 		dir.force_raycast_update()
 		if dir.is_colliding():
 			var colliding = dir.get_collider()
-			if colliding.is_in_group("statue"):
+			if colliding.is_in_group("statue") and !colliding.is_in_group("box"):
 				neighbors.append(colliding)
 	return neighbors
 

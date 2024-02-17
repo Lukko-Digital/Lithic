@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="4_51fbm"]
 [ext_resource type="PackedScene" uid="uid://c3lhrfgi52fr2" path="res://src/statues/human_2.tscn" id="7_0dsjo"]
 [ext_resource type="PackedScene" uid="uid://cga87j5rlixq7" path="res://src/statues/bear.tscn" id="7_dex7j"]
-[ext_resource type="PackedScene" uid="uid://csbchrokkljl5" path="res://src/statues/human_kid.tscn" id="8_b3xbs"]
+[ext_resource type="PackedScene" path="res://src/statues/human_kid.tscn" id="8_b3xbs"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="8_chvtg"]
-[ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="8_uouxw"]
+[ext_resource type="PackedScene" path="res://src/ui/ui.tscn" id="8_uouxw"]
 
 [sub_resource type="Gradient" id="Gradient_8f10s"]
 interpolation_mode = 2
@@ -301,7 +301,7 @@ sources/0 = SubResource("TileSetAtlasSource_t4c2m")
 [node name="Main" type="Node2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-6, -62)
+position = Vector2(24, -136)
 rotation = 1.57079
 scale = Vector2(1.01062, 0.861103)
 color = Color(0.690196, 0, 0.376471, 0.992157)
@@ -338,13 +338,13 @@ position = Vector2(-8, -56)
 [node name="ui" parent="." instance=ExtResource("8_uouxw")]
 
 [node name="bear" parent="." instance=ExtResource("7_dex7j")]
-position = Vector2(-8, 24)
+position = Vector2(-24, 24)
 dialogue_file = "res://src/ui/test.txt"
 
 [node name="human_2" parent="." instance=ExtResource("7_0dsjo")]
-position = Vector2(-8, 8)
+position = Vector2(-24, 8)
 dialogue_file = "res://src/ui/test.txt"
 
 [node name="human_kid" parent="." instance=ExtResource("8_b3xbs")]
-position = Vector2(-56, 8)
+position = Vector2(-24, -8)
 dialogue_file = "res://src/ui/test.txt"

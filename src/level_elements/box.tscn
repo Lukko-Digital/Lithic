@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://i5pffunxhykk"]
+
+[ext_resource type="Texture2D" uid="uid://brqrnaeifeskr" path="res://assets/png/box.png" id="1_m7m0c"]
+[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="2_bhyn6"]
+
+[node name="box" type="Sprite2D"]
+texture = ExtResource("1_m7m0c")
+
+[node name="Statue" parent="." groups=["box"] instance=ExtResource("2_bhyn6")]
