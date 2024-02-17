@@ -2,7 +2,7 @@
 !0
 human: ...
 human: do not touch me.
-human: filfth.
+human: filth.
 !1
 human: ......
 
