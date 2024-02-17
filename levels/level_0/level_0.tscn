@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_7a77x"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_ba6mk"]
 [ext_resource type="PackedScene" uid="uid://dflo8inhbj6r1" path="res://src/statues/demon_smart.tscn" id="5_laa3l"]
-[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/inscription.tscn" id="6_yks47"]
+[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="6_yks47"]
 
 [node name="level_0" type="Node2D"]
 
@@ -25,6 +25,6 @@ position = Vector2(-8, -56)
 position = Vector2(-24, 8)
 dialogue_file = "res://src/ui/test.txt"
 
-[node name="inscription" parent="." instance=ExtResource("6_yks47")]
+[node name="sign" parent="." instance=ExtResource("6_yks47")]
 position = Vector2(-72, -24)
 dialogue_file = "res://src/ui/test.txt"

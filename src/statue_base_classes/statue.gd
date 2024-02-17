@@ -29,7 +29,7 @@ func move(dir: Vector2) -> bool:
 func handle_tree_glow(prev_tree):
 	if handle_glow():
 		for statue in get_entire_tree():
-			if not statue.is_in_group("inscription"):
+			if not statue.is_in_group("sign"):
 				statue.glow.show()
 	else:
 		glow.hide()
@@ -39,7 +39,7 @@ func handle_tree_glow(prev_tree):
 
 ## Glow or deglow self if in tree
 func handle_glow() -> bool:
-	if is_in_group("inscription"):
+	if is_in_group("sign"):
 		return false
 	if len(find_paths_to_sign()) == 0:
 		glow.hide()
@@ -105,7 +105,7 @@ func find_paths_to_sign() -> Array:
 	while len(q) > 0: #Run graph search
 		var path: Array = q.pop_front()
 		var last: Statue = path[-1]
-		if last.is_in_group("inscription"):
+		if last.is_in_group("sign"):
 			paths.append(path)
 		else:
 			for neighbor in last.get_neighbors():
@@ -141,7 +141,7 @@ func check_tree() -> bool:
 	
 
 	for statue in get_neighbors(): #If there is no valid path, check if next to sign
-		if statue.is_in_group("inscription") and (!friendly or !can_read):
+		if statue.is_in_group("sign") and (!friendly or !can_read):
 			say(Globals.DialogueState.NEXT_TO_SIGN)
 			return false
 
