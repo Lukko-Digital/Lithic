@@ -91,6 +91,8 @@ func facing_interactable():
 
 
 func handle_reset():
+	Globals.in_dialogue = false
+	Globals.in_door_ui = false
 	get_tree().reload_current_scene()
 
 
@@ -108,7 +110,6 @@ func handle_interact():
 		colliding.interact()
 	elif colliding.is_in_group("door") and not Globals.in_door_ui:
 		Globals.enter_door_ui.emit()
-	
 
 
 func _unhandled_input(event):
