@@ -25,7 +25,6 @@ func _ready():
 	get_viewport().connect("gui_focus_changed", _on_focus_changed)
 	SELECTOR_DEFUALT_POS = vert_selector.position
 	connect_button_signals()
-	$GridContainer/butterfly_button1.grab_focus()
 
 
 func connect_button_signals():
