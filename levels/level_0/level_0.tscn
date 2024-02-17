@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_4c1j8"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_7a77x"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_ba6mk"]
-[ext_resource type="PackedScene" uid="uid://dflo8inhbj6r1" path="res://src/statues/demon_smart.tscn" id="5_laa3l"]
+[ext_resource type="PackedScene" uid="uid://dflo8inhbj6r1" path="res://src/statues/demon.tscn" id="5_laa3l"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="6_yks47"]
 
 [node name="level_0" type="Node2D"]
@@ -21,7 +21,7 @@ position = Vector2(8, -8)
 [node name="door" parent="." instance=ExtResource("4_ba6mk")]
 position = Vector2(-8, -56)
 
-[node name="demon_smart" parent="." instance=ExtResource("5_laa3l")]
+[node name="demon" parent="." instance=ExtResource("5_laa3l")]
 position = Vector2(-24, 8)
 dialogue_file = "res://src/ui/test.txt"
 
