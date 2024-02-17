@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwehmhlm2sfv2"]
+
+[ext_resource type="Texture2D" uid="uid://rm5mj8mo644a" path="res://assets/png/poof-sheet.png" id="1_g0yqm"]
+[ext_resource type="Script" path="res://src/statue_base_classes/poof.gd" id="2_f5lnb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0stq"]
+atlas = ExtResource("1_g0yqm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn3yj"]
+atlas = ExtResource("1_g0yqm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtx21"]
+atlas = ExtResource("1_g0yqm")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx1m7"]
+atlas = ExtResource("1_g0yqm")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yw67u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0stq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn3yj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtx21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx1m7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="poof" type="AnimatedSprite2D"]
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_yw67u")
+autoplay = "default"
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_f5lnb")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

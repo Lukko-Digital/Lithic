@@ -15,15 +15,24 @@ class_name Statue
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var glow: Node2D = $Glow
-
+@onready var poof_scene = preload("res://src/statue_base_classes/poof.tscn")
 
 ## Move according to movement resource
 ## Update glow of self and neighbors
 func move(dir: Vector2) -> bool:
 	var prev_tree = get_entire_tree()
 	var move_status = movement.move(self, dir)
+	if move_status:
+		poof(dir)
 	handle_tree_glow(prev_tree)
 	return move_status
+
+
+func poof(dir: Vector2):
+	var instance = poof_scene.instantiate()
+	instance.position -= Globals.TILE_SIZE * dir
+	instance.look_at(dir)
+	add_child(instance)
 
 
 ## Glow or deglow self and all touching statues if in tree
