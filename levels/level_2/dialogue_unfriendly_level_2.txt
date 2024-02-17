@@ -1,0 +1,11 @@
+#not_in_tree
+!0
+human: ...
+
+#next_to_sign
+!0
+human: I won't read that for you
+
+#unfriendly
+!0
+human: I won't talk to you

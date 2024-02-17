@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://qy51v4l4wwew"]
+
+[ext_resource type="Script" path="res://src/conditions/bound.gd" id="1_2u0v7"]
+
+[resource]
+script = ExtResource("1_2u0v7")
