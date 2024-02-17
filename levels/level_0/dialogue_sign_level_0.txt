@@ -1,28 +1,14 @@
-#not_in_tree
+#condition_unmet
 !0
-player: ... hello ?
-player: what am i doing.
-narrator: you feel stupid, having spoken to a statue.
-demon: hey!
+narrator: a sign with strange glyphs is sealed against the wall
+narrator: beneath, a small sheet of paper has been shoved between the bricks
+player: ...
+narrator: should you look?
 !1
-demon: relax, you're not the first human i've spoken to.
-
-#next_to_sign
-!0
-demon: i can't read that
-
-#neighbor_language_barrier
-!0
-demon: i don't understand them
-
-#neighbor_condition_unmet
-!0
-demon: they won't talk to me
-
-#other_tree_condition_unmet
-!0
-demon: they don't know the answer
-
-#solution
-!0
-demon: the code is bird branch circle bird
+narrator: you pick up the flimsy notes
+narrator: it is barely legible
+player: "butterfly, human, wolf, knife..."
+player: ...
+player: what?
+!2
+player: "butterfly, human, wolf, knife..."
