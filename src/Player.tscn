@@ -226,9 +226,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_vp2sg"]
-resource_name = "push"
-length = 0.5
+[sub_resource type="Animation" id="Animation_b632k"]
+resource_name = "bump_wall"
+length = 0.14
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -239,7 +239,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("3_ccr2p")
+"stream": ExtResource("6_1gnk2")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -264,9 +264,9 @@ tracks/0/keys = {
 }
 tracks/0/use_blend = true
 
-[sub_resource type="Animation" id="Animation_b632k"]
-resource_name = "bump_wall"
-length = 0.14
+[sub_resource type="Animation" id="Animation_vp2sg"]
+resource_name = "push"
+length = 0.5
 tracks/0/type = "audio"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -277,7 +277,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("6_1gnk2")
+"stream": ExtResource("3_ccr2p")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -314,7 +314,7 @@ collide_with_areas = true
 visible = false
 position = Vector2(160, 166)
 sprite_frames = SubResource("SpriteFrames_usrte")
-frame_progress = 0.813085
+frame_progress = 0.596643
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
