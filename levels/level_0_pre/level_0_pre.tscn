@@ -1,0 +1,65 @@
+[gd_scene load_steps=11 format=3 uid="uid://drk147jqtgb5l"]
+
+[ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="1_3j657"]
+[ext_resource type="Script" path="res://src/narrator_scene.gd" id="1_7fdpp"]
+[ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="2_81xit"]
+[ext_resource type="PackedScene" uid="uid://b40x6eiyl71gu" path="res://levels/level_0/level_0.tscn" id="2_g8awe"]
+[ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="3_336ap"]
+[ext_resource type="PackedScene" uid="uid://dflo8inhbj6r1" path="res://src/statues/demon.tscn" id="4_hr1t5"]
+[ext_resource type="Texture2D" uid="uid://pkg4kt0jh5us" path="res://assets/png/tutorial_start.png" id="5_tfpbb"]
+[ext_resource type="Script" path="res://levels/level_0_pre/ControlsTutorial.gd" id="6_jgpdf"]
+
+[sub_resource type="Animation" id="Animation_ts1gh"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.8), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdhog"]
+_data = {
+"fade_in": SubResource("Animation_ts1gh")
+}
+
+[node name="level_0_pre" type="Node2D"]
+script = ExtResource("1_7fdpp")
+next_scene = ExtResource("2_g8awe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(120, 0)
+
+[node name="Player" parent="." instance=ExtResource("1_3j657")]
+position = Vector2(-88, -8)
+no_interact_prompt = true
+disable_movement = true
+
+[node name="ui" parent="." instance=ExtResource("2_81xit")]
+door_code = Array[int]([0, 2, 3, 1])
+
+[node name="TileMap" parent="." instance=ExtResource("3_336ap")]
+layer_1/tile_data = PackedInt32Array(-6, 131072, 0, -65542, 458752, 1, -65541, 720896, 1, -5, 720896, 2, -7, 393216, 2, -65543, 393216, 1, 65530, 131072, 0, 65531, 720896, 2, 65529, 393216, 2, 131066, 458752, 6, 131067, 720896, 6, 131065, 393216, 6)
+
+[node name="demon" parent="." instance=ExtResource("4_hr1t5")]
+position = Vector2(-88, 8)
+dialogue_file = "res://levels/level_0_pre/dialogue_narrator_level_0_pre.txt"
+
+[node name="ControlsTutorial" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(120, 0)
+texture = ExtResource("5_tfpbb")
+script = ExtResource("6_jgpdf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ControlsTutorial"]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_cdhog")
+}
