@@ -56,6 +56,13 @@ func _unhandled_input(event):
 		move_selector(1)
 
 
+func _on_enter_pressed():
+	if selector_position == get_parent().door_code:
+		print("correct")
+	else:
+		print("incorrect")
+
+
 func _on_exit_pressed():
 	Globals.in_door_ui = false
 	hide()

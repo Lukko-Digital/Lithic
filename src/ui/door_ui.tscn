@@ -162,4 +162,5 @@ theme_override_fonts/font = ExtResource("7_vwjfb")
 theme_override_font_sizes/font_size = 8
 text = "Exit"
 
+[connection signal="pressed" from="Enter" to="." method="_on_enter_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
