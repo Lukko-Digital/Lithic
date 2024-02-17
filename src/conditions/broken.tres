@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=2 format=3 uid="uid://c5hmivsfaucxy"]
 
-[ext_resource type="Script" path="res://src/conditions/kid.gd" id="1_xmhyj"]
+[ext_resource type="Script" path="res://src/conditions/broken.gd" id="1_2djdi"]
 
 [resource]
-script = ExtResource("1_xmhyj")
+script = ExtResource("1_2djdi")
