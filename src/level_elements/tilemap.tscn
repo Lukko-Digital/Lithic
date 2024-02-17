@@ -279,6 +279,7 @@ terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_t4c2m")
 
 [node name="TileMap" type="TileMap"]
+z_index = -5
 texture_filter = 1
 tile_set = SubResource("TileSet_jkfto")
 format = 2

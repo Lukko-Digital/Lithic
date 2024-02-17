@@ -14,10 +14,43 @@ class_name Statue
 @export var broken: bool = false
 
 @onready var ray: RayCast2D = $RayCast2D
-
+@onready var glow: Node2D = $Glow
 
 func move(dir: Vector2) -> bool:
-	return movement.move(self, dir)
+	var prev_tree = get_entire_tree()
+	var move_status = movement.move(self, dir)
+	handle_tree_glow(prev_tree)
+	return move_status
+
+
+func handle_tree_glow(prev_tree):
+	if len(graph_search()) == 0:
+		glow.hide()
+		for statue in prev_tree:
+			statue.handle_glow()
+	else:
+		for statue in get_entire_tree():
+			statue.glow.show()
+
+
+func handle_glow():
+	if len(graph_search()) == 0:
+		glow.hide()
+	else:
+		glow.show()
+
+
+func get_entire_tree():
+	var q = [self] #Initialize graph search queue
+	var seen = [self]
+
+	while len(q) > 0: #Run graph search
+		var curr: Statue = q.pop_front()
+		for neighbor in curr.get_neighbors():
+			if neighbor not in seen:
+				q.append(neighbor)
+				seen.append(neighbor)
+	return seen
 
 
 func get_neighbors() -> Array[Statue]:
