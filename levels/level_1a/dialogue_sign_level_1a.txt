@@ -1,0 +1,4 @@
+#condition_unmet
+!0
+narrator: another sign that you don't understand
+narrator: maybe you could ask for help
