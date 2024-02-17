@@ -1,10 +1,164 @@
-[gd_scene load_steps=6 format=3 uid="uid://curqycab2s72k"]
+[gd_scene load_steps=22 format=3 uid="uid://curqycab2s72k"]
 
 [ext_resource type="Script" path="res://src/ui/dialogue_ui.gd" id="1_bsbyu"]
 [ext_resource type="Texture2D" uid="uid://dgeniccg7und6" path="res://assets/png/textbox.png" id="2_vjyw4"]
 [ext_resource type="FontFile" uid="uid://cixv775p251um" path="res://assets/fonts/Early GameBoy.ttf" id="3_gpc11"]
-[ext_resource type="Texture2D" uid="uid://oq6bh2rkq4vq" path="res://assets/png/statue1_portrait.png" id="3_qvlij"]
-[ext_resource type="Texture2D" uid="uid://bgp2nyth0rlb6" path="res://assets/png/statue2_portrait.png" id="5_0oc3a"]
+[ext_resource type="Texture2D" uid="uid://b5ljrkypdvsoi" path="res://assets/png/portrait/portrait_bear.png" id="4_ax7hd"]
+[ext_resource type="Texture2D" uid="uid://dairku3blp74f" path="res://assets/png/portrait/portrait_bear_kid.png" id="6_o7rk7"]
+[ext_resource type="Texture2D" uid="uid://dt60wfp6kihdm" path="res://assets/png/portrait/portrait_demon.png" id="7_jnmge"]
+[ext_resource type="Texture2D" uid="uid://8ryneemx0is0" path="res://assets/png/portrait/portrait_demon_2.png" id="8_yrm00"]
+[ext_resource type="Texture2D" uid="uid://iu6hdnnl6cu2" path="res://assets/png/portrait/portrait_demon_2_kid.png" id="9_ghhkk"]
+[ext_resource type="Texture2D" uid="uid://6e7wbknkupc6" path="res://assets/png/portrait/portrait_demon_kid.png" id="10_s3m57"]
+[ext_resource type="Texture2D" uid="uid://3m3u4ewo22ds" path="res://assets/png/portrait/portrait_human.png" id="11_pclkw"]
+[ext_resource type="Texture2D" uid="uid://cqea51ft7ohy3" path="res://assets/png/portrait/portrait_human_2.png" id="12_fs0aj"]
+[ext_resource type="Texture2D" uid="uid://dveeayah7rokh" path="res://assets/png/portrait/portrait_human_2_kid.png" id="13_o8m8o"]
+[ext_resource type="Texture2D" uid="uid://b81t87hcxlayx" path="res://assets/png/portrait/portrait_human_kid.png" id="14_f5qqo"]
+[ext_resource type="Texture2D" uid="uid://xclqsw055n5s" path="res://assets/png/portrait/portrait_mask.png" id="15_gpfqe"]
+[ext_resource type="Texture2D" uid="uid://b8mjmah06ouka" path="res://assets/png/portrait/portrait_mask_2.png" id="16_jgm2o"]
+[ext_resource type="Texture2D" uid="uid://bhb8hcvaqwhkm" path="res://assets/png/portrait/portrait_mask_2_kid.png" id="17_dydgl"]
+[ext_resource type="Texture2D" uid="uid://bh4wxd41ruby6" path="res://assets/png/portrait/portrait_mask_kid.png" id="18_m28m0"]
+[ext_resource type="Texture2D" uid="uid://cq08kmu038k7u" path="res://assets/png/portrait/portrait_player.png" id="19_npujq"]
+[ext_resource type="Texture2D" uid="uid://d252onx8svy4q" path="res://assets/png/portrait/portrait_wolf.png" id="20_tuyfe"]
+[ext_resource type="Texture2D" uid="uid://ccdt6xjgg54bm" path="res://assets/png/portrait/portrait_wolf_kid.png" id="21_s8gkg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mgs60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ax7hd")
+}],
+"loop": true,
+"name": &"bear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o7rk7")
+}],
+"loop": true,
+"name": &"bear_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_jnmge")
+}],
+"loop": true,
+"name": &"demon",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_yrm00")
+}],
+"loop": true,
+"name": &"demon_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ghhkk")
+}],
+"loop": true,
+"name": &"demon_2_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_s3m57")
+}],
+"loop": true,
+"name": &"demon_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_pclkw")
+}],
+"loop": true,
+"name": &"human",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_fs0aj")
+}],
+"loop": true,
+"name": &"human_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_o8m8o")
+}],
+"loop": true,
+"name": &"human_2_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_f5qqo")
+}],
+"loop": true,
+"name": &"human_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_gpfqe")
+}],
+"loop": true,
+"name": &"mask",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_jgm2o")
+}],
+"loop": true,
+"name": &"mask_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_dydgl")
+}],
+"loop": true,
+"name": &"mask_2_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_m28m0")
+}],
+"loop": true,
+"name": &"mask_kid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_npujq")
+}],
+"loop": true,
+"name": &"player",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_tuyfe")
+}],
+"loop": true,
+"name": &"wolf",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_s8gkg")
+}],
+"loop": true,
+"name": &"wolf_kid",
+"speed": 5.0
+}]
 
 [node name="dialogue_ui" type="Control"]
 layout_mode = 3
@@ -54,45 +208,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 1
 
-[node name="Portraits" type="Control" parent="TextBox"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 32.0
-offset_top = 0.5
-offset_right = 32.0
-offset_bottom = 0.5
-grow_vertical = 2
-
-[node name="statue1" type="TextureRect" parent="TextBox/Portraits"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.5
-offset_top = -14.5
-offset_right = 12.5
-offset_bottom = 14.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("3_qvlij")
-
-[node name="statue2" type="TextureRect" parent="TextBox/Portraits"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -13.5
-offset_top = -14.5
-offset_right = 13.5
-offset_bottom = 14.5
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("5_0oc3a")
+[node name="Portraits" type="AnimatedSprite2D" parent="TextBox"]
+position = Vector2(31, 24)
+sprite_frames = SubResource("SpriteFrames_mgs60")
+animation = &"demon"

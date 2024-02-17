@@ -1,41 +1,41 @@
 #condition_unmet
 !0
-statue1: my condition isn't met
+bear: my condition isn't met
 
 #no_english
 !0
-statue1: 中国第一
+bear: 中国第一
 
 #not_in_tree
 !0
-statue1: where's the sign
+bear: where's the sign
 !1
-statue2: wwwwwwwww
+bear_kid: wwwwwwwww
 !2
-statue1: aaaaaaaaa
+bear: aaaaaaaaa
 !3
-statue2: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+bear_kid: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 
 #next_to_sign
 !0
-statue1: i can't read that
+bear: i can't read that
 
 #unfriendly
 !0
-statue1: i don't talk to you
+bear: i don't talk to you
 
 #neighbor_language_barrier
 !0
-statue1: i don't understand them
+bear: i don't understand them
 
 #neighbor_condition_unmet
 !0
-statue1: they won't talk to me
+bear: they won't talk to me
 
 #other_tree_condition_unmet
 !0
-statue1: they don't know the answer
+bear: they don't know the answer
 
 #solution
 !0
-statue1: the code is bird branch circle bird
+bear: the code is bird branch circle bird
