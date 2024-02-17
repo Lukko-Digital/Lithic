@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Door-topdown-puzzle-prototype"
-run/main_scene="res://src/Main.tscn"
+run/main_scene="res://levels/level_0_pre/level_0_pre.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 boot_splash/show_image=false
 config/icon="res://icon.svg"
