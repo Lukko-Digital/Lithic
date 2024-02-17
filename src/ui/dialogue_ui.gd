@@ -4,6 +4,7 @@ extends Control
 
 @onready var label: Label = $TextBox/Label
 @onready var text_timer: Timer = $TextTimer
+@onready var portrait: AnimatedSprite2D = $TextBox/Portraits
 
 var display_in_progress = false
 var dialogue_lines
@@ -17,14 +18,6 @@ const TEXT_SPEED = 0.04
 func _ready():
 	Globals.start_dialogue.connect(_start_dialogue)
 	Globals.advance_dialogue.connect(next_line)
-	init_portraits()
-
-
-func init_portraits():
-	for child in $TextBox/Portraits.get_children():
-		portrait_map[child.name] = child
-	active_portrait = portrait_map.keys()[0]
-	portrait_map[active_portrait].show()
 
 
 func _start_dialogue(lines):
@@ -48,12 +41,9 @@ func next_line():
 
 
 func show_line():
-	var portrait = dialogue_lines[current_line].get_slice(": ", 0)
+	var portrait_name = dialogue_lines[current_line].get_slice(": ", 0)
 	var line = dialogue_lines[current_line].get_slice(": ", 1)
-	if portrait != active_portrait:
-		portrait_map[active_portrait].hide()
-		active_portrait = portrait
-		portrait_map[active_portrait].show()
+	portrait.play(portrait_name)
 	label.text = line
 	animate_display()
 
