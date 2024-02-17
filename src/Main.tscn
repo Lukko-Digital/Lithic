@@ -1,11 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://tsnqanemh5ff"]
+[gd_scene load_steps=10 format=3 uid="uid://tsnqanemh5ff"]
 
 [ext_resource type="Texture2D" uid="uid://dyv043lm2nkxy" path="res://assets/png/tilemap.png" id="1_jx0p3"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="3_6k3o2"]
-[ext_resource type="PackedScene" uid="uid://c7eb7rc1l5hfn" path="res://src/statues/bear_statue.tscn" id="3_gkh47"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="4_51fbm"]
-[ext_resource type="PackedScene" uid="uid://bib74g0vnmp4g" path="res://src/statues/kid_statue.tscn" id="5_5lbq8"]
-[ext_resource type="PackedScene" uid="uid://do8s01btdu4mx" path="res://src/statues/parent_statue.tscn" id="6_et4xd"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="8_chvtg"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="8_uouxw"]
 
@@ -328,20 +325,8 @@ layer_1/tile_data = PackedInt32Array(-65531, 0, 1, -65532, 65536, 1, 3, 65536, 0
 [node name="Player" parent="." instance=ExtResource("3_6k3o2")]
 position = Vector2(8, -8)
 
-[node name="bear_statue" parent="." instance=ExtResource("3_gkh47")]
-position = Vector2(40, -8)
-dialogue_file = "res://src/ui/test.txt"
-
 [node name="sign" parent="." instance=ExtResource("4_51fbm")]
 position = Vector2(-40, -24)
-dialogue_file = "res://src/ui/test.txt"
-
-[node name="kid_statue" parent="." instance=ExtResource("5_5lbq8")]
-position = Vector2(-56, 8)
-dialogue_file = "res://src/ui/test.txt"
-
-[node name="parent_statue" parent="." instance=ExtResource("6_et4xd")]
-position = Vector2(-24, 24)
 dialogue_file = "res://src/ui/test.txt"
 
 [node name="door" parent="." instance=ExtResource("8_chvtg")]
