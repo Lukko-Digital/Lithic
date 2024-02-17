@@ -7,7 +7,9 @@ var INPUTS = {"right": Vector2.RIGHT,
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $Sprite2D
-@onready var interact_prompt: CanvasLayer = $InteractPrompt
+@onready var interact_prompt: AnimatedSprite2D = $CanvasLayer/InteractPrompt
+@onready var push_sound: AudioStreamPlayer = $sfx/push
+@onready var fail_push_sound: AudioStreamPlayer = $sfx/fail_push
 
 func move(dir):
 	if Globals.in_dialogue or Globals.in_door_ui:
@@ -29,21 +31,25 @@ func move(dir):
 	else:
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue"):
-			colliding.move(INPUTS[dir])
+			if colliding.move(INPUTS[dir]):
+				push_sound.play()
+			else:
+				fail_push_sound.play()
 		match dir:
 			"up", "down":
 				sprite.play("%s_push" % dir)
+				await sprite.animation_finished
+				sprite.play(dir)
 			"left":
 				sprite.flip_h = true
 				sprite.play("right_push")
+				await sprite.animation_finished
+				sprite.play("right")
 			"right":
 				sprite.flip_h = false
 				sprite.play("%s_push" % dir)
-
-
-# func _ready():
-# 	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
-# 	position += Vector2.ONE * Globals.TILE_SIZE/2
+				await sprite.animation_finished
+				sprite.play(dir)
 
 
 func _process(delta):
@@ -51,16 +57,25 @@ func _process(delta):
 
 
 func handle_interact_prompt():
-	if Globals.in_dialogue or Globals.in_door_ui:
-		interact_prompt.hide()
-		return
-	var colliding = ray.get_collider()
-	if !is_instance_valid(colliding):
-		interact_prompt.hide()
-	elif colliding.is_in_group("statue") or colliding.is_in_group("door"):
+	if facing_interactable():
 		interact_prompt.show()
+		interact_prompt.play("default")
 	else:
 		interact_prompt.hide()
+		interact_prompt.stop()
+
+
+func facing_interactable():
+	if Globals.in_dialogue or Globals.in_door_ui:
+		return false
+
+	var colliding = ray.get_collider()
+	if !is_instance_valid(colliding):
+		return false
+	elif colliding.is_in_group("statue") or colliding.is_in_group("door"):
+		return true
+	
+	return false
 
 
 func _unhandled_input(event):

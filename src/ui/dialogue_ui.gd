@@ -5,6 +5,7 @@ extends Control
 @onready var label: Label = $TextBox/Label
 @onready var text_timer: Timer = $TextTimer
 @onready var portrait: AnimatedSprite2D = $TextBox/Portraits
+@onready var audio_player: AnimationPlayer = $AudioStreamPlayer/AudioAnimationPlayer
 
 var display_in_progress = false
 var dialogue_lines
@@ -13,7 +14,7 @@ var current_line
 var active_portrait: String
 var portrait_map: Dictionary
 
-const TEXT_SPEED = 0.04
+const TEXT_SPEED = 0.08
 
 const Label_Width = {
 	DEFAULT = 214,
@@ -65,13 +66,23 @@ func show_line():
 		label.position.x = Label_X_Pos.DEFAULT
 		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
 		
-	animate_display()
+	animate_display(portrait_name)
 
 
-func animate_display():
+func animate_display(portrait_name: String):
+	var talking_sound
+	if portrait_name == "player":
+		talking_sound = "player"
+	elif portrait_name.right(3) == "kid":
+		talking_sound = "kid"
+	else:
+		talking_sound = "statue"
+
 	label.visible_characters = 0
 	display_in_progress = true
 	while label.visible_characters < len(label.text):
+		audio_player.stop(true)
+		audio_player.play(talking_sound)
 		label.visible_characters += 1
 		text_timer.start(TEXT_SPEED)
 		await text_timer.timeout

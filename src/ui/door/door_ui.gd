@@ -4,8 +4,12 @@ extends Control
 
 @onready var background: AnimatedSprite2D = $Background
 @onready var big_button_sprite: AnimatedSprite2D = $BigButton/BigButtonSprite
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $TransitionAnimationPlayer
 @onready var vert_selector: Sprite2D = $VerticalSelector
+@onready var press_sound: AudioStreamPlayer = $sfx/button_press
+@onready var hover_sound: AudioStreamPlayer = $sfx/button_hover
+@onready var correct_sound: AudioStreamPlayer = $sfx/correct
+@onready var incorrect_sound: AudioStreamPlayer = $sfx/incorrect
 
 var SELECTOR_DEFUALT_POS
 
@@ -20,6 +24,12 @@ func _ready():
 	Globals.enter_door_ui.connect(_enter)
 	get_viewport().connect("gui_focus_changed", _on_focus_changed)
 	SELECTOR_DEFUALT_POS = vert_selector.position
+	connect_button_signals()
+
+
+func connect_button_signals():
+	for button in $GridContainer.get_children():
+		button.pressed.connect(_button_pressed)
 
 
 func _enter():
@@ -33,12 +43,14 @@ func _enter():
 
 func _on_big_button_pressed():
 	if is_code_correct():
+		correct_sound.play()
 		background.play("correct")
 		big_button_sprite.play("correct")
 		animation_player.play("fade_to_black")
 		await animation_player.animation_finished
 		get_tree().change_scene_to_packed(get_parent().next_scene)
 	else:
+		incorrect_sound.play()
 		background.play("incorrect")
 		big_button_sprite.play("incorrect")
 		animation_player.play("fade_to_clear")
@@ -67,3 +79,8 @@ func _on_focus_changed(button: Control):
 		vert_selector.position.x = SELECTOR_DEFUALT_POS.x + button.position.x
 	else:
 		vert_selector.hide()
+	hover_sound.play()
+
+func _button_pressed():
+	press_sound.play()
+	
