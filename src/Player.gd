@@ -7,6 +7,7 @@ var INPUTS = {"right": Vector2.RIGHT,
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $Sprite2D
+@onready var interact_prompt: CanvasLayer = $InteractPrompt
 
 func move(dir):
 	if Globals.in_dialogue or Globals.in_door_ui:
@@ -25,27 +26,42 @@ func move(dir):
 			"right":
 				sprite.flip_h = false
 				sprite.play(dir)
-		
 	else:
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue"):
-			if colliding.move(INPUTS[dir]):
-				#position += INPUTS[dir] * Globals.TILE_SIZE
-				pass
-				
-			match dir:
-				"up", "down":
-					sprite.play("%s_push" % dir)
-				"left":
-					sprite.flip_h = true
-					sprite.play("right_push")
-				"right":
-					sprite.flip_h = false
-					sprite.play("%s_push" % dir)
+			colliding.move(INPUTS[dir])
+		match dir:
+			"up", "down":
+				sprite.play("%s_push" % dir)
+			"left":
+				sprite.flip_h = true
+				sprite.play("right_push")
+			"right":
+				sprite.flip_h = false
+				sprite.play("%s_push" % dir)
+
 
 # func _ready():
 # 	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
 # 	position += Vector2.ONE * Globals.TILE_SIZE/2
+
+
+func _process(delta):
+	handle_interact_prompt()
+
+
+func handle_interact_prompt():
+	if Globals.in_dialogue or Globals.in_door_ui:
+		interact_prompt.hide()
+		return
+	var colliding = ray.get_collider()
+	if !is_instance_valid(colliding):
+		interact_prompt.hide()
+	elif colliding.is_in_group("statue") or colliding.is_in_group("door"):
+		interact_prompt.show()
+	else:
+		interact_prompt.hide()
+
 
 func _unhandled_input(event):
 	for dir in INPUTS.keys():
