@@ -7,6 +7,8 @@ const ICON_DIST = 20
 var selector_position = [0, 0, 0, 0]
 var active_selector = 0 : set = _set_active_selector
 
+signal correct_code
+signal incorrect_code
 
 func _set_active_selector(new_selector):
 	# Release previous selector
@@ -54,6 +56,13 @@ func _unhandled_input(event):
 		move_selector(-1)
 	elif event.is_action_pressed("down"):
 		move_selector(1)
+
+
+func _on_enter_pressed():
+	if selector_position == get_parent().door_code:
+		correct_code.emit()
+	else:
+		incorrect_code.emit()
 
 
 func _on_exit_pressed():
