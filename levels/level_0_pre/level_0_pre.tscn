@@ -33,7 +33,6 @@ _data = {
 
 [node name="level_0_pre" type="Node2D"]
 script = ExtResource("1_7fdpp")
-next_scene = ExtResource("2_g8awe")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(120, 0)
@@ -45,6 +44,7 @@ disable_movement = true
 
 [node name="ui" parent="." instance=ExtResource("2_81xit")]
 door_code = Array[int]([0, 2, 3, 1])
+next_scene = ExtResource("2_g8awe")
 
 [node name="TileMap" parent="." instance=ExtResource("3_336ap")]
 layer_1/tile_data = PackedInt32Array(-6, 131072, 0, -65542, 458752, 1, -65541, 720896, 1, -5, 720896, 2, -7, 393216, 2, -65543, 393216, 1, 65530, 131072, 0, 65531, 720896, 2, 65529, 393216, 2, 131066, 458752, 6, 131067, 720896, 6, 131065, 393216, 6)
