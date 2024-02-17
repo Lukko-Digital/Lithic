@@ -1,6 +1,10 @@
 #not_in_tree
 !0
 human: ...
+human: do not touch me.
+human: filfth.
+!1
+human: ......
 
 #next_to_sign
 !0

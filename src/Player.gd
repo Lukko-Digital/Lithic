@@ -39,10 +39,13 @@ func move(dir):
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue") and not colliding.is_in_group("sign"):
 			if colliding.move(INPUTS[dir]):
+				audio_player.stop()
 				audio_player.play("push")
 			else:
+				audio_player.stop()
 				audio_player.play("fail_push")
 		else:
+			audio_player.stop()
 			audio_player.play("bump_wall")
 		match dir:
 			"up", "down":
