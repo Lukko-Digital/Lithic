@@ -15,6 +15,16 @@ var portrait_map: Dictionary
 
 const TEXT_SPEED = 0.04
 
+const Label_Width = {
+	DEFAULT = 214,
+	NARRATOR = 266
+}
+
+const Label_X_Pos = {
+	DEFAULT = 64,
+	NARRATOR = 12
+}
+
 func _ready():
 	Globals.start_dialogue.connect(_start_dialogue)
 	Globals.advance_dialogue.connect(next_line)
@@ -45,6 +55,16 @@ func show_line():
 	var line = dialogue_lines[current_line].get_slice(": ", 1)
 	portrait.play(portrait_name)
 	label.text = line
+	
+	if portrait_name == "narrator":
+		label.size.x = Label_Width.NARRATOR
+		label.position.x = Label_X_Pos.NARRATOR
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	else:
+		label.size.x = Label_Width.DEFAULT
+		label.position.x = Label_X_Pos.DEFAULT
+		label.horizontal_alignment = HORIZONTAL_ALIGNMENT_LEFT
+		
 	animate_display()
 
 

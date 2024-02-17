@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://buyq5h8l4bg1f"]
+[gd_scene load_steps=28 format=3 uid="uid://buyq5h8l4bg1f"]
 
 [ext_resource type="Script" path="res://src/ui/door/door_ui.gd" id="1_euxld"]
 [ext_resource type="Texture2D" uid="uid://dwyr7ukv20o47" path="res://assets/png/lock/lock_bg_success.png" id="2_gi6wa"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://finabebd3s42" path="res://assets/png/lock/lock_button_wolf_pressed.png" id="11_0augj"]
 [ext_resource type="Texture2D" uid="uid://mo5s7b73vphp" path="res://assets/png/lock/lock_button_big_fail.png" id="20_dxcdu"]
 [ext_resource type="Texture2D" uid="uid://bmroghcn343bj" path="res://assets/png/lock/lock_button_big_success.png" id="20_mwwog"]
+[ext_resource type="Texture2D" uid="uid://dgnug6halvbke" path="res://assets/png/lock/lock_selector_vertical.png" id="22_tm5bm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v2tel"]
 animations = [{
@@ -257,5 +258,10 @@ centered = false
 libraries = {
 "": SubResource("AnimationLibrary_k7xc8")
 }
+
+[node name="VerticalSelector" type="Sprite2D" parent="."]
+position = Vector2(78, 39)
+texture = ExtResource("22_tm5bm")
+centered = false
 
 [connection signal="pressed" from="BigButton" to="." method="_on_big_button_pressed"]
