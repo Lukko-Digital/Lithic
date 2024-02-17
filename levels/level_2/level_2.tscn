@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c486hruor0evv"]
+[gd_scene load_steps=11 format=3 uid="uid://c486hruor0evv"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_ev813"]
 [ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="1_px537"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cwsx4e3n3o0y0" path="res://src/statue_base_classes/interactable.tscn" id="6_vjcp5"]
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="7_enp7g"]
 [ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="8_3vu11"]
+[ext_resource type="Texture2D" uid="uid://cpefnov44yvd6" path="res://assets/png/note_in_wall.png" id="10_2riua"]
 
 [node name="level_0" type="Node2D"]
 
@@ -64,5 +65,7 @@ position = Vector2(-104, -24)
 position = Vector2(88, 40)
 
 [node name="note" parent="." instance=ExtResource("5_b6uj1")]
-position = Vector2(-24, -24)
+position = Vector2(-24, 56)
+rotation = -3.14159
+texture = ExtResource("10_2riua")
 dialogue_file = "res://levels/level_2/dialogue_note_level_2.txt"
