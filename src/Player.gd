@@ -90,23 +90,33 @@ func facing_interactable():
 	return false
 
 
+func handle_reset():
+	Globals.in_dialogue = false
+	Globals.in_door_ui = false
+	get_tree().reload_current_scene()
+
+
+func handle_interact():
+	if Globals.in_dialogue:
+		Globals.advance_dialogue.emit()
+		return
+	
+	ray.force_raycast_update()
+	if !ray.is_colliding():
+		return
+	
+	var colliding = ray.get_collider()
+	if colliding.is_in_group("statue") and !colliding.is_in_group("box"):
+		colliding.interact()
+	elif colliding.is_in_group("door") and not Globals.in_door_ui:
+		Globals.enter_door_ui.emit()
+
+
 func _unhandled_input(event):
 	for dir in INPUTS.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
 	if event.is_action_pressed("reset"):
-		get_tree().reload_current_scene()
+		handle_reset()
 	if event.is_action_pressed("interact"):
-		if Globals.in_dialogue:
-			Globals.advance_dialogue.emit()
-			return
-		
-		ray.force_raycast_update()
-		if !ray.is_colliding():
-			return
-		
-		var colliding = ray.get_collider()
-		if colliding.is_in_group("statue") and !colliding.is_in_group("box"):
-			colliding.interact()
-		elif colliding.is_in_group("door") and not Globals.in_door_ui:
-			Globals.enter_door_ui.emit()
+		handle_interact()
