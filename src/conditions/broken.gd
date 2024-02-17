@@ -1,6 +1,7 @@
 extends StatueCondition
 
 func check_condition(statue: Statue) -> bool:
-	if !statue.broken:
-		return true
-	return false
+	return statue.broken
+
+func fix(statue: Statue) -> void:
+	statue.broken = false

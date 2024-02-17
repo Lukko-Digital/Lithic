@@ -43,9 +43,9 @@ func move(dir):
 					sprite.flip_h = false
 					sprite.play("%s_push" % dir)
 
-func _ready():
-	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
-	position += Vector2.ONE * Globals.TILE_SIZE/2
+# func _ready():
+# 	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
+# 	position += Vector2.ONE * Globals.TILE_SIZE/2
 
 func _unhandled_input(event):
 	for dir in INPUTS.keys():
