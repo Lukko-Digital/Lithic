@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://buyq5h8l4bg1f"]
+[gd_scene load_steps=31 format=3 uid="uid://buyq5h8l4bg1f"]
 
 [ext_resource type="Script" path="res://src/ui/door/door_ui.gd" id="1_euxld"]
 [ext_resource type="Texture2D" uid="uid://dwyr7ukv20o47" path="res://assets/png/lock/lock_bg_success.png" id="2_gi6wa"]
@@ -81,22 +81,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Animation" id="Animation_ry7ub"]
-resource_name = "fade_to_black"
-length = 2.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1.5, 2.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_j3uv5"]
 resource_name = "fade_to_clear"
 length = 2.5
@@ -115,7 +99,6 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k7xc8"]
 _data = {
-"fade_to_black": SubResource("Animation_ry7ub"),
 "fade_to_clear": SubResource("Animation_j3uv5")
 }
 
