@@ -83,7 +83,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_j3uv5"]
 resource_name = "fade_to_clear"
-length = 2.5
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -91,10 +91,10 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(1.3, 1.6, 1.9, 2.2, 2.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0.4, 0.5, 0.8, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.7), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.571429), Color(1, 1, 1, 0.285714), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k7xc8"]
@@ -103,6 +103,7 @@ _data = {
 }
 
 [node name="door_ui" type="Control"]
+modulate = Color(1, 1, 1, 0.285714)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
