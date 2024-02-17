@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b1cn4d0qsq01g"]
+
+[ext_resource type="Texture2D" uid="uid://cd7t5otdnqd7" path="res://assets/png/lock/lock_selector_small.png" id="1_mx4k5"]
+
+[node name="door_button" type="TextureButton"]
+toggle_mode = true
+texture_focused = ExtResource("1_mx4k5")

@@ -29,6 +29,7 @@ func _set_active_selector(new_selector):
 
 func _ready():
 	Globals.enter_door_ui.connect(_enter)
+	$GridContainer/butterfly_button1.grab_focus()
 
 
 func _enter():

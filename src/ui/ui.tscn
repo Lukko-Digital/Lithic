@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_7e6xk"]
 [ext_resource type="PackedScene" uid="uid://curqycab2s72k" path="res://src/ui/dialogue_ui.tscn" id="1_vggkf"]
-[ext_resource type="PackedScene" uid="uid://buyq5h8l4bg1f" path="res://src/ui/door_ui.tscn" id="2_05elc"]
+[ext_resource type="PackedScene" uid="uid://buyq5h8l4bg1f" path="res://src/ui/door/door_ui.tscn" id="2_05elc"]
 
 [sub_resource type="Animation" id="Animation_cwinn"]
 resource_name = "red"
