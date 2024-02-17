@@ -13,17 +13,12 @@ class_name Statue
 @export var bound_location: Vector2 = Vector2(0, 0)
 @export var broken: bool = false
 
-
-
 @onready var ray: RayCast2D = $RayCast2D
-
-# func _ready():
-# 	get_parent().position = get_parent().position.snapped(Vector2.ONE * Globals.TILE_SIZE)
-# 	get_parent().position += Vector2.ONE * Globals.TILE_SIZE/2
 
 
 func move(dir: Vector2) -> bool:
 	return movement.move(self, dir)
+
 
 func get_neighbors() -> Array[Statue]:
 	var neighbors: Array[Statue] = []
@@ -33,8 +28,8 @@ func get_neighbors() -> Array[Statue]:
 			var colliding = dir.get_collider()
 			if colliding.is_in_group("statue"):
 				neighbors.append(colliding)
-
 	return neighbors
+
 
 func check_conditions() -> bool:
 	for condition in conditions:
@@ -42,6 +37,7 @@ func check_conditions() -> bool:
 			return false
 
 	return true
+
 
 func interact():
 	if !check_conditions():
@@ -53,7 +49,8 @@ func interact():
 
 	check_tree()
 
-func check_tree() -> bool:
+
+func graph_search() -> Array:
 	var q = [[self]] #Initialize graph search queue
 	var paths = []
 
@@ -66,6 +63,11 @@ func check_tree() -> bool:
 			for neighbor in last.get_neighbors():
 				if neighbor not in path:
 					q.append(path + [neighbor])
+	return paths
+
+
+func check_tree() -> bool:
+	var paths = graph_search()
 
 	if len(paths) == 0: #Not in tree
 		say(Globals.DialogueState.NOT_IN_TREE)

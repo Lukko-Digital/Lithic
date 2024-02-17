@@ -1,71 +1,56 @@
 extends Control
 
-@onready var selectors = $selectors.get_children()
+@export var column_groups: Array[ButtonGroup]
 
-const DEFAULT_Y = 56
-const ICON_DIST = 20
-var selector_position = [0, 0, 0, 0]
-var active_selector = 0 : set = _set_active_selector
+@onready var background: AnimatedSprite2D = $Background
+@onready var big_button_sprite: AnimatedSprite2D = $BigButton/BigButtonSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-signal correct_code
-signal incorrect_code
-
-func _set_active_selector(new_selector):
-	# Release previous selector
-	if active_selector != 4:
-		selectors[active_selector].play("default")
-	else:
-		$Enter.release_focus()
-		$Exit.release_focus()
-
-	active_selector = clamp(new_selector, 0, 4)
-	
-	# Activate new Selector
-	if active_selector != 4:
-		selectors[active_selector].play("active")
-	else:
-		$Enter.grab_focus()
-
+const BUTTON_MAP = {
+	"butterfly": 0,
+	"knife": 1,
+	"human": 2,
+	"wolf": 3
+}
 
 func _ready():
 	Globals.enter_door_ui.connect(_enter)
-	$GridContainer/butterfly_button1.grab_focus()
 
 
 func _enter():
 	Globals.in_door_ui = true
-	active_selector = 0
+	modulate = Color(Color.WHITE)
+	background.play("default")
+	big_button_sprite.play("default")
+	$GridContainer/butterfly_button1.grab_focus()
 	show()
 
 
-func move_selector(dir: int):
-	if active_selector == 4:
-		return
-	var new_pos = clamp(selector_position[active_selector] + dir, 0, 3)
-	selector_position[active_selector] = new_pos
-	selectors[active_selector].position.y = DEFAULT_Y + new_pos * ICON_DIST
-
-
-func _unhandled_input(event):
-	if not Globals.in_door_ui:
-		return
-	if event.is_action_pressed("left"):
-		active_selector -= 1
-	elif event.is_action_pressed("right"):
-		active_selector += 1
-	elif event.is_action_pressed("up"):
-		move_selector(-1)
-	elif event.is_action_pressed("down"):
-		move_selector(1)
-
-
-func _on_enter_pressed():
-	if selector_position == get_parent().door_code:
-		correct_code.emit()
+func _on_big_button_pressed():
+	if is_code_correct():
+		background.play("correct")
+		big_button_sprite.play("correct")
+		animation_player.play("fade_to_black")
+		await animation_player.animation_finished
+		get_tree().change_scene_to_packed(get_parent().next_scene)
 	else:
-		incorrect_code.emit()
+		background.play("incorrect")
+		big_button_sprite.play("incorrect")
+		animation_player.play("fade_to_clear")
+		await animation_player.animation_finished
+		hide()
+		Globals.in_door_ui = false
 
 
-func _on_exit_pressed():
-	Globals.in_door_ui = false
-	hide()
+func is_code_correct() -> bool:
+	var buttons = column_groups.map(
+		func(group): return group.get_pressed_button()
+	)
+	if false in buttons.map(func(button): return is_instance_valid(button)):
+		return false
+	var code = buttons.map(
+		func(button): return BUTTON_MAP[button.name.get_slice("_", 0)]
+	)
+	if code == get_parent().door_code:
+		return true
+	return false

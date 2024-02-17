@@ -1,7 +1,9 @@
-[gd_scene load_steps=21 format=3 uid="uid://buyq5h8l4bg1f"]
+[gd_scene load_steps=27 format=3 uid="uid://buyq5h8l4bg1f"]
 
 [ext_resource type="Script" path="res://src/ui/door/door_ui.gd" id="1_euxld"]
-[ext_resource type="Texture2D" uid="uid://gilemu6q2ovq" path="res://assets/png/selector-sheet.png" id="2_7680x"]
+[ext_resource type="Texture2D" uid="uid://dwyr7ukv20o47" path="res://assets/png/lock/lock_bg_success.png" id="2_gi6wa"]
+[ext_resource type="Texture2D" uid="uid://d4dgh4l6j67hk" path="res://assets/png/lock/lock_bg_fail.png" id="2_giasf"]
+[ext_resource type="Texture2D" uid="uid://bx335cpeetlak" path="res://assets/png/lock/lock_bg_neutral.png" id="2_skw6m"]
 [ext_resource type="PackedScene" uid="uid://b1cn4d0qsq01g" path="res://src/ui/door/door_button.tscn" id="3_25rap"]
 [ext_resource type="Texture2D" uid="uid://bw35q3me1nkau" path="res://assets/png/lock/lock_button_butterfly.png" id="3_j3j7h"]
 [ext_resource type="Texture2D" uid="uid://dsk4n17ksa7oh" path="res://assets/png/lock/lock_button_butterfly_pressed.png" id="4_4miwn"]
@@ -17,33 +19,100 @@
 [ext_resource type="Texture2D" uid="uid://circfvvp4lw3n" path="res://assets/png/lock/lock_button_human_pressed.png" id="9_ku0ri"]
 [ext_resource type="Texture2D" uid="uid://d2oykros7g8kx" path="res://assets/png/lock/lock_button_wolf.png" id="10_7dgd2"]
 [ext_resource type="Texture2D" uid="uid://finabebd3s42" path="res://assets/png/lock/lock_button_wolf_pressed.png" id="11_0augj"]
+[ext_resource type="Texture2D" uid="uid://mo5s7b73vphp" path="res://assets/png/lock/lock_button_big_fail.png" id="20_dxcdu"]
+[ext_resource type="Texture2D" uid="uid://bmroghcn343bj" path="res://assets/png/lock/lock_button_big_success.png" id="20_mwwog"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ohdu1"]
-atlas = ExtResource("2_7680x")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0ljv"]
-atlas = ExtResource("2_7680x")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_w0eo7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_v2tel"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ohdu1")
+"texture": ExtResource("2_gi6wa")
 }],
 "loop": true,
-"name": &"active",
+"name": &"correct",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u0ljv")
+"texture": ExtResource("2_skw6m")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_giasf")
+}],
+"loop": true,
+"name": &"incorrect",
+"speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmieu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_mwwog")
+}],
+"loop": true,
+"name": &"correct",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_me4dg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_dxcdu")
+}],
+"loop": true,
+"name": &"incorrect",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_j3uv5"]
+resource_name = "fade_to_clear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ry7ub"]
+resource_name = "fade_to_black"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7xc8"]
+_data = {
+"fade_to_black": SubResource("Animation_ry7ub"),
+"fade_to_clear": SubResource("Animation_j3uv5")
+}
 
 [node name="door_ui" type="Control"]
 layout_mode = 3
@@ -53,32 +122,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_euxld")
+column_groups = Array[ButtonGroup]([ExtResource("4_xb47d"), ExtResource("7_hvq4l"), ExtResource("8_x7brb"), ExtResource("9_axh11")])
 
-[node name="selectors" type="Node2D" parent="."]
-visible = false
-
-[node name="selector0" type="AnimatedSprite2D" parent="selectors"]
-position = Vector2(64, 56)
-sprite_frames = SubResource("SpriteFrames_w0eo7")
-
-[node name="selector1" type="AnimatedSprite2D" parent="selectors"]
-position = Vector2(84, 56)
-sprite_frames = SubResource("SpriteFrames_w0eo7")
-
-[node name="selector2" type="AnimatedSprite2D" parent="selectors"]
-position = Vector2(104, 56)
-sprite_frames = SubResource("SpriteFrames_w0eo7")
-
-[node name="selector3" type="AnimatedSprite2D" parent="selectors"]
-position = Vector2(124, 56)
-sprite_frames = SubResource("SpriteFrames_w0eo7")
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 90)
+sprite_frames = SubResource("SpriteFrames_v2tel")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-layout_mode = 0
-offset_left = 56.0
-offset_top = 48.0
-offset_right = 132.0
-offset_bottom = 124.0
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 68.0
+offset_top = -45.5
+offset_right = 183.0
+offset_bottom = 45.5
+grow_vertical = 2
 theme_override_constants/h_separation = 1
 theme_override_constants/v_separation = 1
 columns = 4
@@ -179,11 +238,24 @@ button_group = ExtResource("9_axh11")
 texture_normal = ExtResource("10_7dgd2")
 texture_pressed = ExtResource("11_0augj")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="BigButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 152.0
-offset_top = 24.0
-offset_right = 197.0
-offset_bottom = 107.0
+offset_left = 192.0
+offset_top = 28.0
+offset_right = 255.0
+offset_bottom = 116.0
 texture_normal = ExtResource("6_me4dg")
 texture_focused = ExtResource("7_gm487")
+
+[node name="BigButtonSprite" type="AnimatedSprite2D" parent="BigButton"]
+position = Vector2(0, -2)
+sprite_frames = SubResource("SpriteFrames_wmieu")
+animation = &"correct"
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k7xc8")
+}
+
+[connection signal="pressed" from="BigButton" to="." method="_on_big_button_pressed"]
