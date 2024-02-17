@@ -53,7 +53,8 @@ func interact():
 
 	check_tree()
 
-func check_tree() -> bool:
+
+func graph_search() -> Array:
 	var q = [[self]] #Initialize graph search queue
 	var paths = []
 
@@ -66,6 +67,11 @@ func check_tree() -> bool:
 			for neighbor in last.get_neighbors():
 				if neighbor not in path:
 					q.append(path + [neighbor])
+	return paths
+
+
+func check_tree() -> bool:
+	var paths = graph_search()
 
 	if len(paths) == 0: #Not in tree
 		say(Globals.DialogueState.NOT_IN_TREE)
