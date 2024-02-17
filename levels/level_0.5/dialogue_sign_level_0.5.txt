@@ -1,0 +1,16 @@
+#condition_unmet
+!0
+narrator: another sign covered in strange glyphs
+narrator: another note is crammed below
+player: "the code is all butterflies"
+player: "but what use is knowing that now?"
+player: "sometimes, the only option is to start over"
+player: shit...
+narrator: you consider pressing r
+!1
+player: "the code is all butterflies"
+player: "but what use is knowing that now?"
+player: "sometimes, the only option is to start over"
+player: shit...
+narrator: you consider pressing r
+!1 narrator: you consider pressing r
