@@ -40,6 +40,7 @@ animations = [{
 }]
 
 [node name="poof" type="AnimatedSprite2D"]
+z_index = -1
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_yw67u")
 autoplay = "default"
