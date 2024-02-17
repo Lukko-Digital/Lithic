@@ -1,6 +1,7 @@
 extends Area2D
 
 @export var no_interact_prompt: bool
+@export var disable_movement: bool
 
 var INPUTS = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
@@ -18,7 +19,7 @@ func _ready():
 
 
 func move(dir):
-	if Globals.in_dialogue or Globals.in_door_ui:
+	if Globals.in_dialogue or Globals.in_door_ui or disable_movement:
 		return
 	ray.target_position = INPUTS[dir] * Globals.TILE_SIZE
 	ray.force_raycast_update()
