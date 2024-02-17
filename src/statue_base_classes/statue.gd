@@ -10,7 +10,7 @@ class_name Statue
 @export var speaks_old: bool = false
 @export_subgroup("Condition specific properties")
 @export var is_parent: bool = false
-@export var bound_location: Vector2 = Vector2(0, 0)
+@export var bound_location: Node2D = null
 @export var broken: bool = false
 
 @onready var ray: RayCast2D = $RayCast2D
@@ -122,6 +122,11 @@ func check_tree() -> bool:
 		say(Globals.DialogueState.NOT_IN_TREE)
 		return false
 
+	for statue in get_neighbors(): #If there is no valid path, check if next to sign
+		if statue.is_in_group("sign") and (!friendly or !can_read):
+			say(Globals.DialogueState.NEXT_TO_SIGN)
+			return false
+	
 	if !friendly: #Not friendly
 		say(Globals.DialogueState.UNFRIENDLY)
 		return false
@@ -139,12 +144,6 @@ func check_tree() -> bool:
 			say(Globals.DialogueState.SOLUTION)
 			return true
 	
-
-	for statue in get_neighbors(): #If there is no valid path, check if next to sign
-		if statue.is_in_group("sign") and (!friendly or !can_read):
-			say(Globals.DialogueState.NEXT_TO_SIGN)
-			return false
-
 	var first_path = paths[0] #Check if neighbor doesn't speak the same language
 	if !((self.speaks_english and first_path[0].speaks_english) or (self.speaks_old and first_path[0].speaks_old)):
 		say(Globals.DialogueState.NEIGHBOR_LANGUAGE_BARRIER)
