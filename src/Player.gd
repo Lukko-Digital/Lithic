@@ -8,6 +8,8 @@ var INPUTS = {"right": Vector2.RIGHT,
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var interact_prompt: CanvasLayer = $InteractPrompt
+@onready var push_sound: AudioStreamPlayer = $sfx/push
+@onready var fail_push_sound: AudioStreamPlayer = $sfx/fail_push
 
 func move(dir):
 	if Globals.in_dialogue or Globals.in_door_ui:
@@ -29,7 +31,10 @@ func move(dir):
 	else:
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue"):
-			colliding.move(INPUTS[dir])
+			if colliding.move(INPUTS[dir]):
+				push_sound.play()
+			else:
+				fail_push_sound.play()
 		match dir:
 			"up", "down":
 				sprite.play("%s_push" % dir)
