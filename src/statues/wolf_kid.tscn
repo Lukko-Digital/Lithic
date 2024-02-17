@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr40vka6787ki"]
+
+[ext_resource type="Texture2D" uid="uid://cnje6l2w8mx68" path="res://assets/png/statues_all.png" id="1_lsbdq"]
+[ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="2_og5rr"]
+[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="3_6bmw6"]
+[ext_resource type="Resource" uid="uid://b7ub0hy007eni" path="res://src/conditions/kid.tres" id="4_mogb1"]
+
+[node name="wolf_kid" type="Sprite2D"]
+texture = ExtResource("1_lsbdq")
+hframes = 4
+vframes = 4
+frame = 6
+script = ExtResource("2_og5rr")
+
+[node name="Statue" parent="." instance=ExtResource("3_6bmw6")]
+conditions = Array[Resource("res://src/statue_base_classes/statue_condition.gd")]([ExtResource("4_mogb1")])
+friendly = true
