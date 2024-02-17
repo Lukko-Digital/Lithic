@@ -14,7 +14,7 @@ var current_line
 var active_portrait: String
 var portrait_map: Dictionary
 
-const TEXT_SPEED = 0.08
+const TEXT_SPEED = 0.06
 
 const Label_Width = {
 	DEFAULT = 214,
