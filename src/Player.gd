@@ -1,5 +1,8 @@
 extends Area2D
 
+@export var no_interact_prompt: bool
+@export var disable_movement: bool
+
 var INPUTS = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
 			"up": Vector2.UP,
@@ -10,8 +13,13 @@ var INPUTS = {"right": Vector2.RIGHT,
 @onready var interact_prompt: AnimatedSprite2D = $CanvasLayer/InteractPrompt
 @onready var audio_player: AnimationPlayer = $AudioStreamPlayer/AudioAnimationPlayer
 
+
+func _ready():
+	$CanvasLayer.visible = !no_interact_prompt
+
+
 func move(dir):
-	if Globals.in_dialogue or Globals.in_door_ui:
+	if Globals.in_dialogue or Globals.in_door_ui or disable_movement:
 		return
 	ray.target_position = INPUTS[dir] * Globals.TILE_SIZE
 	ray.force_raycast_update()

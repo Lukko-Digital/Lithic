@@ -1,0 +1,8 @@
+#condition_unmet
+!0
+narrator: another sign covered in strange glyphs
+narrator: remains of a note are scattered on the ground
+!3
+narrator: another sign covered in strange glyphs
+narrator: remains of a note are scattered on the ground
+narrator: you should probably look for help...
