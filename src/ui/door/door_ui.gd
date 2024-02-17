@@ -2,6 +2,9 @@ extends Control
 
 @export var column_groups: Array[ButtonGroup]
 
+@onready var background: AnimatedSprite2D = $Background
+@onready var big_button_sprite: AnimatedSprite2D = $BigButton/BigButtonSprite
+
 signal correct_code
 signal incorrect_code
 
@@ -23,7 +26,12 @@ func _enter():
 
 
 func _on_big_button_pressed():
-	print(is_code_correct())
+	if is_code_correct():
+		background.play("correct")
+		big_button_sprite.play("correct")
+	else:
+		background.play("incorrect")
+		big_button_sprite.play("incorrect")
 
 
 func is_code_correct() -> bool:
