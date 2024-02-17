@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://6ophqk3vk5nv"]
+
+[ext_resource type="Texture2D" uid="uid://cnje6l2w8mx68" path="res://assets/png/statues_all.png" id="1_hxqb0"]
+[ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="2_v3xty"]
+[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="3_vbgy5"]
+[ext_resource type="Resource" uid="uid://b7ub0hy007eni" path="res://src/conditions/kid.tres" id="4_uy8vk"]
+
+[node name="demon_kid" type="Sprite2D"]
+texture = ExtResource("1_hxqb0")
+hframes = 4
+vframes = 4
+frame = 4
+script = ExtResource("2_v3xty")
+
+[node name="Statue" parent="." instance=ExtResource("3_vbgy5")]
+conditions = Array[Resource("res://src/statue_base_classes/statue_condition.gd")]([ExtResource("4_uy8vk")])
+can_read = true
+friendly = true
+speaks_old = true

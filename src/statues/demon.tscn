@@ -14,3 +14,4 @@ script = ExtResource("2_7puru")
 can_read = true
 friendly = true
 speaks_old = true
+is_parent = true
