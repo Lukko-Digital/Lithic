@@ -311,6 +311,7 @@ texture = SubResource("GradientTexture2D_3ax4f")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
+z_index = -5
 texture_filter = 1
 tile_set = SubResource("TileSet_7cqio")
 format = 2
