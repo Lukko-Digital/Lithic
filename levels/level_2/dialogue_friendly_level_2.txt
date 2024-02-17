@@ -6,7 +6,7 @@ bear: you lost?
 bear: ohhh, yeah sure, i can help you with that.
 bear: just push me over to that sign and i'll give it a look.
 !2
-bear: whenever you're ready.
+bear: let's translate that sign for ya
 
 #next_to_sign
 !0
@@ -16,9 +16,10 @@ bear: anything really.
 bear: so i don't really remember how to read these.
 !1
 bear: i'm sure someone else in here could...
-bear: but knowing him, he won't want to help you.
+bear: but knowing them, they won't want to help you.
 !2
-bear: how about you spaek to him through me?
+bear: how about you speak to him through me?
+bear: if you can get him next to the sign
 bear: he'll be willing to tell me it's meaning,
 bear: and i'll relay it back to you.
 bear: our little secret. he won't know any better.

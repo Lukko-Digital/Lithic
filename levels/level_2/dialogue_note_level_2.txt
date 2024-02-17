@@ -1,0 +1,6 @@
+#condition_unmet
+!0
+narrator: a note is crammed between the bricks
+player: "statues love to talk to eachother"
+player: "but only about glyphs"
+player: "make sure at least one of them has something to read"

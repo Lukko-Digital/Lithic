@@ -1,11 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://d21o540g7sc1k"]
+[gd_scene load_steps=38 format=3 uid="uid://d21o540g7sc1k"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_cqm3l"]
 [ext_resource type="Texture2D" uid="uid://cfcvg8tectf2o" path="res://assets/png/player-sheet.png" id="2_cw1x6"]
 [ext_resource type="AudioStream" uid="uid://q75m27ysowho" path="res://assets/audio/move_statue.mp3" id="3_ccr2p"]
 [ext_resource type="Texture2D" uid="uid://dmffofumuk7mb" path="res://assets/png/tutorial_interact-sheet.png" id="3_im8uc"]
 [ext_resource type="AudioStream" uid="uid://d26omux2fp47k" path="res://assets/audio/talking_statue.mp3" id="4_r3y1o"]
-[ext_resource type="AudioStream" uid="uid://detx6vbwuw42" path="res://assets/audio/talking_player.mp3" id="6_1gnk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dyi58"]
 atlas = ExtResource("2_cw1x6")
@@ -239,7 +238,7 @@ tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("6_1gnk2")
+"stream": ExtResource("4_r3y1o")
 }],
 "times": PackedFloat32Array(0)
 }
