@@ -10,21 +10,26 @@ bear: let's translate that sign for ya
 
 #next_to_sign
 !0
-bear: ooh... this is a bit awkwared.
+bear: ooh... this is a bit awkward.
 bear: it's been a few centuries since i've done...
 bear: anything really.
 bear: so i don't really remember how to read these.
 !1
 bear: i'm sure someone else in here could...
 bear: but knowing them, they won't want to help you.
-!2
-bear: how about you speak to him through me?
-bear: if you can get him next to the sign
-bear: he'll be willing to tell me it's meaning,
+bear: if you can get them next to the sign
+bear: they'll be willing to tell me it's meaning,
 bear: and i'll relay it back to you.
-bear: our little secret. he won't know any better.
+bear: our little secret. they won't know any better.
+!2
+bear: what am I still doing here?
+bear: i'm not the one who can read it.
 
 #solution
 !0
-bear: he says the code is...
-bear: "wolf, wolf, butterfly, wolf"
+bear: they tell me the glyphs read...
+bear: "two humans face one another wielding knives"
+bear: i was never much for poetry.
+player: thank you.
+!1
+bear: "two humans face one another wielding knives"
