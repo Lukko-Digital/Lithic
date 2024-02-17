@@ -109,7 +109,7 @@ script = ExtResource("1_cqm3l")
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_eyjim")
-animation = &"right_push"
+animation = &"down_push"
 autoplay = "down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -121,3 +121,12 @@ collision_mask = 14
 collide_with_areas = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="InteractPrompt" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="InteractPrompt"]
+offset_left = 107.0
+offset_top = 69.0
+offset_right = 227.0
+offset_bottom = 95.0
+text = "[space] interact"
