@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="1_c2okk"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_i6noe"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_gwnqq"]
-[ext_resource type="PackedScene" uid="uid://bt4u6lqa38xtk" path="res://levels/level_1/level_1.tscn" id="4_3xjoe"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_rr33n"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="5_244kj"]
+[ext_resource type="PackedScene" uid="uid://basx0gbt7ectp" path="res://levels/level_0b/level_0b.tscn" id="5_gi354"]
 [ext_resource type="Texture2D" uid="uid://gnh2i0qb62nv" path="res://assets/png/sign_with_translation.png" id="6_iqxsp"]
-[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="7_htk45"]
+[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="7_htk45"]
 [ext_resource type="Texture2D" uid="uid://cpefnov44yvd6" path="res://assets/png/note_in_wall.png" id="7_q6yti"]
 
 [node name="level_0" type="Node2D"]
@@ -26,7 +26,7 @@ layer_1/tile_data = PackedInt32Array(-7, 393216, 1, 65529, 393216, 2, 131065, 39
 position = Vector2(-88, 40)
 
 [node name="ui" parent="." instance=ExtResource("3_gwnqq")]
-next_scene = ExtResource("4_3xjoe")
+next_scene = ExtResource("5_gi354")
 
 [node name="door" parent="." instance=ExtResource("4_rr33n")]
 position = Vector2(88, -56)
@@ -34,13 +34,13 @@ position = Vector2(88, -56)
 [node name="sign" parent="." instance=ExtResource("5_244kj")]
 position = Vector2(-8, -40)
 texture = ExtResource("6_iqxsp")
-dialogue_file = "res://levels/level_0.5/dialogue_sign_level_0.5.txt"
+dialogue_file = "res://levels/level_0a/dialogue_sign_level_0a.txt"
 
 [node name="sign2" parent="." instance=ExtResource("5_244kj")]
 position = Vector2(104, 8)
 rotation = 1.57079
 texture = ExtResource("7_q6yti")
-dialogue_file = "res://levels/level_0.5/dialogue_sign_2_level_0.5.txt"
+dialogue_file = "res://levels/level_0a/dialogue_sign_2_level_0a.txt"
 
 [node name="box" parent="." instance=ExtResource("7_htk45")]
 position = Vector2(-8, 8)
