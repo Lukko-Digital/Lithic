@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2t0okqo4no4x"]
+
+[ext_resource type="Texture2D" uid="uid://cnje6l2w8mx68" path="res://assets/png/statues_all.png" id="1_qmr4j"]
+[ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="2_bst12"]
+[ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="3_efjw6"]
+
+[node name="mask_2" type="Sprite2D"]
+texture = ExtResource("1_qmr4j")
+hframes = 4
+vframes = 4
+frame = 11
+script = ExtResource("2_bst12")
+
+[node name="Statue" parent="." instance=ExtResource("3_efjw6")]
+is_parent = true
