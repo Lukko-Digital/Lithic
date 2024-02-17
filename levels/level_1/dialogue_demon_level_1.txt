@@ -1,0 +1,20 @@
+#not_in_tree
+!0
+player: ... hello ?
+player: what am i doing.
+narrator: you feel stupid, having spoken to a statue.
+demon: hey!
+!1
+demon: relax, you're not the first human i've spoken to.
+demon: i won't hurt you.
+!2
+demon: do you need something?
+demon: the signage around here isn't very human friendly.
+human: ...
+demon: i can direct you if i could get a better look.
+!3
+demon: if you push me over to that sign i can help you out.
+
+#solution
+!0
+demon: the code is bird branch circle bird
