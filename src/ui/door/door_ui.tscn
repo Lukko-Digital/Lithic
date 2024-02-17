@@ -1,0 +1,189 @@
+[gd_scene load_steps=21 format=3 uid="uid://buyq5h8l4bg1f"]
+
+[ext_resource type="Script" path="res://src/ui/door/door_ui.gd" id="1_euxld"]
+[ext_resource type="Texture2D" uid="uid://gilemu6q2ovq" path="res://assets/png/selector-sheet.png" id="2_7680x"]
+[ext_resource type="PackedScene" uid="uid://b1cn4d0qsq01g" path="res://src/ui/door/door_button.tscn" id="3_25rap"]
+[ext_resource type="Texture2D" uid="uid://bw35q3me1nkau" path="res://assets/png/lock/lock_button_butterfly.png" id="3_j3j7h"]
+[ext_resource type="Texture2D" uid="uid://dsk4n17ksa7oh" path="res://assets/png/lock/lock_button_butterfly_pressed.png" id="4_4miwn"]
+[ext_resource type="ButtonGroup" uid="uid://xifxovs3s1e5" path="res://src/ui/door/Column1.tres" id="4_xb47d"]
+[ext_resource type="Texture2D" uid="uid://chopusjmpxd8h" path="res://assets/png/lock/lock_button_big_neutral.png" id="6_me4dg"]
+[ext_resource type="Texture2D" uid="uid://b74y1ds282kcy" path="res://assets/png/lock/lock_button_knife.png" id="6_py32b"]
+[ext_resource type="Texture2D" uid="uid://b5o6urjxfilp7" path="res://assets/png/lock/lock_selector_big.png" id="7_gm487"]
+[ext_resource type="ButtonGroup" uid="uid://dcc2o7ytr4u7t" path="res://src/ui/door/Column2.tres" id="7_hvq4l"]
+[ext_resource type="Texture2D" uid="uid://ylshd6p2l3f7" path="res://assets/png/lock/lock_button_knife_pressed.png" id="7_p6hvi"]
+[ext_resource type="Texture2D" uid="uid://cjgk8cxtp4xqa" path="res://assets/png/lock/lock_button_human.png" id="8_rj8bb"]
+[ext_resource type="ButtonGroup" uid="uid://crsurms2t678v" path="res://src/ui/door/Column3.tres" id="8_x7brb"]
+[ext_resource type="ButtonGroup" uid="uid://ck34p8d255j47" path="res://src/ui/door/Column4.tres" id="9_axh11"]
+[ext_resource type="Texture2D" uid="uid://circfvvp4lw3n" path="res://assets/png/lock/lock_button_human_pressed.png" id="9_ku0ri"]
+[ext_resource type="Texture2D" uid="uid://d2oykros7g8kx" path="res://assets/png/lock/lock_button_wolf.png" id="10_7dgd2"]
+[ext_resource type="Texture2D" uid="uid://finabebd3s42" path="res://assets/png/lock/lock_button_wolf_pressed.png" id="11_0augj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohdu1"]
+atlas = ExtResource("2_7680x")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0ljv"]
+atlas = ExtResource("2_7680x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0eo7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohdu1")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ljv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="door_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_euxld")
+
+[node name="selectors" type="Node2D" parent="."]
+visible = false
+
+[node name="selector0" type="AnimatedSprite2D" parent="selectors"]
+position = Vector2(64, 56)
+sprite_frames = SubResource("SpriteFrames_w0eo7")
+
+[node name="selector1" type="AnimatedSprite2D" parent="selectors"]
+position = Vector2(84, 56)
+sprite_frames = SubResource("SpriteFrames_w0eo7")
+
+[node name="selector2" type="AnimatedSprite2D" parent="selectors"]
+position = Vector2(104, 56)
+sprite_frames = SubResource("SpriteFrames_w0eo7")
+
+[node name="selector3" type="AnimatedSprite2D" parent="selectors"]
+position = Vector2(124, 56)
+sprite_frames = SubResource("SpriteFrames_w0eo7")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 48.0
+offset_right = 132.0
+offset_bottom = 124.0
+theme_override_constants/h_separation = 1
+theme_override_constants/v_separation = 1
+columns = 4
+
+[node name="butterfly_button1" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("4_xb47d")
+texture_normal = ExtResource("3_j3j7h")
+texture_pressed = ExtResource("4_4miwn")
+
+[node name="butterfly_button2" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("7_hvq4l")
+texture_normal = ExtResource("3_j3j7h")
+texture_pressed = ExtResource("4_4miwn")
+
+[node name="butterfly_button3" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("8_x7brb")
+texture_normal = ExtResource("3_j3j7h")
+texture_pressed = ExtResource("4_4miwn")
+
+[node name="butterfly_button4" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("9_axh11")
+texture_normal = ExtResource("3_j3j7h")
+texture_pressed = ExtResource("4_4miwn")
+
+[node name="knife_button1" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("4_xb47d")
+texture_normal = ExtResource("6_py32b")
+texture_pressed = ExtResource("7_p6hvi")
+
+[node name="knife_button2" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("7_hvq4l")
+texture_normal = ExtResource("6_py32b")
+texture_pressed = ExtResource("7_p6hvi")
+
+[node name="knife_button3" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("8_x7brb")
+texture_normal = ExtResource("6_py32b")
+texture_pressed = ExtResource("7_p6hvi")
+
+[node name="knife_button4" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("9_axh11")
+texture_normal = ExtResource("6_py32b")
+texture_pressed = ExtResource("7_p6hvi")
+
+[node name="human_button1" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("4_xb47d")
+texture_normal = ExtResource("8_rj8bb")
+texture_pressed = ExtResource("9_ku0ri")
+
+[node name="human_button2" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("7_hvq4l")
+texture_normal = ExtResource("8_rj8bb")
+texture_pressed = ExtResource("9_ku0ri")
+
+[node name="human_button3" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("8_x7brb")
+texture_normal = ExtResource("8_rj8bb")
+texture_pressed = ExtResource("9_ku0ri")
+
+[node name="human_button4" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("9_axh11")
+texture_normal = ExtResource("8_rj8bb")
+texture_pressed = ExtResource("9_ku0ri")
+
+[node name="wolf_button1" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("4_xb47d")
+texture_normal = ExtResource("10_7dgd2")
+texture_pressed = ExtResource("11_0augj")
+
+[node name="wolf_button2" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("7_hvq4l")
+texture_normal = ExtResource("10_7dgd2")
+texture_pressed = ExtResource("11_0augj")
+
+[node name="wolf_button3" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("8_x7brb")
+texture_normal = ExtResource("10_7dgd2")
+texture_pressed = ExtResource("11_0augj")
+
+[node name="wolf_button4" parent="GridContainer" instance=ExtResource("3_25rap")]
+layout_mode = 2
+button_group = ExtResource("9_axh11")
+texture_normal = ExtResource("10_7dgd2")
+texture_pressed = ExtResource("11_0augj")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 152.0
+offset_top = 24.0
+offset_right = 197.0
+offset_bottom = 107.0
+texture_normal = ExtResource("6_me4dg")
+texture_focused = ExtResource("7_gm487")
