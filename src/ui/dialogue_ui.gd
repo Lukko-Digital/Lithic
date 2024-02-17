@@ -73,6 +73,8 @@ func animate_display(portrait_name: String):
 	var talking_sound
 	if portrait_name == "player":
 		talking_sound = "player"
+	elif portrait_name == "narrator":
+		talking_sound = "narrator"
 	elif portrait_name.right(3) == "kid":
 		talking_sound = "kid"
 	else:
