@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b40x6eiyl71gu"]
+
+[ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_xj8i5"]
+[ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_4c1j8"]
+[ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_7a77x"]
+[ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_ba6mk"]
+[ext_resource type="PackedScene" uid="uid://dflo8inhbj6r1" path="res://src/statues/demon_smart.tscn" id="5_laa3l"]
+[ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/inscription.tscn" id="6_yks47"]
+
+[node name="level_0" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_xj8i5")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_4c1j8")]
+position = Vector2(8, -8)
+
+[node name="ui" parent="." instance=ExtResource("3_7a77x")]
+
+[node name="door" parent="." instance=ExtResource("4_ba6mk")]
+position = Vector2(-8, -56)
+
+[node name="demon_smart" parent="." instance=ExtResource("5_laa3l")]
+position = Vector2(-24, 8)
+dialogue_file = "res://src/ui/test.txt"
+
+[node name="inscription" parent="." instance=ExtResource("6_yks47")]
+position = Vector2(-72, -24)
+dialogue_file = "res://src/ui/test.txt"

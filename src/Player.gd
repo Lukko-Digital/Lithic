@@ -30,8 +30,9 @@ func move(dir):
 		var colliding = ray.get_collider()
 		if colliding.is_in_group("statue"):
 			if colliding.move(INPUTS[dir]):
-				position += INPUTS[dir] * Globals.TILE_SIZE
-
+				#position += INPUTS[dir] * Globals.TILE_SIZE
+				pass
+				
 			match dir:
 				"up", "down":
 					sprite.play("%s_push" % dir)
