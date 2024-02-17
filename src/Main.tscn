@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://tsnqanemh5ff"]
+[gd_scene load_steps=15 format=3 uid="uid://tsnqanemh5ff"]
 
+[ext_resource type="Shader" path="res://src/recolor.gdshader" id="1_aobh5"]
 [ext_resource type="Texture2D" uid="uid://dyv043lm2nkxy" path="res://assets/png/tilemap.png" id="1_jx0p3"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="3_6k3o2"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="4_51fbm"]
@@ -298,10 +299,20 @@ terrain_set_0/terrain_0/name = "LEVEL_BASE"
 terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_t4c2m")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4sjxg"]
+shader = ExtResource("1_aobh5")
+shader_parameter/black = null
+shader_parameter/dark = Color(0.235294, 0.235294, 0.235294, 1)
+shader_parameter/mid_dark = Color(0.392157, 0.392157, 0.392157, 1)
+shader_parameter/mid_light = Color(0.670588, 0.670588, 0.670588, 1)
+shader_parameter/light = Color(0.878431, 0.878431, 0.878431, 1)
+shader_parameter/white = Color(1, 1, 1, 1)
+
 [node name="Main" type="Node2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(24, -136)
+visible = false
+position = Vector2(-232, -24)
 rotation = 1.57079
 scale = Vector2(1.01062, 0.861103)
 color = Color(0.690196, 0, 0.376471, 0.992157)
@@ -348,3 +359,10 @@ dialogue_file = "res://src/ui/test.txt"
 [node name="human_kid" parent="." instance=ExtResource("8_b3xbs")]
 position = Vector2(-24, -8)
 dialogue_file = "res://src/ui/test.txt"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4sjxg")
+offset_left = -168.0
+offset_top = -104.0
+offset_right = 168.0
+offset_bottom = 104.0
