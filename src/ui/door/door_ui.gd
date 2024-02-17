@@ -6,9 +6,6 @@ extends Control
 @onready var big_button_sprite: AnimatedSprite2D = $BigButton/BigButtonSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-signal correct_code
-signal incorrect_code
-
 const BUTTON_MAP = {
 	"butterfly": 0,
 	"knife": 1,
@@ -33,13 +30,16 @@ func _on_big_button_pressed():
 	if is_code_correct():
 		background.play("correct")
 		big_button_sprite.play("correct")
+		animation_player.play("fade_to_black")
+		await animation_player.animation_finished
+		get_tree().change_scene_to_packed(get_parent().next_scene)
 	else:
 		background.play("incorrect")
 		big_button_sprite.play("incorrect")
-	animation_player.play("fade")
-	await animation_player.animation_finished
-	hide()
-	Globals.in_door_ui = false
+		animation_player.play("fade_to_clear")
+		await animation_player.animation_finished
+		hide()
+		Globals.in_door_ui = false
 
 
 func is_code_correct() -> bool:
