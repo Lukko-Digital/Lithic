@@ -46,10 +46,7 @@ func _on_big_button_pressed():
 		correct_sound.play()
 		background.play("correct")
 		big_button_sprite.play("correct")
-		animation_player.play("fade_to_black")
-		await animation_player.animation_finished
-		Globals.in_door_ui = false
-		get_tree().change_scene_to_packed(get_parent().next_scene)
+		get_parent().transition_scene()
 	else:
 		incorrect_sound.play()
 		background.play("incorrect")
