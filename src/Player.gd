@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var no_interact_prompt: bool
+
 var INPUTS = {"right": Vector2.RIGHT,
 			"left": Vector2.LEFT,
 			"up": Vector2.UP,
@@ -9,6 +11,11 @@ var INPUTS = {"right": Vector2.RIGHT,
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @onready var interact_prompt: AnimatedSprite2D = $CanvasLayer/InteractPrompt
 @onready var audio_player: AnimationPlayer = $AudioStreamPlayer/AudioAnimationPlayer
+
+
+func _ready():
+	$CanvasLayer.visible = !no_interact_prompt
+
 
 func move(dir):
 	if Globals.in_dialogue or Globals.in_door_ui:
