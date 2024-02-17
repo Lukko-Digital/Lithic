@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxmocqedm2fv2"]
+[gd_scene load_steps=8 format=3 uid="uid://dxmocqedm2fv2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_7e6xk"]
 [ext_resource type="PackedScene" uid="uid://curqycab2s72k" path="res://src/ui/dialogue_ui.tscn" id="1_vggkf"]
 [ext_resource type="PackedScene" uid="uid://buyq5h8l4bg1f" path="res://src/ui/door/door_ui.tscn" id="2_05elc"]
 [ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="4_l0ddj"]
+
+[sub_resource type="Animation" id="Animation_wudor"]
+resource_name = "fade_to_black"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2mewk"]
+resource_name = "fade_from_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jweh7"]
+_data = {
+"fade_from_black": SubResource("Animation_2mewk"),
+"fade_to_black": SubResource("Animation_wudor")
+}
 
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_7e6xk")
@@ -15,7 +52,19 @@ visible = false
 [node name="door_ui" parent="." instance=ExtResource("2_05elc")]
 visible = false
 
-[node name="ColorRect" parent="." instance=ExtResource("4_l0ddj")]
+[node name="ScreenColor" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 328.0
+offset_bottom = 184.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenColor"]
+libraries = {
+"": SubResource("AnimationLibrary_jweh7")
+}
+
+[node name="Shader" parent="." instance=ExtResource("4_l0ddj")]
 offset_left = -840.0
 offset_top = -520.0
 offset_right = 840.0
