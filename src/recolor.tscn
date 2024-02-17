@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cj3iolrebdmth"]
+[gd_scene load_steps=3 format=3 uid="uid://0lf7v2cwtquy"]
 
 [ext_resource type="Shader" path="res://src/recolor.gdshader" id="1_ytnpm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sjxg"]
 shader = ExtResource("1_ytnpm")
-shader_parameter/black = Color(0.258824, 0.113725, 0.2, 1)
+shader_parameter/black = Color(0.262745, 0.0509804, 0.141176, 1)
 shader_parameter/dark = Color(0.572549, 0.192157, 0.266667, 1)
 shader_parameter/mid_dark = Color(0.913725, 0.329412, 0.329412, 1)
 shader_parameter/mid_light = Color(0.886275, 0.678431, 0.47451, 1)

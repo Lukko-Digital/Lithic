@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b40x6eiyl71gu"]
+[gd_scene load_steps=10 format=3 uid="uid://b40x6eiyl71gu"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_xj8i5"]
+[ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="1_xj88q"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_4c1j8"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_7a77x"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_ba6mk"]
 [ext_resource type="PackedScene" uid="uid://bjv0gqay2h1qw" path="res://levels/level_0.5/level_0.5.tscn" id="4_wm7ol"]
 [ext_resource type="Texture2D" uid="uid://gnh2i0qb62nv" path="res://assets/png/sign_with_translation.png" id="6_p3v1c"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="6_yks47"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="8_tdwli"]
 
 [node name="level_0" type="Node2D"]
 
@@ -30,3 +32,24 @@ position = Vector2(72, -40)
 position = Vector2(-24, -56)
 texture = ExtResource("6_p3v1c")
 dialogue_file = "res://levels/level_0/dialogue_sign_level_0.txt"
+
+[node name="box" parent="." instance=ExtResource("8_tdwli")]
+position = Vector2(8, 24)
+
+[node name="box2" parent="." instance=ExtResource("8_tdwli")]
+position = Vector2(-8, -40)
+
+[node name="box3" parent="." instance=ExtResource("8_tdwli")]
+position = Vector2(-56, 24)
+
+[node name="box4" parent="." instance=ExtResource("8_tdwli")]
+position = Vector2(104, 8)
+
+[node name="box5" parent="." instance=ExtResource("8_tdwli")]
+position = Vector2(88, 8)
+
+[node name="box6" parent="." instance=ExtResource("8_tdwli")]
+position = Vector2(104, -8)
+
+[node name="ColorRect" parent="." instance=ExtResource("1_xj88q")]
+visible = false

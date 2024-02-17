@@ -1,12 +1,29 @@
 #not_in_tree
 !0
-bear: where's the sign
+bear: hey there.
+bear: you lost?
+!1
+bear: ohhh, yeah sure, i can help you with that.
+bear: just push me over to that sign and i'll give it a look.
+!2
+bear: whenever you're ready.
 
 #next_to_sign
 !0
-bear: i can't read that
+bear: ooh... this is a bit awkwared.
+bear: it's been a few centuries since i've done...
+bear: anything really.
+bear: so i don't really remember how to read these.
+!1
+bear: i'm sure someone else in here could...
+bear: but knowing him, he won't want to help you.
+!2
+bear: how about you spaek to him through me?
+bear: he'll be willing to tell me it's meaning,
+bear: and i'll relay it back to you.
+bear: our little secret. he won't know any better.
 
 #solution
 !0
 bear: he says the code is...
-bear: "wolf, human, butterfly, butterfly"
+bear: "wolf, wolf, butterfly, wolf"

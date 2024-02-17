@@ -4,8 +4,15 @@ human: ...
 
 #next_to_sign
 !0
-human: I won't read that for you
+human: don't ask me what it says
+human: i refuse to help your kind
+!1
+human: ...
+!5
+human: go away.
+!6
+human: ...
 
 #unfriendly
 !0
-human: I won't talk to you
+human: ...

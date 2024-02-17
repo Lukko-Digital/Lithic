@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://drk147jqtgb5l"]
+[gd_scene load_steps=12 format=3 uid="uid://drk147jqtgb5l"]
 
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="1_3j657"]
 [ext_resource type="Script" path="res://src/narrator_scene.gd" id="1_7fdpp"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="2_81xit"]
 [ext_resource type="PackedScene" uid="uid://b40x6eiyl71gu" path="res://levels/level_0/level_0.tscn" id="2_g8awe"]
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="3_336ap"]
+[ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="3_c4qp3"]
 [ext_resource type="PackedScene" uid="uid://dflo8inhbj6r1" path="res://src/statues/demon.tscn" id="4_hr1t5"]
 [ext_resource type="Texture2D" uid="uid://pkg4kt0jh5us" path="res://assets/png/tutorial_start.png" id="5_tfpbb"]
 [ext_resource type="Script" path="res://levels/level_0_pre/ControlsTutorial.gd" id="6_jgpdf"]
@@ -63,3 +64,7 @@ autoplay = "fade_in"
 libraries = {
 "": SubResource("AnimationLibrary_cdhog")
 }
+
+[node name="ColorRect" parent="." instance=ExtResource("3_c4qp3")]
+visible = false
+offset_right = 344.0
