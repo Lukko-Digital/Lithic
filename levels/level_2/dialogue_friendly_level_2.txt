@@ -1,0 +1,12 @@
+#not_in_tree
+!0
+bear: where's the sign
+
+#next_to_sign
+!0
+bear: i can't read that
+
+#solution
+!0
+bear: he says the code is...
+bear: "wolf, human, butterfly, butterfly"

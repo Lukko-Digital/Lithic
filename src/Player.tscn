@@ -1,10 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://d21o540g7sc1k"]
+[gd_scene load_steps=39 format=3 uid="uid://d21o540g7sc1k"]
 
 [ext_resource type="Script" path="res://src/Player.gd" id="1_cqm3l"]
 [ext_resource type="Texture2D" uid="uid://cfcvg8tectf2o" path="res://assets/png/player-sheet.png" id="2_cw1x6"]
 [ext_resource type="AudioStream" uid="uid://q75m27ysowho" path="res://assets/audio/move_statue.mp3" id="3_ccr2p"]
 [ext_resource type="Texture2D" uid="uid://dmffofumuk7mb" path="res://assets/png/tutorial_interact-sheet.png" id="3_im8uc"]
 [ext_resource type="AudioStream" uid="uid://d26omux2fp47k" path="res://assets/audio/talking_statue.mp3" id="4_r3y1o"]
+[ext_resource type="AudioStream" uid="uid://detx6vbwuw42" path="res://assets/audio/talking_player.mp3" id="6_1gnk2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dyi58"]
 atlas = ExtResource("2_cw1x6")
@@ -225,6 +226,70 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_vp2sg"]
+resource_name = "push"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_ccr2p")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3k0br"]
+resource_name = "fail_push"
+length = 0.14
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_r3y1o")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_b632k"]
+resource_name = "bump_wall"
+length = 0.14
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_1gnk2")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ys0w"]
+_data = {
+"bump_wall": SubResource("Animation_b632k"),
+"fail_push": SubResource("Animation_3k0br"),
+"push": SubResource("Animation_vp2sg")
+}
+
 [node name="Player" type="Area2D"]
 collision_mask = 6
 script = ExtResource("1_cqm3l")
@@ -249,14 +314,13 @@ collide_with_areas = true
 visible = false
 position = Vector2(160, 166)
 sprite_frames = SubResource("SpriteFrames_usrte")
-frame_progress = 0.417465
+frame_progress = 0.813085
 
-[node name="sfx" type="Node" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
-[node name="push" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("3_ccr2p")
-
-[node name="fail_push" type="AudioStreamPlayer" parent="sfx"]
-stream = ExtResource("4_r3y1o")
+[node name="AudioAnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_6ys0w")
+}
 
 [connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]
