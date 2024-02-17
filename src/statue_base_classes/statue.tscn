@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cybmii6rvx01a"]
 
 [ext_resource type="Script" path="res://src/statue_base_classes/statue.gd" id="1_gy53u"]
-[ext_resource type="Resource" path="res://src/statue_base_classes/pushable.tres" id="2_pfm1k"]
+[ext_resource type="Resource" uid="uid://g2et165suq6o" path="res://src/statue_base_classes/pushable.tres" id="2_pfm1k"]
 [ext_resource type="Texture2D" uid="uid://rrnsnlrrwenm" path="res://assets/png/statue_beam_front.png" id="3_8perm"]
 [ext_resource type="Texture2D" uid="uid://c8n5hpqsbcfpp" path="res://assets/png/statue_beam_back.png" id="4_sh5ul"]
 
@@ -45,16 +45,15 @@ collision_mask = 4
 collide_with_areas = true
 
 [node name="Glow" type="Node2D" parent="."]
-visible = false
 
 [node name="FrontGlow" type="Sprite2D" parent="Glow"]
+self_modulate = Color(1, 1, 1, 0.466667)
 z_index = 1
-position = Vector2(-8, -17)
+position = Vector2(-8, -13)
+scale = Vector2(1.00225, 0.829345)
 texture = ExtResource("3_8perm")
 centered = false
 
 [node name="BackGlow" type="Sprite2D" parent="Glow"]
 z_index = -1
-position = Vector2(-8, -17)
 texture = ExtResource("4_sh5ul")
-centered = false
