@@ -25,23 +25,28 @@ func move(dir: Vector2) -> bool:
 	return move_status
 
 
-## Glow or deglow all touching statues if in tree
+## Glow or deglow self and all touching statues if in tree
 func handle_tree_glow(prev_tree):
-	if len(find_paths_to_sign()) == 0:
+	if handle_glow():
+		for statue in get_entire_tree():
+			if not statue.is_in_group("inscription"):
+				statue.glow.show()
+	else:
 		glow.hide()
 		for statue in prev_tree:
 			statue.handle_glow()
-	else:
-		for statue in get_entire_tree():
-			statue.glow.show()
 
 
 ## Glow or deglow self if in tree
-func handle_glow():
+func handle_glow() -> bool:
+	if is_in_group("inscription"):
+		return false
 	if len(find_paths_to_sign()) == 0:
 		glow.hide()
+		return false
 	else:
 		glow.show()
+		return true
 
 
 ## Fetch all touching statues
