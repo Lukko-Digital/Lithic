@@ -1,8 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://tsnqanemh5ff"]
+[gd_scene load_steps=13 format=3 uid="uid://tsnqanemh5ff"]
 
 [ext_resource type="Texture2D" uid="uid://dyv043lm2nkxy" path="res://assets/png/tilemap.png" id="1_jx0p3"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="3_6k3o2"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="4_51fbm"]
+[ext_resource type="PackedScene" uid="uid://c3lhrfgi52fr2" path="res://src/statues/human_2.tscn" id="7_0dsjo"]
+[ext_resource type="PackedScene" uid="uid://cga87j5rlixq7" path="res://src/statues/bear.tscn" id="7_dex7j"]
+[ext_resource type="PackedScene" uid="uid://csbchrokkljl5" path="res://src/statues/human_kid.tscn" id="8_b3xbs"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="8_chvtg"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="8_uouxw"]
 
@@ -333,3 +336,15 @@ dialogue_file = "res://src/ui/test.txt"
 position = Vector2(-8, -56)
 
 [node name="ui" parent="." instance=ExtResource("8_uouxw")]
+
+[node name="bear" parent="." instance=ExtResource("7_dex7j")]
+position = Vector2(-8, 24)
+dialogue_file = "res://src/ui/test.txt"
+
+[node name="human_2" parent="." instance=ExtResource("7_0dsjo")]
+position = Vector2(-8, 8)
+dialogue_file = "res://src/ui/test.txt"
+
+[node name="human_kid" parent="." instance=ExtResource("8_b3xbs")]
+position = Vector2(-56, 8)
+dialogue_file = "res://src/ui/test.txt"
