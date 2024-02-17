@@ -7,7 +7,7 @@ var INPUTS = {"right": Vector2.RIGHT,
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var sprite: AnimatedSprite2D = $Sprite2D
-@onready var interact_prompt: CanvasLayer = $InteractPrompt
+@onready var interact_prompt: AnimatedSprite2D = $CanvasLayer/InteractPrompt
 @onready var push_sound: AudioStreamPlayer = $sfx/push
 @onready var fail_push_sound: AudioStreamPlayer = $sfx/fail_push
 
@@ -52,26 +52,30 @@ func move(dir):
 				sprite.play(dir)
 
 
-# func _ready():
-# 	position = position.snapped(Vector2.ONE * Globals.TILE_SIZE)
-# 	position += Vector2.ONE * Globals.TILE_SIZE/2
-
-
 func _process(delta):
 	handle_interact_prompt()
 
 
 func handle_interact_prompt():
-	if Globals.in_dialogue or Globals.in_door_ui:
-		interact_prompt.hide()
-		return
-	var colliding = ray.get_collider()
-	if !is_instance_valid(colliding):
-		interact_prompt.hide()
-	elif colliding.is_in_group("statue") or colliding.is_in_group("door"):
+	if facing_interactable():
 		interact_prompt.show()
+		interact_prompt.play("default")
 	else:
 		interact_prompt.hide()
+		interact_prompt.stop()
+
+
+func facing_interactable():
+	if Globals.in_dialogue or Globals.in_door_ui:
+		return false
+
+	var colliding = ray.get_collider()
+	if !is_instance_valid(colliding):
+		return false
+	elif colliding.is_in_group("statue") or colliding.is_in_group("door"):
+		return true
+	
+	return false
 
 
 func _unhandled_input(event):
