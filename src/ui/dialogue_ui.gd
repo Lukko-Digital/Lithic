@@ -18,7 +18,6 @@ func _ready():
 	Globals.start_dialogue.connect(_start_dialogue)
 	Globals.advance_dialogue.connect(next_line)
 	init_portraits()
-	print(portrait_map)
 
 
 func init_portraits():
