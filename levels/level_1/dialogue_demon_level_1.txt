@@ -10,11 +10,16 @@ demon: i won't hurt you.
 !2
 demon: do you need something?
 demon: the signage around here isn't very human friendly.
-human: ...
+player: ...
 demon: i can direct you if i could get a better look.
 !3
 demon: if you push me over to that sign i can help you out.
 
 #solution
 !0
-demon: the code is bird branch circle bird
+demon: the sign reads...
+demon: "the first human to kill a beast would learn to fly"
+demon: i hope that makes sense to you.
+player: thanks.
+!1
+demon: "the first human to kill a beast would learn to fly"
