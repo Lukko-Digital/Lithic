@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://buyq5h8l4bg1f"]
+[gd_scene load_steps=26 format=3 uid="uid://buyq5h8l4bg1f"]
 
 [ext_resource type="Script" path="res://src/ui/door/door_ui.gd" id="1_euxld"]
 [ext_resource type="Texture2D" uid="uid://dwyr7ukv20o47" path="res://assets/png/lock/lock_bg_success.png" id="2_gi6wa"]
@@ -59,7 +59,10 @@ animations = [{
 "name": &"correct",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_me4dg")
+}],
 "loop": true,
 "name": &"default",
 "speed": 5.0
@@ -72,6 +75,27 @@ animations = [{
 "name": &"incorrect",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_j3uv5"]
+resource_name = "fade"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7xc8"]
+_data = {
+"fade": SubResource("Animation_j3uv5")
+}
 
 [node name="door_ui" type="Control"]
 layout_mode = 3
@@ -209,6 +233,12 @@ texture_focused = ExtResource("7_gm487")
 [node name="BigButtonSprite" type="AnimatedSprite2D" parent="BigButton"]
 position = Vector2(0, -2)
 sprite_frames = SubResource("SpriteFrames_wmieu")
+animation = &"correct"
 centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k7xc8")
+}
 
 [connection signal="pressed" from="BigButton" to="." method="_on_big_button_pressed"]

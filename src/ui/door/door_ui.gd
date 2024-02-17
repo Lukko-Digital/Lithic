@@ -4,6 +4,7 @@ extends Control
 
 @onready var background: AnimatedSprite2D = $Background
 @onready var big_button_sprite: AnimatedSprite2D = $BigButton/BigButtonSprite
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 signal correct_code
 signal incorrect_code
@@ -17,11 +18,14 @@ const BUTTON_MAP = {
 
 func _ready():
 	Globals.enter_door_ui.connect(_enter)
-	$GridContainer/butterfly_button1.grab_focus()
 
 
 func _enter():
 	Globals.in_door_ui = true
+	modulate = Color(Color.WHITE)
+	background.play("default")
+	big_button_sprite.play("default")
+	$GridContainer/butterfly_button1.grab_focus()
 	show()
 
 
@@ -32,6 +36,10 @@ func _on_big_button_pressed():
 	else:
 		background.play("incorrect")
 		big_button_sprite.play("incorrect")
+	animation_player.play("fade")
+	await animation_player.animation_finished
+	hide()
+	Globals.in_door_ui = false
 
 
 func is_code_correct() -> bool:
