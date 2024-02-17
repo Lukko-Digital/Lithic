@@ -1,0 +1,9 @@
+#condition_unmet
+!0
+narrator: yet another mysterious sign
+narrator: again you find a tattered note below
+player: "knife, knife, knife, wolf"
+player: gotta get to the door now...
+!1
+player: "knife, knife, knife, wolf"
+player: gotta get to the door now...

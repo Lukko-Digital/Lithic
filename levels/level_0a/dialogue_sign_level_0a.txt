@@ -13,4 +13,3 @@ player: "but what use is knowing that now?"
 player: "sometimes, the only option is to start over"
 player: shit...
 narrator: you consider pressing r
-!1 narrator: you consider pressing r
