@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://curqycab2s72k"]
+[gd_scene load_steps=30 format=3 uid="uid://curqycab2s72k"]
 
 [ext_resource type="Script" path="res://src/ui/dialogue_ui.gd" id="1_bsbyu"]
 [ext_resource type="Texture2D" uid="uid://dgeniccg7und6" path="res://assets/png/textbox.png" id="2_vjyw4"]
@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://ccdt6xjgg54bm" path="res://assets/png/portrait/portrait_wolf_kid.png" id="21_s8gkg"]
 [ext_resource type="AudioStream" uid="uid://b2xemu0gljaxt" path="res://assets/audio/talking_kid.mp3" id="22_ko883"]
 [ext_resource type="AudioStream" uid="uid://d26omux2fp47k" path="res://assets/audio/talking_statue.mp3" id="23_n2v71"]
-[ext_resource type="AudioStream" uid="uid://dqbsg1gngb1w" path="res://assets/audio/button_press.mp3" id="24_jojig"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mgs60"]
 animations = [{
@@ -184,46 +183,8 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
+"start_offset": 0.0300309,
 "stream": ExtResource("22_ko883")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/0/use_blend = true
-
-[sub_resource type="Animation" id="Animation_f3hui"]
-resource_name = "player"
-length = 0.14
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("21_lnie4")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/0/use_blend = true
-
-[sub_resource type="Animation" id="Animation_iyntq"]
-resource_name = "statue"
-length = 0.14
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("23_n2v71")
 }],
 "times": PackedFloat32Array(0)
 }
@@ -241,8 +202,46 @@ tracks/0/loop_wrap = true
 tracks/0/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("24_jojig")
+"start_offset": 0.0527963,
+"stream": ExtResource("21_lnie4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_f3hui"]
+resource_name = "player"
+length = 0.14
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0547338,
+"stream": ExtResource("21_lnie4")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_iyntq"]
+resource_name = "statue"
+length = 0.14
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0203435,
+"start_offset": 0.0402027,
+"stream": ExtResource("23_n2v71")
 }],
 "times": PackedFloat32Array(0)
 }
