@@ -46,7 +46,7 @@ func is_code_correct() -> bool:
 	var buttons = column_groups.map(
 		func(group): return group.get_pressed_button()
 	)
-	if $_NULL in buttons:
+	if false in buttons.map(func(button): return is_instance_valid(button)):
 		return false
 	var code = buttons.map(
 		func(button): return BUTTON_MAP[button.name.get_slice("_", 0)]
