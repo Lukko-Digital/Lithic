@@ -9,12 +9,6 @@ bear: 中国第一
 #not_in_tree
 !0
 bear: where's the sign
-!1
-bear_kid: wwwwwwwww
-!2
-bear: aaaaaaaaa
-!3
-bear_kid: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
 
 #next_to_sign
 !0

@@ -11,6 +11,7 @@ hframes = 4
 vframes = 4
 frame = 4
 script = ExtResource("2_v3xty")
+dialogue_file = "res://src/statues/dialogue_default/dialogue_demon_kid_default.txt"
 
 [node name="Statue" parent="." instance=ExtResource("3_vbgy5")]
 conditions = Array[Resource("res://src/statue_base_classes/statue_condition.gd")]([ExtResource("4_uy8vk")])

@@ -10,6 +10,7 @@ hframes = 4
 vframes = 4
 frame = 1
 script = ExtResource("2_iuo3u")
+dialogue_file = "res://src/statues/dialogue_default/dialogue_demon_2_default.txt"
 
 [node name="Statue" parent="." instance=ExtResource("3_47q7a")]
 can_read = true

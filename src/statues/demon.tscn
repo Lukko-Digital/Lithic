@@ -9,6 +9,7 @@ texture = ExtResource("1_6vw7c")
 hframes = 4
 vframes = 4
 script = ExtResource("2_7puru")
+dialogue_file = "res://src/statues/dialogue_default/dialogue_demon_default.txt"
 
 [node name="Statue" parent="." instance=ExtResource("3_le7on")]
 can_read = true

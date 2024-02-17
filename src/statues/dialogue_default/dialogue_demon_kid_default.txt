@@ -1,0 +1,33 @@
+#condition_unmet
+!0
+demon_kid: wheres my dad
+
+#not_in_tree
+!0
+demon_kid: im demon_kid!!
+!1
+demon_kid: wwwwwwwww
+!2
+demon_kid: aaaaaaaaa
+!3
+demon_kid: qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
+
+#next_to_sign
+!0
+demon_kid: i can't read that
+
+#neighbor_language_barrier
+!0
+demon_kid: i don't understand them
+
+#neighbor_condition_unmet
+!0
+demon_kid: they won't talk to me
+
+#other_tree_condition_unmet
+!0
+demon_kid: they don't know the answer
+
+#solution
+!0
+demon_kid: the code is bird branch circle bird

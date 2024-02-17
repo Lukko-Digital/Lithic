@@ -137,6 +137,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"narrator",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("19_npujq")
 }],
 "loop": true,
@@ -194,7 +202,7 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -90.0
+offset_left = -81.0
 offset_top = -14.5
 offset_right = 133.0
 offset_bottom = 15.5
@@ -209,6 +217,6 @@ autowrap_mode = 2
 text_overrun_behavior = 1
 
 [node name="Portraits" type="AnimatedSprite2D" parent="TextBox"]
-position = Vector2(31, 24)
+position = Vector2(35, 24)
 sprite_frames = SubResource("SpriteFrames_mgs60")
-animation = &"demon"
+animation = &"narrator"

@@ -45,6 +45,7 @@ collision_mask = 4
 collide_with_areas = true
 
 [node name="Glow" type="Node2D" parent="."]
+visible = false
 
 [node name="FrontGlow" type="Sprite2D" parent="Glow"]
 self_modulate = Color(1, 1, 1, 0.466667)
