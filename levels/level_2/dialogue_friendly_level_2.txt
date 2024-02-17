@@ -8,4 +8,5 @@ bear: i can't read that
 
 #solution
 !0
-bear: the code is butterfly, butterfly, butterfly, butterfly
+bear: he says the code is...
+bear: "wolf, human, butterfly, butterfly"
