@@ -16,6 +16,8 @@ class_name Statue
 @onready var ray: RayCast2D = $RayCast2D
 @onready var glow: Node2D = $Glow
 
+## Move according to movement resource
+## Update glow of self and neighbors
 func move(dir: Vector2) -> bool:
 	var prev_tree = get_entire_tree()
 	var move_status = movement.move(self, dir)
@@ -23,8 +25,9 @@ func move(dir: Vector2) -> bool:
 	return move_status
 
 
+## Glow or deglow all touching statues if in tree
 func handle_tree_glow(prev_tree):
-	if len(graph_search()) == 0:
+	if len(find_paths_to_sign()) == 0:
 		glow.hide()
 		for statue in prev_tree:
 			statue.handle_glow()
@@ -33,13 +36,15 @@ func handle_tree_glow(prev_tree):
 			statue.glow.show()
 
 
+## Glow or deglow self if in tree
 func handle_glow():
-	if len(graph_search()) == 0:
+	if len(find_paths_to_sign()) == 0:
 		glow.hide()
 	else:
 		glow.show()
 
 
+## Fetch all touching statues
 func get_entire_tree():
 	var q = [self] #Initialize graph search queue
 	var seen = [self]
@@ -53,6 +58,7 @@ func get_entire_tree():
 	return seen
 
 
+## Fetch adjacent statues
 func get_neighbors() -> Array[Statue]:
 	var neighbors: Array[Statue] = []
 	for dir in $Adjacents.get_children():
@@ -64,6 +70,7 @@ func get_neighbors() -> Array[Statue]:
 	return neighbors
 
 
+## Check speaking conditions determined by resource
 func check_conditions() -> bool:
 	for condition in conditions:
 		if !condition.check_condition(self):
@@ -72,6 +79,7 @@ func check_conditions() -> bool:
 	return true
 
 
+## Called when player interacts with statue
 func interact():
 	if !check_conditions():
 		say(Globals.DialogueState.CONDITIONS_UNMET)
@@ -83,7 +91,9 @@ func interact():
 	check_tree()
 
 
-func graph_search() -> Array:
+## Find paths through statues to the sign
+## Returns all statues in the direct path to the sign
+func find_paths_to_sign() -> Array:
 	var q = [[self]] #Initialize graph search queue
 	var paths = []
 
@@ -99,8 +109,9 @@ func graph_search() -> Array:
 	return paths
 
 
+## Check tree and say appropriate dialogue
 func check_tree() -> bool:
-	var paths = graph_search()
+	var paths = find_paths_to_sign()
 
 	if len(paths) == 0: #Not in tree
 		say(Globals.DialogueState.NOT_IN_TREE)
@@ -143,5 +154,6 @@ func check_tree() -> bool:
 	return false
 
 
+## Show dialogue
 func say(state: int):
 	get_parent().say(state)
