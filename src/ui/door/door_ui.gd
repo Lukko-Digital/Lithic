@@ -5,6 +5,9 @@ extends Control
 @onready var background: AnimatedSprite2D = $Background
 @onready var big_button_sprite: AnimatedSprite2D = $BigButton/BigButtonSprite
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var vert_selector: Sprite2D = $VerticalSelector
+
+var SELECTOR_DEFUALT_POS
 
 const BUTTON_MAP = {
 	"butterfly": 0,
@@ -15,6 +18,8 @@ const BUTTON_MAP = {
 
 func _ready():
 	Globals.enter_door_ui.connect(_enter)
+	get_viewport().connect("gui_focus_changed", _on_focus_changed)
+	SELECTOR_DEFUALT_POS = vert_selector.position
 
 
 func _enter():
@@ -54,3 +59,11 @@ func is_code_correct() -> bool:
 	if code == get_parent().door_code:
 		return true
 	return false
+
+
+func _on_focus_changed(button: Control):
+	if button.name != "BigButton":
+		vert_selector.show()
+		vert_selector.position.x = SELECTOR_DEFUALT_POS.x + button.position.x
+	else:
+		vert_selector.hide()
