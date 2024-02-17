@@ -33,12 +33,18 @@ func move(dir):
 		match dir:
 			"up", "down":
 				sprite.play("%s_push" % dir)
+				await sprite.animation_finished
+				sprite.play(dir)
 			"left":
 				sprite.flip_h = true
 				sprite.play("right_push")
+				await sprite.animation_finished
+				sprite.play("right")
 			"right":
 				sprite.flip_h = false
 				sprite.play("%s_push" % dir)
+				await sprite.animation_finished
+				sprite.play(dir)
 
 
 # func _ready():
