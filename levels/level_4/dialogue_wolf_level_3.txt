@@ -30,6 +30,15 @@ wolf: really got no clue here...
 !2
 wolf: no idea, man.
 
+#neighbor_language_barrier
+!0
+wolf: yikes, they're only speaking the old language
+wolf: not a clue what they're saying
+
+#other_tree_condition_unmet
+!0
+wolf: drat seems like they can't read it either
+
 #solution
 !0
 wolf: so they're sayin...
