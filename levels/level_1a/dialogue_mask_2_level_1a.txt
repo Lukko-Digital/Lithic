@@ -1,0 +1,25 @@
+#not_in_tree
+!0
+mask_2: what ho! greetings traveller.
+player: um, hey there.
+
+!1
+mask_2: you need help with that sign dontcha?
+
+!2
+mask_2: bring me on over and i'll read that for you.
+
+!3
+mask_2: onward! to the sign!
+narrator: you wonder how these statues are able to talk
+
+#solution
+!0
+mask_2: this sign says...
+mask_2: *ahem*
+mask_2: "the three dogs followed behind their caretaker" 
+mask_2: does that help thee?
+player: yes... thank you.
+!1
+mask_2: "the three dogs followed behind their caretaker"
+
