@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0xylbn1trlmv"]
+[gd_scene load_steps=5 format=3 uid="uid://b0xylbn1trlmv"]
 
+[ext_resource type="Script" path="res://levels/credits/credits.gd" id="1_2lsjo"]
 [ext_resource type="Texture2D" uid="uid://d4ktyq5lmpxk1" path="res://assets/png/credits.png" id="1_m6uno"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="2_s8q2x"]
+[ext_resource type="PackedScene" uid="uid://cbjgke1wrf4ex" path="res://levels/title/title.tscn" id="4_h35w6"]
 
 [node name="credits" type="Control"]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2lsjo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -18,4 +21,5 @@ offset_bottom = 40.0
 texture = ExtResource("1_m6uno")
 
 [node name="ui" parent="." instance=ExtResource("2_s8q2x")]
+next_scene = ExtResource("4_h35w6")
 is_end_scene = true
