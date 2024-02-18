@@ -84,7 +84,11 @@ func facing_interactable():
 	var colliding = ray.get_collider()
 	if !is_instance_valid(colliding):
 		return false
-	elif (colliding.is_in_group("statue") and !colliding.is_in_group("box")) or colliding.is_in_group("door"):
+	elif (
+		(colliding.is_in_group("statue") and !colliding.is_in_group("box"))
+		or colliding.is_in_group("door")
+		or colliding.is_in_group("unlocked_door")
+	):
 		return true
 	
 	return false
@@ -108,6 +112,8 @@ func handle_interact():
 	var colliding = ray.get_collider()
 	if colliding.is_in_group("statue") and !colliding.is_in_group("box"):
 		colliding.interact()
+	elif colliding.is_in_group("unlocked_door"):
+		colliding.get_parent().say(Globals.DialogueState.SOLUTION)
 	elif colliding.is_in_group("door") and not Globals.in_door_ui:
 		Globals.enter_door_ui.emit()
 

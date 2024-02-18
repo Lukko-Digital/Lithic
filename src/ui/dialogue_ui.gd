@@ -59,12 +59,16 @@ func show_line():
 	var line = dialogue_lines[current_line].get_slice(": ", 1)
 	portrait.play(portrait_name)
 	
-	if line.left(1) == "~":
-		label.add_theme_font_override("font", old_font)
-		label.text = line.substr(1)
-	else:
-		label.add_theme_font_override("font", default_font)
-		label.text = line
+	match line.left(1):
+		")":
+			get_parent().transition_scene(false, true)
+			label.text = ""
+		"~":
+			label.add_theme_font_override("font", old_font)
+			label.text = line.substr(1)
+		_:
+			label.add_theme_font_override("font", default_font)
+			label.text = line
 	
 	if portrait_name == "narrator":
 		label.size.x = Label_Width.NARRATOR

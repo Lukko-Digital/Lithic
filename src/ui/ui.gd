@@ -19,9 +19,12 @@ func handle_music():
 	if ending_music:
 		Music.ending_music.emit()
 
-func transition_scene(hard_cut=false):
-	if not hard_cut:
+func transition_scene(hard_cut=false, ending=false):
+	if not hard_cut and not ending:
 		transition_player.play("fade_to_black")
+		await transition_player.animation_finished
+	if ending:
+		transition_player.play("ending_fade_to_black")
 		await transition_player.animation_finished
 	Globals.in_door_ui = false
 	Globals.in_dialogue = false
