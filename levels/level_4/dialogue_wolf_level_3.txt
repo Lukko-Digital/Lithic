@@ -1,0 +1,41 @@
+#not_in_tree
+!0
+wolf: yo!
+wolf: howzit.
+
+!1
+wolf: ohhh... that's what you want?
+wolf: wish i could, really do.
+wolf: fact is i can't read that for ya.
+wolf: can't even speak the language...
+wolf: i'm sure one of my buddies could though!
+
+!2
+wolf: they might not be willing to help you out,
+wolf: but if they tell me the answer, i'll pass it on.
+player: thanks.
+wolf: no sweat.
+
+!3
+wolf: remember, even if they won't tell you the answer,
+wolf: they'd tell me in a heartbeat.
+
+#next_to_sign
+!0
+wolf: told ya, can't read none of this.
+wolf: english speaker till death.
+!1
+wolf: maybe grab one of my buddies?
+wolf: really got no clue here...
+!2
+wolf: no idea, man.
+
+#solution
+!0
+wolf: so they're sayin...
+wolf: "many wild dogs to chase only one boy"
+wolf: that's a pretty good one.
+player: thanks.
+
+!1
+wolf: "many wild dogs to chase only one boy"

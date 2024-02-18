@@ -1,0 +1,11 @@
+#no_english
+!0
+human_2: 不会说英文不会说英文!!!
+narrator: how rude
+player: sorry!
+human_2: 不会.
+player: ...
+narrator: he eyes you warily
+
+!1
+human_2: 不会.

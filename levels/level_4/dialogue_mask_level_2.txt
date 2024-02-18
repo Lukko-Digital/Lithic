@@ -1,0 +1,23 @@
+#not_in_tree
+!0
+mask: hahahahaha.
+mask: are you coming to me for help?
+mask: disgusting.
+!1
+mask: i can't read the sign anyway, i never learned
+mask: although i do speak the language
+
+#next_to_sign
+!0
+mask: don't ask me what it says.
+mask: i don't aid trespassers.
+!1
+mask: disgusting human.
+!5
+mask: leave me be.
+!6
+mask: ...
+
+#unfriendly
+!0
+mask: ...
