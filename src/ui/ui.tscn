@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dxmocqedm2fv2"]
+[gd_scene load_steps=10 format=3 uid="uid://dxmocqedm2fv2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_7e6xk"]
 [ext_resource type="PackedScene" uid="uid://curqycab2s72k" path="res://src/ui/dialogue_ui.tscn" id="1_vggkf"]
 [ext_resource type="PackedScene" uid="uid://buyq5h8l4bg1f" path="res://src/ui/door/door_ui.tscn" id="2_05elc"]
 [ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="4_l0ddj"]
+[ext_resource type="Shader" path="res://src/recolor.gdshader" id="5_7rhje"]
 
 [sub_resource type="Animation" id="Animation_dm50b"]
 resource_name = "fade_from_black"
@@ -43,6 +44,15 @@ _data = {
 "fade_to_black": SubResource("Animation_ols57")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q2c20"]
+shader = ExtResource("5_7rhje")
+shader_parameter/black = null
+shader_parameter/dark = null
+shader_parameter/mid_dark = null
+shader_parameter/mid_light = null
+shader_parameter/light = null
+shader_parameter/white = null
+
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_7e6xk")
 door_code = Array[int]([0, 0, 0, 0])
@@ -70,3 +80,11 @@ offset_left = -840.0
 offset_top = -520.0
 offset_right = 840.0
 offset_bottom = 520.0
+
+[node name="EndSceneShader" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_q2c20")
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 328.0
+offset_bottom = 184.0

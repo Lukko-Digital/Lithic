@@ -341,6 +341,7 @@ y_sort_enabled = true
 [node name="ui" parent="." instance=ExtResource("1_ww24f")]
 layer = 2
 next_scene = ExtResource("2_1d4rh")
+is_end_scene = true
 
 [node name="EndBackground" type="Sprite2D" parent="."]
 z_index = -1
