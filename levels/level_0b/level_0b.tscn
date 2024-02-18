@@ -45,12 +45,6 @@ position = Vector2(8, 24)
 [node name="box4" parent="." instance=ExtResource("7_2a5pj")]
 position = Vector2(-24, 40)
 
-[node name="box5" parent="." instance=ExtResource("7_2a5pj")]
-position = Vector2(56, 8)
-
-[node name="box6" parent="." instance=ExtResource("7_2a5pj")]
-position = Vector2(8, -8)
-
 [node name="box7" parent="." instance=ExtResource("7_2a5pj")]
 position = Vector2(-8, -8)
 
@@ -62,12 +56,6 @@ position = Vector2(56, -8)
 
 [node name="box10" parent="." instance=ExtResource("7_2a5pj")]
 position = Vector2(40, -24)
-
-[node name="box11" parent="." instance=ExtResource("7_2a5pj")]
-position = Vector2(-40, 8)
-
-[node name="box12" parent="." instance=ExtResource("7_2a5pj")]
-position = Vector2(-40, 24)
 
 [node name="box13" parent="." instance=ExtResource("7_2a5pj")]
 position = Vector2(-24, -24)

@@ -159,7 +159,7 @@ func check_tree() -> bool:
 			return true
 	
 	var first_path = paths[0] #Check if neighbor doesn't speak the same language
-	if !((self.speaks_english and first_path[0].speaks_english) or (self.speaks_old and first_path[0].speaks_old)):
+	if !((self.speaks_english and first_path[1].speaks_english) or (self.speaks_old and first_path[1].speaks_old)):
 		say(Globals.DialogueState.NEIGHBOR_LANGUAGE_BARRIER)
 		return false
 	

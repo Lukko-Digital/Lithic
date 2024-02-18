@@ -28,8 +28,8 @@ bear: i'm not the one who can read it.
 #solution
 !0
 bear: they tell me the glyphs read...
-bear: "two humans face one another wielding knives"
+bear: "foolish humans and the blades that come between them."
 bear: i was never much for poetry.
 player: thank you.
 !1
-bear: "two humans face one another wielding knives"
+bear: "foolish humans and the blades that come between them."
