@@ -20,6 +20,7 @@ height = 219
 [node name="level_5" type="Node2D"]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 position = Vector2(8, -8)
 energy = 0.64
 blend_mode = 1
