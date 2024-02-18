@@ -14,7 +14,7 @@ demon: life is so much better whole.
 #solution
 !0
 demon: ahh... it says...
-demon: "high, low, high, and the upper of the two between."
+demon: "two high, one low, and at last the upper of the two between."
 player: thank you.
 demon: what a rubbish poem.
 demon: you wanna hear me do better?
