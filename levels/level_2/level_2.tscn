@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c486hruor0evv"]
+[gd_scene load_steps=12 format=3 uid="uid://c486hruor0evv"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_ev813"]
 [ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="1_px537"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_2n3l8"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_6vk8j"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_hnj5g"]
+[ext_resource type="PackedScene" uid="uid://nvbri1cw0yvx" path="res://levels/level_3/level_3.tscn" id="5_7o3gv"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="5_b6uj1"]
 [ext_resource type="PackedScene" uid="uid://cwsx4e3n3o0y0" path="res://src/statue_base_classes/interactable.tscn" id="6_vjcp5"]
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="7_enp7g"]
@@ -32,6 +33,7 @@ position = Vector2(-120, 8)
 
 [node name="ui" parent="." instance=ExtResource("3_6vk8j")]
 door_code = Array[int]([2, 1, 1, 2])
+next_scene = ExtResource("5_7o3gv")
 
 [node name="door" parent="." instance=ExtResource("4_hnj5g")]
 position = Vector2(56, -40)
