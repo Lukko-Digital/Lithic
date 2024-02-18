@@ -2,6 +2,9 @@ extends Control
 
 @export_file var dialogue_file
 
+@onready var default_font: FontFile = preload("res://assets/fonts/Early GameBoy.ttf")
+@onready var old_font: FontFile = preload("res://assets/fonts/Early GameBoy.ttf")
+
 @onready var label: Label = $TextBox/Label
 @onready var text_timer: Timer = $TextTimer
 @onready var portrait: AnimatedSprite2D = $TextBox/Portraits
@@ -55,7 +58,13 @@ func show_line():
 	var portrait_name = dialogue_lines[current_line].get_slice(": ", 0)
 	var line = dialogue_lines[current_line].get_slice(": ", 1)
 	portrait.play(portrait_name)
-	label.text = line
+	
+	if line.left(1) == "~":
+		label.add_theme_font_override("font", old_font)
+		label.text = line.substr(1)
+	else:
+		label.add_theme_font_override("font", default_font)
+		label.text = line
 	
 	if portrait_name == "narrator":
 		label.size.x = Label_Width.NARRATOR
