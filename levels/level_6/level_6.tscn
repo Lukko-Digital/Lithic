@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="8_qewhf"]
 [ext_resource type="Resource" uid="uid://c5hmivsfaucxy" path="res://src/conditions/broken.tres" id="9_ae8ak"]
 [ext_resource type="Resource" uid="uid://bfj4wuvb6egd2" path="res://src/conditions/broken_movement.tres" id="10_q5bit"]
-[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="13_ggamh"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="13_ggamh"]
 
 [sub_resource type="Gradient" id="Gradient_wux2r"]
 

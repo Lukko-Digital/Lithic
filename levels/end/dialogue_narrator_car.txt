@@ -7,7 +7,3 @@ player: ...
 narrator: you consider getting in your car
 narrator: and then reconsider.
 narrator: it's nice to be outside.
-
-!1
-player: okay!
-player: time to go.

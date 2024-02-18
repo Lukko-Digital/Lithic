@@ -6,7 +6,7 @@ demon: as you can tell.
 player: of course.
 
 !1
-demon: i can help you read those glyphs if that's what you're wondering.
+demon: sure, i can help you read those glyphs.
 
 !2
 demon: life is so much better whole.

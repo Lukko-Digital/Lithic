@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="7_hr5n2"]
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="8_ucxmj"]
 [ext_resource type="Resource" uid="uid://b7ub0hy007eni" path="res://src/conditions/kid.tres" id="9_4gv55"]
-[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="11_3j67p"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="11_3j67p"]
 
 [sub_resource type="Gradient" id="Gradient_wux2r"]
 

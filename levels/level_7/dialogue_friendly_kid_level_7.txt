@@ -6,9 +6,12 @@ bear_kid: ...need mom...
 !0
 bear_kid: do you need help?
 bear_kid: nobody in my family can read...
-bear_kid: we never learned the language...
-bear_kid: well, my brother can speak it.
-bear_kid: he's trying to learn!!
+bear_kid: but I can speak it!
+bear_kid: i can speak great!!
+
+!1
+bear_kid: if you can find someone to read the sign
+bear_kid: i can translate!
 
 #next_to_sign
 !0
@@ -17,16 +20,21 @@ bear_kid: i don't know i don't know!
 player: don't be upset. it's okay.
 narrative: he calms down
 !1
-bear_kid: ...i don't know this language...
-bear_kid: at least my brother can speak it.
-bear_kid: he's pretty shy... maybe i can tell you for him.
+bear_kid: ...i can't read this...
+bear_kid: but I can speak it!
+bear_kid: if anyone read it to me,
+bear_kid: i could translate!!
+
+#other_tree_condition_unmet
+!0
+bear_kid: my mom doesn't know that language...
 
 #solution
 !0
-bear_kid: they think it says...
+bear_kid: i think they said...
 bear_kid: "a man who lampposts two murders...
 brea_kid: is considered a beast"
-bear_kid: they're not sure that's completely right...
+bear_kid: i'm not sure i completely got it...
 player: it's okay. thank you.
 !1
 bear_kid: "a man who lampposts two murders...
