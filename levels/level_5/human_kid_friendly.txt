@@ -1,0 +1,36 @@
+#condition_unmet
+!0
+human_kid: mom?
+human_kid: you're not my mom.
+human_kid: where did she go...
+
+!1
+human_kid: ...where's my mom...
+
+#not_in_tree
+!0
+human_kid: hi...
+player: hey there.
+human_kid: you need help... i'll help you.
+
+!1
+human_kid: i can go read that for you...
+
+#next_to_sign
+!0
+human_kid: i can't read that
+
+#neighbor_condition_unmet
+!0
+human_kid: she can't read... let me try!
+
+#solution
+!0
+human_kid: it says "it killed two of its own kind."
+human_kid: "cruelty is in its nature."
+player: thank you so much.
+narrator: he nods at you.
+
+!1
+human_kid: "it killed two of its own kind."
+human_kid: "cruelty is in its nature."

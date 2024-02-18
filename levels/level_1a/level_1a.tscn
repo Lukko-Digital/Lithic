@@ -36,9 +36,6 @@ dialogue_file = "res://levels/level_1a/dialogue_sign_level_1a.txt"
 [node name="door" parent="." instance=ExtResource("8_xuy6q")]
 position = Vector2(56, -72)
 
-[node name="box" parent="." instance=ExtResource("6_524jp")]
-position = Vector2(40, 24)
-
 [node name="box2" parent="." instance=ExtResource("6_524jp")]
 position = Vector2(24, 40)
 
@@ -51,11 +48,8 @@ position = Vector2(-56, 40)
 [node name="box5" parent="." instance=ExtResource("6_524jp")]
 position = Vector2(-8, 40)
 
-[node name="box6" parent="." instance=ExtResource("6_524jp")]
-position = Vector2(-8, 24)
-
 [node name="box7" parent="." instance=ExtResource("6_524jp")]
-position = Vector2(-40, 56)
+position = Vector2(-40, 24)
 
 [node name="box8" parent="." instance=ExtResource("6_524jp")]
 position = Vector2(56, -40)
@@ -63,11 +57,8 @@ position = Vector2(56, -40)
 [node name="box9" parent="." instance=ExtResource("6_524jp")]
 position = Vector2(72, -40)
 
-[node name="box10" parent="." instance=ExtResource("6_524jp")]
-position = Vector2(72, 40)
-
 [node name="box11" parent="." instance=ExtResource("6_524jp")]
-position = Vector2(56, -8)
+position = Vector2(72, -8)
 
 [node name="box12" parent="." instance=ExtResource("6_524jp")]
 position = Vector2(40, -24)
