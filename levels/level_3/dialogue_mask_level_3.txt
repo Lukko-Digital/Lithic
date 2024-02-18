@@ -1,0 +1,37 @@
+#not_in_tree
+!0
+mask: welcome, traveller
+player: hi...
+
+!1
+mask: oh them?
+mask: yes they only speak the olden language...
+mask: but they are quite friendly to humans.
+
+!2
+mask: i can see you'd like to leave this place
+mask: if you bring me to the sign, i might be able to help
+
+!3
+mask: if you bring me to the sign, i might be able to help
+
+#next_to_sign
+!0
+mask: i must appologize.
+mask: i am unable to help you read this...
+mask: my eyesight is poorer than i remember.
+
+!1
+mask: i have an idea
+mask: if this were spoken to me,
+mask: i might be able to translate it into human tongue.
+
+#solution
+!0
+mask: they tell me it reads...
+mask: "the butterflies and hounds paraded one after another"
+mask: ah... one from my childhood. off you go.
+player: thank you very much.
+
+!1
+mask: "the butterflies and hounds paraded one after another"
