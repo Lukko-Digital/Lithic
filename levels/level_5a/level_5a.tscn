@@ -81,9 +81,6 @@ is_parent = true
 [node name="box" parent="." instance=ExtResource("11_3j67p")]
 position = Vector2(-88, 40)
 
-[node name="box2" parent="." instance=ExtResource("11_3j67p")]
-position = Vector2(-56, -24)
-
 [node name="box3" parent="." instance=ExtResource("11_3j67p")]
 position = Vector2(40, 8)
 
