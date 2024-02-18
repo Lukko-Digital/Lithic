@@ -1,15 +1,26 @@
 #not_in_tree
 !0
-demon: ...new level!.
-demon: you reek.
+demon: you want me to read those glyphs?
+demon: i wish i could help.
+demon: my eyesight has gotten too poor...
+
 !1
-demon: ...?
-demon: i will not help you.
+demon: if you could bring my son over,
+demon: he could read it out to me...?
 
 #next_to_sign
 !0
-demon: ...
+demon: only my son has the vision to read this.
+demon: however, he does not know the common language.
+demon: i can translate it for him.
 
-#unfriendly
+#solution
 !0
-demon: ...
+demon: ah, a joke.
+demon: "two butterflies face off in battle,"
+demon: "knives between them."
+player: thanks.
+
+!1
+demon: "two butterflies face off in battle,"
+demon: "knives between them."

@@ -1,37 +1,8 @@
 #condition_unmet
 !0
-demon_kid: new level!?
-demon_kid: you're not my mom.
-demon_kid: where did she go...
+demon_kid: ~i wish i could help you
 
-!1
-demon_kid: ...where's my mom...
+#no_english
 
-#not_in_tree
 !0
-demon_kid: hi...
-player: hey there.
-demon_kid: you need help... i'll help you.
-
-!1
-demon_kid: i can go read that for you...
-
-#next_to_sign
-!0
-demon_kid: i can't read that
-
-#other_tree_condition_unmet
-!0
-demon_kid: she can't read... let me try!
-
-
-#solution
-!0
-demon_kid: it says "it killed two of its own kind."
-demon_kid: "cruelty is in its nature."
-player: thank you so much.
-narrator: he nods at you.
-
-!1
-demon_kid: "it killed two of its own kind."
-demon_kid: "cruelty is in its nature."
+demon_kid: ~i dont know
