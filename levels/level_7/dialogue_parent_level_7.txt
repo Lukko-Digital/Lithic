@@ -1,0 +1,11 @@
+#not_in_tree
+!0
+wolf: dont like you
+
+#next_to_sign
+!0
+wolf: dont like you
+
+#unfriendly
+!0
+wolf: dont like you

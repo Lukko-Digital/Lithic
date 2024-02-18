@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://co0iteg12sj1g"]
+[gd_scene load_steps=17 format=3 uid="uid://co0iteg12sj1g"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_ed5ql"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_5qr50"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_q4nwc"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_iehui"]
+[ext_resource type="PackedScene" uid="uid://cq3trq4yvjk4d" path="res://levels/level_7/level_7.tscn" id="4_j6rmi"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="5_ce6up"]
 [ext_resource type="Texture2D" uid="uid://c38qvl8wylomk" path="res://assets/png/statues_all_broken.png" id="6_3ht7e"]
 [ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="7_0ki8l"]
@@ -41,6 +42,7 @@ position = Vector2(40, 40)
 
 [node name="ui" parent="." instance=ExtResource("3_q4nwc")]
 door_code = Array[int]([2, 1, 2, 2])
+next_scene = ExtResource("4_j6rmi")
 
 [node name="door" parent="." instance=ExtResource("4_iehui")]
 position = Vector2(40, 72)

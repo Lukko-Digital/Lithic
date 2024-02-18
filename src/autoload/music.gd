@@ -13,7 +13,3 @@ func _on_start_music():
 func _on_ending_music():
 	main_track.stop()
 	ending_track.play()
-
-
-func _on_ending_track_finished():
-	pass

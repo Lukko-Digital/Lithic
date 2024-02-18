@@ -307,7 +307,7 @@ text_overrun_behavior = 1
 [node name="Portraits" type="AnimatedSprite2D" parent="TextBox"]
 position = Vector2(35, 24)
 sprite_frames = SubResource("SpriteFrames_mgs60")
-animation = &"narrator"
+animation = &"wolf_kid"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

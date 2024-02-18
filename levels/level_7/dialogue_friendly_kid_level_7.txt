@@ -1,0 +1,15 @@
+#condition_unmet
+!0
+bear_kid: mom
+
+#not_in_tree
+!0
+bear_kid: mom
+
+#next_to_sign
+!0
+bear_kid: only my brother can read
+
+#solution
+!0
+bear_kid: it says "0 0 0 0"
