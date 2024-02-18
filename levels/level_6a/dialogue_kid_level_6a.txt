@@ -1,0 +1,15 @@
+#condition_unmet
+!0
+mask_2_kid: my mom is broken bears :(
+
+#not_in_tree
+!0
+mask_2_kid: thank you for fixing mom
+
+#next_to_sign
+!0
+mask_2_kid: sorry, i cannor read
+
+#solution
+!0
+mask_2_kid: it says "0 0 0 0"
