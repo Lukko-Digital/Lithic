@@ -1,14 +1,17 @@
 #condition_unmet
 !0
 narrator: a sign with strange glyphs is sealed against the wall
+narrator: but that's not all...
+
+!1
 narrator: beneath, a small sheet of paper has been shoved between the bricks
 player: ...
 narrator: should you look?
-!1
+!2
 narrator: you pick up the flimsy notes
 narrator: it is barely legible
 player: "butterfly, human, wolf, knife..."
 player: ...
 player: what?
-!2
+!3
 player: "butterfly, human, wolf, knife..."

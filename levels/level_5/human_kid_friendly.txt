@@ -5,7 +5,8 @@ human_kid: you're not my mom.
 human_kid: where did she go...
 
 !1
-human_kid: ...where's my mom...
+human_kid: ...need mom...
+human_kid: ...too far away...
 
 #not_in_tree
 !0
@@ -28,7 +29,7 @@ human_kid: she can't read... let me try!
 #solution
 !0
 human_kid: it says "it killed two of its own kind."
-human_kid: "cruelty is in its nature."
+human_kid: "humans are cruel."
 player: thank you so much.
 narrator: he nods at you.
 

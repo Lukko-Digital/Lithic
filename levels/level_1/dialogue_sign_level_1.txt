@@ -1,5 +1,8 @@
 #condition_unmet
 !0
 narrator: another sign covered in strange glyphs
+!1
 narrator: remains of a note are scattered on the ground
 narrator: you should probably look for help...
+!2
+narrator: you'll probably need help reading this...

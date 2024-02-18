@@ -1,6 +1,8 @@
 #condition_unmet
 !0
 narrator: a note is crammed between the bricks
+
+!1
 player: "if you don't know the code"
 player: "why are you even here?" 
 player: "sometimes, the only option is to start over"

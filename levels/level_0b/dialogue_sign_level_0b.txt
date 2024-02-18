@@ -1,17 +1,19 @@
 #condition_unmet
 !0
 narrator: another plaque covered in illegible glyphs
+!1
 narrator: a tattered note is crammed into the wall below
+!2
 player: "knife, knife, knife, wolf"
 player: efficient
-!1
+!3
 player: "knife, knife, knife, wolf"
-!2
+!4
 narrator: have you been reading it wrong this whole time?
 player: "knife, knife, knife, butterfly"...?
 narrator: nope, it's definitely wolf.
 player: it's definitely wolf.
 player: "knife, knife, knife, wolf"
 narrator: you realize you should probably get to it
-!3
+!5
 player: "knife, knife, knife, wolf"

@@ -1,15 +1,17 @@
 #condition_unmet
 !0
-narrator: another sign covered in strange glyphs
+narrator: a sign covered in strange glyphs
+!1
 narrator: another note is crammed below
+
+!2
+narrator: you decide to read it
 player: "the code is all butterflies"
 player: "but what use is knowing that now?"
 player: "sometimes, the only option is to start over"
 player: shit...
 narrator: you consider pressing r
-!1
+!3
 player: "the code is all butterflies"
 player: "but what use is knowing that now?"
-player: "sometimes, the only option is to start over"
-player: shit...
 narrator: you consider pressing r

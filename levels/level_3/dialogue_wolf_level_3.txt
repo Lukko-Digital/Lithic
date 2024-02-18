@@ -2,7 +2,7 @@
 !0
 wolf: ~spdiubhbi
 player: i umm...
-narrator: you wish you had studied harder in high school
+narrator: you wish you had studied harder in school.
 wolf: ~sdiubhe
 narrator: they seem to be understanding
 player: sorry.
