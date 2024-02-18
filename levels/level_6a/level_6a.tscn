@@ -42,7 +42,6 @@ position = Vector2(40, 40)
 
 [node name="ui" parent="." instance=ExtResource("3_q4nwc")]
 door_code = Array[int]([2, 2, 2, 2])
-next_scene = ExtResource("4_j6rmi")
 
 [node name="door" parent="." instance=ExtResource("4_iehui")]
 position = Vector2(40, 72)
