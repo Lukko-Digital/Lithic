@@ -1,4 +1,7 @@
 #condition_unmet
 !0
-human: im broken
-
+narrator: it sits in silence
+narrator: as most statues do.
+narrator: why are you surprised?
+!1
+narrator: it does not speak

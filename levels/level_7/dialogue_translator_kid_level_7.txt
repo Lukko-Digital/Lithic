@@ -1,15 +1,18 @@
 #condition_unmet
 !0
-wolf_kid: mom
+wolf_kid: ...mom...
 
 #not_in_tree
 !0
-wolf_kid: i can speak old but not read
+wolf_kid: ....hi....
+wolf_kid: .....
+narrator: he tries to hide behind his mother.
 
 #next_to_sign
 !0
-wolf_kid: i can speak old but not read
+wolf_kid: ..........
+wolf_kid: ...i can't read it yet...
 
 #unfriendly
 !0
-wolf_kid: go away
+wolf_kid: .............

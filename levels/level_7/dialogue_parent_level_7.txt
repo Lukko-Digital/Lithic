@@ -1,11 +1,16 @@
 #not_in_tree
 !0
-wolf: dont like you
+wolf: stay away from my children.
 
 #next_to_sign
 !0
-wolf: dont like you
+wolf: i don't speak this language.
+wolf: and even if I could, i wouldn't speak it to a human.
 
 #unfriendly
 !0
-wolf: dont like you
+wolf: what a joke.
+wolf: leave me be.
+
+!1
+wolf: gross.

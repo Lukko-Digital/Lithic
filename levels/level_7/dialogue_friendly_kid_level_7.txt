@@ -1,15 +1,33 @@
 #condition_unmet
 !0
-bear_kid: mom
+bear_kid: ...need mom...
 
 #not_in_tree
 !0
-bear_kid: mom
+bear_kid: do you need help?
+bear_kid: nobody in my family can read...
+bear_kid: we never learned the language...
+bear_kid: well, my brother can speak it.
+bear_kid: he's trying to learn!!
 
 #next_to_sign
 !0
-bear_kid: only my brother can read
+bear_kid: i'm sorry....
+bear_kid: i don't know i don't know!
+player: don't be upset. it's okay.
+narrative: he calms down
+!1
+bear_kid: ...i don't know this language...
+bear_kid: at least my brother can speak it.
+bear_kid: he's pretty shy... maybe i can tell you for him.
 
 #solution
 !0
-bear_kid: it says "0 0 0 0"
+bear_kid: they think it says...
+bear_kid: "a man who commits two murders...
+brea_kid: is considered a sandwich"
+bear_kid: they're not sure that's completely right...
+player: it's okay. thank you.
+!1
+bear_kid: "a man who commits two murders...
+brea_kid: is considered a sandwich"
