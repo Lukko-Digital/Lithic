@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cnje6l2w8mx68" path="res://assets/png/statues_all.png" id="7_y5q11"]
 [ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="8_t482p"]
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="9_srpuu"]
-[ext_resource type="PackedScene" path="res://src/level_elements/unlocked_door.tscn" id="10_e175m"]
+[ext_resource type="PackedScene" uid="uid://df3cnfjjkiw2m" path="res://src/level_elements/unlocked_door.tscn" id="10_e175m"]
 
 [node name="final_level" type="Node2D"]
 
@@ -25,6 +25,7 @@ position = Vector2(-88, -8)
 
 [node name="ui" parent="." instance=ExtResource("3_v6ifq")]
 next_scene = ExtResource("4_d2lus")
+stop_music = true
 
 [node name="unlocked_door" parent="." instance=ExtResource("10_e175m")]
 position = Vector2(72, -72)
