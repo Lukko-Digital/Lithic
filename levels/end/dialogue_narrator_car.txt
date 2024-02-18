@@ -1,3 +1,13 @@
 #solution
 !0
-narrator: wait this isnt marotte
+player: right
+player: i was driving home...
+player: how...?
+player: ...
+narrator: you consider getting in your car
+narrator: and then reconsider.
+narrator: it's nice to be outside.
+
+!1
+player: okay!
+player: time to go.

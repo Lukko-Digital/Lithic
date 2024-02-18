@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dxmocqedm2fv2"]
+[gd_scene load_steps=11 format=3 uid="uid://dxmocqedm2fv2"]
 
 [ext_resource type="Script" path="res://src/ui/ui.gd" id="1_7e6xk"]
 [ext_resource type="PackedScene" uid="uid://curqycab2s72k" path="res://src/ui/dialogue_ui.tscn" id="1_vggkf"]
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.3), Color(0, 0, 0, 0.7), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_cdcy6"]
+[sub_resource type="Animation" id="Animation_a2ms0"]
 resource_name = "ending_fade_to_black"
 length = 2.0
 tracks/0/type = "value"
@@ -56,19 +56,19 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d2ax0"]
 _data = {
-"ending_fade_to_black": SubResource("Animation_cdcy6"),
+"ending_fade_to_black": SubResource("Animation_a2ms0"),
 "fade_from_black": SubResource("Animation_dm50b"),
 "fade_to_black": SubResource("Animation_ols57")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q2c20"]
 shader = ExtResource("5_7rhje")
-shader_parameter/black = null
-shader_parameter/dark = null
-shader_parameter/mid_dark = null
-shader_parameter/mid_light = null
-shader_parameter/light = null
-shader_parameter/white = null
+shader_parameter/black = Color(0.388235, 0.2, 0.0235294, 1)
+shader_parameter/dark = Color(0.521569, 0.34902, 0.145098, 1)
+shader_parameter/mid_dark = Color(0.639216, 0.505882, 0.298039, 1)
+shader_parameter/mid_light = Color(0.87451, 0.819608, 0.494118, 1)
+shader_parameter/light = Color(0.94902, 0.94902, 0.54902, 1)
+shader_parameter/white = Color(1, 1, 0.752941, 1)
 
 [node name="ui" type="CanvasLayer"]
 script = ExtResource("1_7e6xk")
@@ -85,7 +85,7 @@ offset_left = -8.0
 offset_top = -8.0
 offset_right = 328.0
 offset_bottom = 184.0
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenColor"]
 libraries = {

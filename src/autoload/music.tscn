@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://src/autoload/music.gd" id="1_f0qkn"]
 [ext_resource type="AudioStream" uid="uid://712h7j6a86mb" path="res://assets/audio/music/tome_draft9_pleasloop.mp3" id="2_kw02j"]
-[ext_resource type="AudioStream" uid="uid://crkjm2uft8nwr" path="res://assets/audio/music/ending tome.mp3" id="3_bv4bg"]
+[ext_resource type="AudioStream" uid="uid://bja31rb80tq2g" path="res://assets/audio/music/ending_tome_3_no_silence.mp3" id="3_r6tul"]
 
 [node name="music" type="Node"]
 script = ExtResource("1_f0qkn")
@@ -11,8 +11,7 @@ script = ExtResource("1_f0qkn")
 stream = ExtResource("2_kw02j")
 
 [node name="EndingTrack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_bv4bg")
+stream = ExtResource("3_r6tul")
 
 [connection signal="ending_music" from="." to="." method="_on_ending_music"]
 [connection signal="start_music" from="." to="." method="_on_start_music"]
-[connection signal="finished" from="EndingTrack" to="." method="_on_ending_track_finished"]
