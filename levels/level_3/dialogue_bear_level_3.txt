@@ -1,26 +1,37 @@
 #not_in_tree
 !0
 bear: welcome, traveller
-player: hey
+player: hi...
+
 !1
 bear: oh them?
-bear: yes they only speak the olden language
+bear: yes they only speak the olden language...
+bear: but they are quite friendly to humans.
+
 !2
-bear: they will be able to read the sign for you
+bear: i can see you'd like to leave this place
+bear: if you bring me to the sign, i might be able to help
+
+!3
+bear: if you bring me to the sign, i might be able to help
 
 #next_to_sign
 !0
-bear: i must appologize
-bear: i am unable to read the glyphs
+bear: i must appologize.
+bear: i am unable to help you read this...
+bear: my eyesight is poorer than i remember.
+
 !1
-bear: though i am able to speak the olden language
+bear: i have an idea
+bear: if this were spoken to me,
+bear: i might be able to translate it into human tongue.
 
 #solution
 !0
 bear: they tell me it reads...
 bear: "the butterflies and hounds paraded one after another"
-bear: i thought i recognized the glyph for butterfly
-player: thanks
+bear: ah... one from my childhood. off you go.
+player: thank you very much.
 
 !1
 bear: "the butterflies and hounds paraded one after another"

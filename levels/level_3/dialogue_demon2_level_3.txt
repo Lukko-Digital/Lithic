@@ -1,6 +1,21 @@
 #no_english
 !0
+demon_2: 不会说英文不会说英文
+player: i umm...
+narrator: you wish you had studied harder in high school
+demon: 说英文
+narrator: they seem to be understanding
+player: sorry.
+
+!1
 demon_2: 不会说英文
-player: huh?
-!2
-demon_2: 不会说英文
+
+#next_to_sign
+!0
+demon_2: 不会说英文不会说英文不会说英文
+narrator: they make some hand motions in an attempt to explain
+player: sorry... i don't think i understand
+
+!1
+demon_2: 不会
+narrator: they motion towards the bear statue to come over
