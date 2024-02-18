@@ -1,0 +1,7 @@
+#not_in_tree
+!0
+demon: thank you for putting me back together
+
+#solution
+!0
+demon: it says "0 0 0 0"

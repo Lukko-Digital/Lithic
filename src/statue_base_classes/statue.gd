@@ -12,6 +12,7 @@ class_name Statue
 @export var is_parent: bool = false
 @export var bound_location: Node2D = null
 @export var broken: bool = false
+@export var fixed_statue: Interactable
 
 @onready var ray: RayCast2D = $RayCast2D
 @onready var glow: Node2D = $Glow
