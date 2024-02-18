@@ -1,0 +1,36 @@
+#not_in_tree
+!0
+bear: ah, hello there
+player: hi
+bear: been a while since i've seen something other than boxes
+bear: and dust
+
+!1
+bear: what brings you down here?
+player: umm
+player: i'm not really sure
+
+!2
+bear: well nice meeting you
+
+!3
+bear: don't stay in the dust for too long
+
+#next_to_sign
+!0
+bear: appologies, it seems i've forgotten how to read
+bear: you know what the dust does to you
+narrator: you don't know what the dust does to you
+
+#solution
+!0
+bear: they tell me the glyphs say...
+bear: "the human and the dog paused...
+bear: as the butterflies flew between them"
+bear: ahh what a beautiful image
+bear: not a speck of dust to be found
+player: thank you.
+
+!1
+bear: "the human and the dog paused...
+bear: as the butterflies flew between them"
