@@ -41,17 +41,8 @@ dialogue_file = "res://levels/level_3a/dialogue_bear_level_3a.txt"
 position = Vector2(-88, 8)
 dialogue_file = "res://levels/level_3a/dialogue_demon2_level_3a.txt"
 
-[node name="box" parent="." instance=ExtResource("8_g65ix")]
-position = Vector2(-88, -24)
-
-[node name="box2" parent="." instance=ExtResource("8_g65ix")]
-position = Vector2(-104, -40)
-
 [node name="box3" parent="." instance=ExtResource("8_g65ix")]
 position = Vector2(-8, 8)
-
-[node name="box4" parent="." instance=ExtResource("8_g65ix")]
-position = Vector2(88, 40)
 
 [node name="box5" parent="." instance=ExtResource("8_g65ix")]
 position = Vector2(104, 8)
@@ -79,9 +70,6 @@ position = Vector2(8, -40)
 
 [node name="box13" parent="." instance=ExtResource("8_g65ix")]
 position = Vector2(40, -24)
-
-[node name="box14" parent="." instance=ExtResource("8_g65ix")]
-position = Vector2(40, 24)
 
 [node name="box15" parent="." instance=ExtResource("8_g65ix")]
 position = Vector2(40, 8)
