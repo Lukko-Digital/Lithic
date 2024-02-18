@@ -1,0 +1,15 @@
+#condition_unmet
+!0
+wolf_kid: mom
+
+#not_in_tree
+!0
+wolf_kid: i can speak old but not read
+
+#next_to_sign
+!0
+wolf_kid: i can speak old but not read
+
+#unfriendly
+!0
+wolf_kid: go away
