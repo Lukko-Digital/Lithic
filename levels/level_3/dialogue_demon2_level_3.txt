@@ -1,0 +1,6 @@
+#no_english
+!0
+demon_2: 不会说英文
+player: huh?
+!2
+demon_2: 不会说英文
