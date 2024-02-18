@@ -23,7 +23,6 @@ position = Vector2(-88, -8)
 
 [node name="ui" parent="." instance=ExtResource("3_7a77x")]
 door_code = Array[int]([0, 2, 3, 1])
-next_scene = ExtResource("4_wm7ol")
 start_music = true
 
 [node name="door" parent="." instance=ExtResource("4_ba6mk")]
