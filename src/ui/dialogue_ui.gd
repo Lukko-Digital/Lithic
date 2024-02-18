@@ -3,7 +3,7 @@ extends Control
 @export_file var dialogue_file
 
 @onready var default_font: FontFile = preload("res://assets/fonts/Early GameBoy.ttf")
-@onready var old_font: FontFile = preload("res://assets/fonts/Early GameBoy.ttf")
+@onready var old_font: FontFile = preload("res://assets/fonts/Olden Language.ttf")
 
 @onready var label: Label = $TextBox/Label
 @onready var text_timer: Timer = $TextTimer
