@@ -1,8 +1,8 @@
 #no_english
 !0
-demon_2: werinhowiuhlwjbow iuqh
+demon_2: ~werinhowiuhlwjbow iuqh
 player: ah
 narrator: you still don't understand the language they're speaking
 
 !1
-demon_2: rouiwbiuhw
+demon_2: ~rouiwbiuhw
