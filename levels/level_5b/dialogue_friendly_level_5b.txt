@@ -1,2 +1,30 @@
-The friendly guy is friendly but can't read or translate
-maybe somehow related to the kid (their teacher or something)
+#not_in_tree
+!0
+mask_2: hey there.
+mask_2: i don't know if i can read that sign...
+mask_2: but that kid's a genius.
+mask_2: a bit shy though...
+mask_2: i usually speak in their place.
+
+!1
+mask_2: try getting that kiddo to read it.
+
+#next_to_sign
+!0
+mask_2: i can't read that
+
+#other_tree_condition_unmet
+!0
+mask_2: she can't read... let me try!
+
+
+#solution
+!0
+mask_2: it says "it killed two of its own kind."
+mask_2: "cruelty is in its nature."
+player: thank you so much.
+narrator: he nods at you.
+
+!1
+mask_2: "it killed two of its own kind."
+mask_2: "cruelty is in its nature."
