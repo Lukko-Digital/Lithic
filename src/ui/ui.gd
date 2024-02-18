@@ -6,11 +6,17 @@ extends CanvasLayer
 @export var start_music: bool
 @export var ending_music: bool
 
+@export var is_end_scene: bool = false
+
 @onready var transition_player: AnimationPlayer = $ScreenColor/AnimationPlayer
 
 func _ready():
 	transition_player.play("fade_from_black")
 	handle_music()
+
+	if is_end_scene:
+		$EndSceneShader.show()
+		$Shader.hide()
 
 
 func handle_music():
