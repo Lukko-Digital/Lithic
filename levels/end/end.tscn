@@ -374,7 +374,7 @@ polygon = PackedVector2Array(-108, 48, -39, 86, 58, 87, 127, 48, 146, -1, 160, 0
 polygon = PackedVector2Array(-156, 4, -124, -88, 140, -88, 160, 1, 144, 3, 114, -67, 17, -77, -58, -68, -111, -54, -129, 6)
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(50, 50)
+position = Vector2(-8, 72)
 motion_mode = 1
 script = ExtResource("6_gs4ux")
 
