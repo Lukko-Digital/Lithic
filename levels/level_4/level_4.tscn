@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c3lhrfgi52fr2" path="res://src/statues/human_2.tscn" id="8_uekxf"]
 [ext_resource type="PackedScene" uid="uid://cagw17jsxu1l2" path="res://src/statues/wolf.tscn" id="9_i5xve"]
 [ext_resource type="PackedScene" uid="uid://2a6s3qkvb6ii" path="res://src/statues/mask.tscn" id="10_h1j74"]
-[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="11_lsvja"]
+[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="11_lsvja"]
 
 [node name="level_4" type="Node2D"]
 
