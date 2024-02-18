@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://o0kld8sepmfh"]
+
+[ext_resource type="Script" path="res://src/narrator_scene.gd" id="1_vv00y"]
+[ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_f0n8w"]
+[ext_resource type="PackedScene" path="res://src/ui/ui.tscn" id="3_6vx7b"]
+[ext_resource type="PackedScene" uid="uid://b40x6eiyl71gu" path="res://levels/level_0/level_0.tscn" id="4_1ixfu"]
+[ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="5_sss03"]
+[ext_resource type="PackedScene" path="res://src/statues/demon.tscn" id="6_gbd1o"]
+[ext_resource type="Texture2D" uid="uid://pkg4kt0jh5us" path="res://assets/png/tutorial_start.png" id="7_0kmvw"]
+[ext_resource type="Script" path="res://levels/level_0_pre/ControlsTutorial.gd" id="8_lhsdc"]
+[ext_resource type="PackedScene" uid="uid://0lf7v2cwtquy" path="res://src/recolor.tscn" id="9_yk2br"]
+
+[sub_resource type="Animation" id="Animation_ts1gh"]
+resource_name = "fade_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.2), Color(1, 1, 1, 0.4), Color(1, 1, 1, 0.6), Color(1, 1, 1, 0.8), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cdhog"]
+_data = {
+"fade_in": SubResource("Animation_ts1gh")
+}
+
+[node name="level_0_pre" type="Node2D"]
+script = ExtResource("1_vv00y")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(120, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_f0n8w")]
+position = Vector2(-88, -8)
+no_interact_prompt = true
+disable_movement = true
+
+[node name="ui" parent="." instance=ExtResource("3_6vx7b")]
+door_code = Array[int]([0, 2, 3, 1])
+next_scene = ExtResource("4_1ixfu")
+
+[node name="TileMap" parent="." instance=ExtResource("5_sss03")]
+layer_1/tile_data = PackedInt32Array(-6, 131072, 0, -65542, 458752, 1, -65541, 720896, 1, -5, 720896, 2, -7, 393216, 2, -65543, 393216, 1, 65530, 131072, 0, 65531, 720896, 2, 65529, 393216, 2, 131066, 458752, 6, 131067, 720896, 6, 131065, 393216, 6)
+
+[node name="demon" parent="." instance=ExtResource("6_gbd1o")]
+position = Vector2(-88, 8)
+dialogue_file = "res://levels/level_0_pre/dialogue_narrator_level_0_pre.txt"
+
+[node name="ControlsTutorial" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(120, 0)
+texture = ExtResource("7_0kmvw")
+script = ExtResource("8_lhsdc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ControlsTutorial"]
+autoplay = "fade_in"
+libraries = {
+"": SubResource("AnimationLibrary_cdhog")
+}
+
+[node name="ColorRect" parent="." instance=ExtResource("9_yk2br")]
+visible = false
+offset_right = 344.0

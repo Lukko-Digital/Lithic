@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://bwi7u2ydpjtxa"]
+
+[ext_resource type="Texture2D" uid="uid://d2vro6auya30p" path="res://assets/png/end_background.png" id="1_fqwo4"]
+[ext_resource type="PackedScene" path="res://src/ui/ui.tscn" id="1_ww24f"]
+[ext_resource type="PackedScene" uid="uid://o0kld8sepmfh" path="res://levels/end/end_post.tscn" id="2_1d4rh"]
+[ext_resource type="Texture2D" uid="uid://bs4i85tyka0dv" path="res://assets/png/end_car.png" id="2_8n8lq"]
+[ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="5_4qig1"]
+[ext_resource type="Script" path="res://levels/end/end_player.gd" id="6_gs4ux"]
+[ext_resource type="Script" path="res://levels/end/EndCar.gd" id="6_nt841"]
+[ext_resource type="AudioStream" uid="uid://d26omux2fp47k" path="res://assets/audio/talking_statue.mp3" id="9_g0gto"]
+[ext_resource type="AudioStream" uid="uid://q75m27ysowho" path="res://assets/audio/move_statue.mp3" id="10_5hq37"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oym5h"]
+radius = 12.0
+height = 70.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7wuv5"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_b632k"]
+resource_name = "bump_wall"
+length = 0.14
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_g0gto")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_3k0br"]
+resource_name = "fail_push"
+length = 0.14
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("9_g0gto")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="Animation" id="Animation_vp2sg"]
+resource_name = "push"
+length = 0.5
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("10_5hq37")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6ys0w"]
+_data = {
+"bump_wall": SubResource("Animation_b632k"),
+"fail_push": SubResource("Animation_3k0br"),
+"push": SubResource("Animation_vp2sg")
+}
+
+[node name="end" type="Node2D"]
+y_sort_enabled = true
+
+[node name="ui" parent="." instance=ExtResource("1_ww24f")]
+next_scene = ExtResource("2_1d4rh")
+
+[node name="EndBackground" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_fqwo4")
+
+[node name="EndCar" type="Sprite2D" parent="."]
+position = Vector2(-6, -14)
+texture = ExtResource("2_8n8lq")
+script = ExtResource("5_4qig1")
+dialogue_file = "res://levels/end/dialogue_narrator_car.txt"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="EndCar" groups=["sign", "statue"]]
+script = ExtResource("6_nt841")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndCar/StaticBody2D"]
+position = Vector2(0, 8)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_oym5h")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Boundry" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundry"]
+polygon = PackedVector2Array(-108, 48, -39, 86, 58, 87, 127, 48, 146, -1, 160, 0, 159, 88, -133, 91, -156, 3, -128, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Boundry"]
+polygon = PackedVector2Array(-156, 4, -124, -88, 140, -88, 160, 1, 144, 3, 114, -67, 17, -77, -58, -68, -111, -54, -129, 6)
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-18, 51)
+motion_mode = 1
+script = ExtResource("6_gs4ux")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_7wuv5")
+
+[node name="RayCast2D" type="RayCast2D" parent="Player"]
+target_position = Vector2(0, 30)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(0, -6)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+
+[node name="AudioAnimationPlayer" type="AnimationPlayer" parent="Player/AudioStreamPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_6ys0w")
+}
