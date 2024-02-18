@@ -10,8 +10,10 @@ mask: although i do speak the language
 #next_to_sign
 !0
 mask: don't ask me what it says.
-mask: i don't aid trespassers.
+mask: while i do speak it, not just anyone can read that.
 !1
+mask: i don't aid trespassers.
+!2
 mask: disgusting human.
 !5
 mask: leave me be.

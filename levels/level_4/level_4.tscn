@@ -20,7 +20,7 @@ layer_1/tile_data = PackedInt32Array(-131075, 65536, 0, -131076, 0, 1, -131074, 
 position = Vector2(-40, -8)
 
 [node name="Player" parent="." instance=ExtResource("2_wrm5i")]
-position = Vector2(-104, -40)
+position = Vector2(-120, -24)
 
 [node name="ui" parent="." instance=ExtResource("3_4neob")]
 door_code = Array[int]([3, 3, 3, 2])
