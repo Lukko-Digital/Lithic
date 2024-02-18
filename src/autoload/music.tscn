@@ -12,6 +12,7 @@ stream = ExtResource("2_kw02j")
 
 [node name="EndingTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_r6tul")
+volume_db = -13.42
 
 [connection signal="ending_music" from="." to="." method="_on_ending_music"]
 [connection signal="start_music" from="." to="." method="_on_start_music"]
