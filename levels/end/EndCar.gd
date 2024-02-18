@@ -11,4 +11,4 @@ func interact():
 
 
 func transition_scene():
-	ui.transition_scene(true)
+	ui.transition_scene(false, true)
