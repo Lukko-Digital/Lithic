@@ -15,4 +15,3 @@ stream = ExtResource("3_bv4bg")
 
 [connection signal="ending_music" from="." to="." method="_on_ending_music"]
 [connection signal="start_music" from="." to="." method="_on_start_music"]
-[connection signal="finished" from="EndingTrack" to="." method="_on_ending_track_finished"]
