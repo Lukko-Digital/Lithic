@@ -1,0 +1,15 @@
+#not_in_tree
+!0
+demon: ...new level!.
+demon: you reek.
+!1
+demon: ...?
+demon: i will not help you.
+
+#next_to_sign
+!0
+demon: ...
+
+#unfriendly
+!0
+demon: ...

@@ -33,13 +33,15 @@ dialogue_file = "res://levels/level_3/dialogue_sign_level_3.txt"
 position = Vector2(-56, 40)
 rotation = -3.1416
 
-[node name="demon_2" parent="." instance=ExtResource("7_1wxk4")]
+[node name="wolf" parent="." instance=ExtResource("7_1wxk4")]
 position = Vector2(40, -8)
-dialogue_file = "res://levels/level_3/dialogue_demon2_level_3.txt"
+frame = 3
+dialogue_file = "res://levels/level_3/dialogue_wolf_level_3.txt"
 
-[node name="bear" parent="." instance=ExtResource("8_fe014")]
+[node name="mask" parent="." instance=ExtResource("8_fe014")]
 position = Vector2(-8, 8)
-dialogue_file = "res://levels/level_3/dialogue_bear_level_3.txt"
+frame = 10
+dialogue_file = "res://levels/level_3/dialogue_mask_level_3.txt"
 
 [node name="box" parent="." instance=ExtResource("8_6aqnv")]
 position = Vector2(72, -24)

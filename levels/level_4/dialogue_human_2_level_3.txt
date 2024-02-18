@@ -1,11 +1,11 @@
 #no_english
 !0
-human_2: 不会说英文不会说英文!!!
+human_2: ~FDSU HVBRU OIWSNO VB!!!
 narrator: how rude
 player: sorry!
-human_2: 不会.
+human_2: ~dfsgdsfgs dfs
 player: ...
 narrator: he eyes you warily
 
 !1
-human_2: 不会.
+human_2: ~df rge.

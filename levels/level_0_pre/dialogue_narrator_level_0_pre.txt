@@ -1,3 +1,5 @@
 #not_in_tree
 !0
-narrator: wait this isnt marotte
+narrator: damp, cool air brushes your face.
+narrator: you can't remember what you were just doing...
+narrator: at least you're not hurt.

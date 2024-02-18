@@ -1,21 +1,21 @@
 #no_english
 !0
-demon_2: ~spdiubhbi
+wolf: ~spdiubhbi
 player: i umm...
 narrator: you wish you had studied harder in high school
-demon: ~sdiubhe
+wolf: ~sdiubhe
 narrator: they seem to be understanding
 player: sorry.
 
 !1
-demon_2: ~sdiubhe
+wolf: ~sdiubhe
 
 #next_to_sign
 !0
-demon_2: ~npoiehrtheb
+wolf: ~npoiehrtheb
 narrator: they make some hand motions in an attempt to explain
 player: sorry... i don't think i understand
 
 !1
-demon_2: ~fgonihwgi
+wolf: ~fgonihwgi
 narrator: they motion towards the bear statue to come over

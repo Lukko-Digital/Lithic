@@ -24,9 +24,10 @@ position = Vector2(56, 56)
 door_code = Array[int]([3, 3, 3, 2])
 next_scene = ExtResource("4_dw8ji")
 
-[node name="demon" parent="." instance=ExtResource("5_58fp0")]
+[node name="mask_2" parent="." instance=ExtResource("5_58fp0")]
 position = Vector2(40, 8)
-dialogue_file = "res://levels/level_1a/dialogue_demon_level_1a.txt"
+frame = 11
+dialogue_file = "res://levels/level_1a/dialogue_mask_2_level_1a.txt"
 
 [node name="sign" parent="." instance=ExtResource("7_u8af1")]
 position = Vector2(-104, 40)
