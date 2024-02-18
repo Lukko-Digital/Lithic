@@ -1,0 +1,5 @@
+#condition_unmet
+!0
+player: "congratulations"
+narrator: you're not sure how you can read it,
+narrator: but you can.

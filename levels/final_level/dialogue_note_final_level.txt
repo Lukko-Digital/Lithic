@@ -1,0 +1,11 @@
+#condition_unmet
+!0
+narrator: another wonderful note
+player: "thanks for playing!"
+player: ...?
+narrator: you question the meaning of reality
+player: unhelpful commentary.
+
+!1
+narrator: really, thanks for playing!
+player: ??????
