@@ -25,7 +25,8 @@ func _physics_process(delta):
 func handle_animation(direction: Vector2):
 	match direction.round():
 		Vector2():
-			sprite.play("idle_" + sprite.animation)
+			if "idle_" not in sprite.animation:
+				sprite.play("idle_" + sprite.animation)
 		Vector2(1,-1), Vector2(1,0), Vector2(1,1):
 			# right
 			sprite.play("right")
