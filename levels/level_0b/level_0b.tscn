@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bt4u6lqa38xtk" path="res://levels/level_1/level_1.tscn" id="4_e44c4"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="5_3a2q7"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="6_d2wws"]
-[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="7_2a5pj"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="7_2a5pj"]
 [ext_resource type="Texture2D" uid="uid://gnh2i0qb62nv" path="res://assets/png/sign_with_translation.png" id="7_y58s6"]
 
 [node name="level_0b" type="Node2D"]

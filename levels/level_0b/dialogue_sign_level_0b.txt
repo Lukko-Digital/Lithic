@@ -1,9 +1,17 @@
 #condition_unmet
 !0
-narrator: yet another mysterious sign
-narrator: again you find a tattered note below
+narrator: another plaque covered in illegible glyphs
+narrator: a tattered note is crammed into the wall below
 player: "knife, knife, knife, wolf"
-player: gotta get to the door now...
+player: efficient
 !1
 player: "knife, knife, knife, wolf"
-player: gotta get to the door now...
+!2
+narrator: have you been reading it wrong this whole time?
+player: "knife, knife, knife, butterfly"...?
+narrator: nope, it's definitely wolf.
+player: it's definitely wolf.
+player: "knife, knife, knife, wolf"
+narrator: you realize you should probably get to it
+!3
+player: "knife, knife, knife, wolf"
