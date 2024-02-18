@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://itxksblvso4y"]
+[gd_scene load_steps=16 format=3 uid="uid://itxksblvso4y"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_uuos8"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_tqayw"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cybmii6rvx01a" path="res://src/statue_base_classes/statue.tscn" id="8_qewhf"]
 [ext_resource type="Resource" uid="uid://c5hmivsfaucxy" path="res://src/conditions/broken.tres" id="9_ae8ak"]
 [ext_resource type="Resource" uid="uid://bfj4wuvb6egd2" path="res://src/conditions/broken_movement.tres" id="10_q5bit"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="13_ggamh"]
 
 [sub_resource type="Gradient" id="Gradient_wux2r"]
 
@@ -34,12 +35,13 @@ layer_0/tile_data = PackedInt32Array(-1179674, 0, 9, -1114138, 0, 9, -1048602, 0
 layer_1/tile_data = PackedInt32Array(-3, 0, 0, -4, 0, 0, -2, 0, 1, -1, 65536, 1, 65535, 131072, 0, 65534, 65536, 1, 65533, 0, 1, 65532, 0, 1, 65531, 393216, 2, 0, 458752, 2, 65537, 65536, 1, 131073, 458752, 6, 1, 65536, 0, 65538, 65536, 0, 131074, 458752, 6, 2, 0, 0, 65539, 0, 1, 131075, 458752, 6, 3, 458752, 2, -65533, 458752, 2, -65532, 131072, 0, -65535, 65536, 1, -131071, 458752, 2, -65536, 65536, 0, -131072, 0, 1, 131072, 458752, 6, 65536, 0, 1, 196607, 458752, 6, 131071, 65536, 0, 196606, 458752, 6, 131070, 458752, 2, 196605, 458752, 6, 131069, 65536, 1, 196604, 458752, 6, 131068, 0, 0, 196603, 393216, 6, 131067, 393216, 2, -131069, 65536, 1, -65534, 0, 1, -131070, 131072, 0, -131068, 65536, 0, -196606, 65536, 1, -196605, 458752, 2, -196604, 65536, 0, -196603, 720896, 2, -196607, 589824, 4, -262143, 393216, 2, -262142, 0, 1, -262141, 65536, 1, -262140, 131072, 0, -327678, 458752, 1, -327676, 458752, 1, -262139, 720896, 2, -327675, 720896, 1, -327679, 393216, 1, -131067, 720896, 2, -65531, 720896, 2, 5, 720896, 2, 4, 131072, 0, 65541, 720896, 2, 65540, 131072, 0, 131077, 720896, 6, 131076, 458752, 6, -65541, 393216, 2, -65537, 65536, 1, -65538, 65536, 0, -131074, 458752, 1, -131073, 458752, 1, -196608, 458752, 1, -65539, 0, 1, -131075, 458752, 1, -65540, 65536, 0, -131076, 458752, 1, -131077, 393216, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(8, -8)
 
 [node name="Player" parent="." instance=ExtResource("2_tqayw")]
 position = Vector2(72, 8)
 
 [node name="ui" parent="." instance=ExtResource("3_fgsll")]
-door_code = Array[int]([2, 1, 2, 2])
+door_code = Array[int]([0, 0, 3, 1])
 next_scene = ExtResource("4_ggfh0")
 
 [node name="door" parent="." instance=ExtResource("4_qp0e6")]
@@ -96,3 +98,15 @@ can_read = true
 friendly = true
 speaks_old = true
 is_parent = true
+
+[node name="box" parent="." instance=ExtResource("13_ggamh")]
+position = Vector2(40, -24)
+
+[node name="box2" parent="." instance=ExtResource("13_ggamh")]
+position = Vector2(56, -40)
+
+[node name="box3" parent="." instance=ExtResource("13_ggamh")]
+position = Vector2(72, -40)
+
+[node name="box4" parent="." instance=ExtResource("13_ggamh")]
+position = Vector2(-56, 24)

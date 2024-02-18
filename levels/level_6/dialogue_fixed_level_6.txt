@@ -1,8 +1,32 @@
 #not_in_tree
 !0
-demon: thank you for putting me back together
+demon: thank you...
+demon: you are much kinder than the last human I met.
+demon: as you can tell.
+player: of course.
 
+!1
+demon: i can help you read those glyphs if that's what you're wondering.
+
+!2
+demon: life is so much better whole.
 
 #solution
 !0
-demon: it says "0 0 0 0"
+demon: ahh... it says...
+demon: "high, low, high, and the upper of the two between."
+player: thank you.
+demon: what a rubbish poem.
+demon: you wanna hear me do better?
+
+!1
+demon: *ahem*
+demon: the foot and the frown
+demon: turn both upside dow-
+demon: now that i've tried...
+demon: i actually find it quite impressive.
+player: it was a good effort.
+narrator: it was not.
+
+!2
+demon: "two high, one low, and at last the upper of the two between."
