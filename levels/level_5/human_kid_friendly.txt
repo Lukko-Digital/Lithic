@@ -20,9 +20,10 @@ human_kid: i can go read that for you...
 !0
 human_kid: i can't read that
 
-#neighbor_condition_unmet
+#other_tree_condition_unmet
 !0
 human_kid: she can't read... let me try!
+
 
 #solution
 !0
