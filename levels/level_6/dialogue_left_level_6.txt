@@ -4,4 +4,8 @@ player: ... hello ?
 narrator: it doesn't respond.
 
 !1
-narrator: ...
+player: rude.
+narrator: it doesn't care.
+
+!2
+narrator: the fragmented statue stares back in silence

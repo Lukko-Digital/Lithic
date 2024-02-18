@@ -41,7 +41,7 @@ layer_1/tile_data = PackedInt32Array(131069, 0, 1, 65533, 65536, 0, -3, 0, 1, -6
 position = Vector2(40, 40)
 
 [node name="ui" parent="." instance=ExtResource("3_q4nwc")]
-door_code = Array[int]([2, 1, 2, 2])
+door_code = Array[int]([2, 2, 2, 2])
 next_scene = ExtResource("4_j6rmi")
 
 [node name="door" parent="." instance=ExtResource("4_iehui")]

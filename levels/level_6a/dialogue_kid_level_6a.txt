@@ -1,15 +1,31 @@
 #condition_unmet
 !0
-mask_2_kid: my mom is broken bears :(
+mask_2_kid: ...dad...?
+mask_2_kid: where's my dad...
+
+!1
+mask_2_kid: ...need dad...
 
 #not_in_tree
 !0
-mask_2_kid: thank you for fixing mom
+mask_2_kid: thank you for fixing him.
+mask_2_kid: you need help...
+mask_2_kid: I help!!
 
 #next_to_sign
 !0
-mask_2_kid: sorry, i cannor read
+mask_2_kid: uhhhh... umm...
+mask_2_kid: i'm sorry!!!! i don't know.
+mask_2_kid: dad is good at reading. the best!
 
 #solution
 !0
-mask_2_kid: it says "0 0 0 0"
+mask_2_kid: he says it's nonsense
+player: please tell me anyways
+mask_2_kid: uhh okay
+narrator: the kid convinces his dad to repeat it
+mask_2_kid: "a world full of humans isn't so bad"
+player: "thank you."
+
+!1
+mask_2_kid: "a world full of humans isn't so bad"
