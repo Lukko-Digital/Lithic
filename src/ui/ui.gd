@@ -5,7 +5,7 @@ extends CanvasLayer
 
 @export var start_music: bool
 @export var ending_music: bool
-
+@export var stop_music: bool
 @export var is_end_scene: bool = false
 
 @onready var transition_player: AnimationPlayer = $ScreenColor/AnimationPlayer
@@ -24,6 +24,8 @@ func handle_music():
 		Music.start_music.emit()
 	if ending_music:
 		Music.ending_music.emit()
+	if stop_music:
+		Music.stop_music.emit()
 
 func transition_scene(hard_cut=false, ending=false):
 	if not hard_cut and not ending:

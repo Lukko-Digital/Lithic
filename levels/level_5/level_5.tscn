@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_54yg1"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_lix43"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_70f3u"]
-[ext_resource type="PackedScene" uid="uid://dnmlhmehnn4cs" path="res://levels/level_5a/level_5a.tscn" id="4_mj8d4"]
+[ext_resource type="PackedScene" uid="uid://itxksblvso4y" path="res://levels/level_6/level_6.tscn" id="4_vch33"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="5_cpa4b"]
 [ext_resource type="Texture2D" uid="uid://cnje6l2w8mx68" path="res://assets/png/statues_all.png" id="7_myjth"]
 [ext_resource type="Script" path="res://src/statue_base_classes/interactable.gd" id="8_bk303"]
@@ -38,7 +38,7 @@ position = Vector2(72, 8)
 
 [node name="ui" parent="." instance=ExtResource("3_lix43")]
 door_code = Array[int]([2, 1, 2, 2])
-next_scene = ExtResource("4_mj8d4")
+next_scene = ExtResource("4_vch33")
 
 [node name="door" parent="." instance=ExtResource("4_70f3u")]
 position = Vector2(-40, -72)

@@ -13,7 +13,7 @@
 [ext_resource type="Resource" uid="uid://bfj4wuvb6egd2" path="res://src/conditions/broken_movement.tres" id="10_840wd"]
 [ext_resource type="Texture2D" uid="uid://cnje6l2w8mx68" path="res://assets/png/statues_all.png" id="11_rgx6a"]
 [ext_resource type="Resource" uid="uid://b7ub0hy007eni" path="res://src/conditions/kid.tres" id="12_tf6a2"]
-[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="13_dag80"]
+[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="13_dag80"]
 
 [sub_resource type="Gradient" id="Gradient_wux2r"]
 
