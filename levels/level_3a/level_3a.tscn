@@ -1,12 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://bv2uq0e4dvac5"]
+[gd_scene load_steps=10 format=3 uid="uid://bv2uq0e4dvac5"]
 
 [ext_resource type="PackedScene" uid="uid://behuuub8664x7" path="res://src/level_elements/tilemap.tscn" id="1_gb7t1"]
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_lbcfn"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_s5drt"]
+[ext_resource type="PackedScene" uid="uid://6lidx4trpyf0" path="res://levels/level_4/level_4.tscn" id="4_fvwb1"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="4_lm0po"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="5_w75jt"]
 [ext_resource type="PackedScene" uid="uid://cga87j5rlixq7" path="res://src/statues/bear.tscn" id="7_0mawh"]
-[ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="8_g65ix"]
+[ext_resource type="PackedScene" uid="uid://i5pffunxhykk" path="res://src/level_elements/box.tscn" id="8_g65ix"]
 [ext_resource type="PackedScene" uid="uid://b4ryb1xphwpuy" path="res://src/statues/demon_2.tscn" id="8_qya6b"]
 
 [node name="level_3a" type="Node2D"]
@@ -22,6 +23,7 @@ position = Vector2(-88, -40)
 
 [node name="ui" parent="." instance=ExtResource("3_s5drt")]
 door_code = Array[int]([2, 0, 0, 3])
+next_scene = ExtResource("4_fvwb1")
 
 [node name="sign" parent="." instance=ExtResource("4_lm0po")]
 position = Vector2(-40, -24)

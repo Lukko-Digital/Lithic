@@ -1,0 +1,15 @@
+#not_in_tree
+!0
+human: ...stay away from me and my son.
+human: you reek.
+!1
+human: ...?
+human: i will not help you.
+
+#next_to_sign
+!0
+human: ...
+
+#unfriendly
+!0
+human: ...
