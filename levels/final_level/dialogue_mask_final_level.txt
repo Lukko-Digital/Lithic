@@ -1,0 +1,7 @@
+#not_in_tree
+!0
+mask: so not all humans are fools...
+mask: well,
+mask: if you *are* human.
+player: ...
+mask: best of luck.
