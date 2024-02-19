@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d21o540g7sc1k" path="res://src/Player.tscn" id="2_4c1j8"]
 [ext_resource type="PackedScene" uid="uid://dxmocqedm2fv2" path="res://src/ui/ui.tscn" id="3_7a77x"]
 [ext_resource type="PackedScene" uid="uid://cb1q0kxjhm5sa" path="res://src/level_elements/door.tscn" id="4_ba6mk"]
-[ext_resource type="PackedScene" uid="uid://bjv0gqay2h1qw" path="res://levels/level_0a/level_0a.tscn" id="4_wm7ol"]
+[ext_resource type="PackedScene" uid="uid://bjv0gqay2h1qw" path="res://levels/level_0a/level_0a.tscn" id="4_m84v4"]
 [ext_resource type="Texture2D" uid="uid://gnh2i0qb62nv" path="res://assets/png/sign_with_translation.png" id="6_p3v1c"]
 [ext_resource type="PackedScene" uid="uid://nnr21idbckd6" path="res://src/level_elements/sign.tscn" id="6_yks47"]
 [ext_resource type="PackedScene" path="res://src/level_elements/box.tscn" id="8_tdwli"]
@@ -23,6 +23,7 @@ position = Vector2(-88, -8)
 
 [node name="ui" parent="." instance=ExtResource("3_7a77x")]
 door_code = Array[int]([0, 2, 3, 1])
+next_scene = ExtResource("4_m84v4")
 start_music = true
 
 [node name="door" parent="." instance=ExtResource("4_ba6mk")]
